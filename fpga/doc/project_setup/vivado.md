@@ -1,0 +1,3 @@
+### Project Mode vs Non-Project Mode
+There are two modes that vivado projects can be structured in, project mode is more guided where as non-project mode the designer has full control on the files and everything has to be done by scripting. <br />
+In our case I've decided to use project mode with some tcl and Makefile scripting to automate the flow while being able to use full feature of the Vivado GUI for debugging

@@ -1,13 +1,13 @@
-# Some notes about using docker
+# Some Notes About Using Docker
 I was going to dockerize the whole environment and project the fpga from a ubuntu environment. Doing this avoids any deviation in software version and makes everything guarantee to work. However for various reason I've decided to postpone this. See below
 
-### Why didn't I dockerize everything
+### Why Didn't I Dockerize Everything
 - Everybody in the group uses Windows
 - If we want to do debugging and view waveform in a GUI application like GTKwave in docker, we'd need an X server. You CAN make docker work and GUI application but it's just not built for that, a VM is better
 - With vivado installation, gtkwave, and setting up the X server so we can do all the development and debugging in Ubuntu, the docker image size will get pretty big
 - Extra complicity in setting up the docker file
 
-### How to build and run
+### How To Build And Run
 ```
 # cd to the directory where the Dockerfile is
 docker build -t fpga_dev_en
@@ -23,7 +23,7 @@ docker start fpga_dev_env
 docker attach fpga_dev_env
 ```
 
-### Some useful docker Commands
+### Some Useful Docker Commands
 ```
 docker images # check all built images in the system
 docker image rm <image id> # remove an image
