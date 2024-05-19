@@ -1,0 +1,2 @@
+FPGA_PRJ_ROOT := $(CURDIR)
+
