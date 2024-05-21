@@ -1,1 +1,3 @@
 .Xil
+output/*
+!output
