@@ -1,10 +1,8 @@
 # setup a vivado project, output a .xpr file
+source common.tcl
 
 # remove all files in output directory
 # {*} expands the list of files into individual command arguments
-set fpga_root_dir [pwd]
-set proj_name "spartan7_proj"
-set proj_dir ${fpga_root_dir}/output/${proj_name}_root
 set files_in_proj_dir [glob -nocomplain -directory "${proj_dir}" *]
 if {[llength $files_in_proj_dir] > 0} {
     file delete -force {*}$files_in_proj_dir
