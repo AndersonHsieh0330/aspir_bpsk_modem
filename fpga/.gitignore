@@ -1,2 +1,3 @@
-output/*
 .Xil
+output/*.v
+!output
