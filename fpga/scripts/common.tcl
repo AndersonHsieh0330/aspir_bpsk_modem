@@ -3,7 +3,11 @@ set fpga_root_dir [pwd]
 set proj_name "spartan7_proj"
 set proj_dir ${fpga_root_dir}/output/${proj_name}_root
 set timestamp [read [open ${fpga_root_dir}/output/timestamp.txt]]
+puts "current timestamp is ${timestamp}"
 set cur_run_dir ${fpga_root_dir}/output/${timestamp}
+set full_partnumber xc7s50csga324-1
+set part_partnumber xc7s50
+set_part ${full_partnumber}
 
 # from https://stackoverflow.com/a/435094/984975 
 # findFiles : match file by pattern recursively

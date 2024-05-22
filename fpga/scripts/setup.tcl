@@ -1,5 +1,5 @@
 # setup a vivado project, output a .xpr file
-source common.tcl
+source ./scripts/common.tcl
 
 # remove all files in output directory
 # {*} expands the list of files into individual command arguments
@@ -19,20 +19,20 @@ set_property -name "default_lib" -value "work" -objects $proj_obj
 set_property target_language Verilog [current_project] -objects $proj_obj
 
 # adding verilog sources
-create_fileset -srcset rtl_src_fileset
-set rtl_src_fileset_obj [get_filesets rtl_src_fileset]
+set rtl_src_fileset_name sources_1
+set rtl_src_fileset_obj [get_filesets ${rtl_src_fileset_name}]
 set rtl_src_files [glob -directory "${fpga_root_dir}/src" *]
 add_files -norecurse -fileset ${rtl_src_fileset_obj} ${rtl_src_files}
 
 # adding contraints files
 # we can have multiple constraint files for each i/o bank
-create_fileset -constrset constraint_fileset
-set constraint_fileset_obj [get_filesets constraint_fileset]
+set constraint_fileset_name constrs_1
+set constraint_fileset_obj [get_filesets ${constraint_fileset_name}]
 set constraint_files [glob -directory "${fpga_root_dir}/util/constraint" *.xdc]
 add_files -norecurse -fileset ${constraint_fileset_obj} ${constraint_files}
 
 # set properties on constraint files
-set constraint_files_obj [get_files -of_objects [get_filesets constraint_fileset] [list {*}${constraint_files}]]
+set constraint_files_obj [get_files -of_objects [get_filesets ${constraint_fileset_name}] [list {*}${constraint_files}]]
 set_property -name "file_type" -value "XDC" -objects $constraint_files_obj
 
 close_project

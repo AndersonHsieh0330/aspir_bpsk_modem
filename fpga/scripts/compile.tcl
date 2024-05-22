@@ -2,7 +2,6 @@
 source ./scripts/common.tcl
 
 puts "\n\n---------- Step#1: Record compile start time ----------\n\n" 
-set timestamp [clock format [clock seconds] -format %Y-%m-%d_%H-%M-%S]
 set top_module_name top
 set checkpoint_dir ${cur_run_dir}/checkpoint
 file mkdir ${checkpoint_dir} 
@@ -33,8 +32,10 @@ place_design
 phys_opt_design
 write_checkpoint -force ${checkpoint_dir}/${timestamp}_post_place
 report_timing_summary -file ${report_dir}/${timestamp}_post_place_timing_summary.rpt
+# vivado placer generates clockinfo.txt in the directory that vivado is launched, so move it into report directory under current run
+# maybe in the future i'll find how to make vivado generate this file somewhere else
+file rename -force ${fpga_root_dir}/clockInfo.txt ${cur_run_dir}/report/clockInfo.txt
 
-# Step#5: Run router, report actual utilization and timing, write checkpoint design, run drc, write verilog and xdc out.
 puts "\n\n---------- Step#5: Run router, report actual utilization and timing. ----------\n\n" 
 route_design
 write_checkpoint -force ${checkpoint_dir}/${timestamp}_post_route
@@ -50,4 +51,6 @@ write_verilog -force ${netlist_dir}/${proj_name}_netlist.v
 write_xdc -no_fixed_only -force ${netlist_dir}/${proj_name}.xdc
 
 puts "\n\n---------- Step#7 : Generate a bitstream ----------\n\n"
-write_bitstream -force ${cur_run_dir}/${proj_name}.bit
+write_bitstream -force ${cur_run_dir}/${proj_name}_${timestamp}.bit
+
+exit

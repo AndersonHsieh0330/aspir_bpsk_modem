@@ -4,3 +4,4 @@
 - `/scripts` - any automating scripts, including the vivado tcl scripts.
 - `/src` - all the verilog source files.
 - `/util` - miscellaneous files like the fpga contraint file(.xdc), arty s7-50 board file, etc.
+- note that vivado also generates this `/.Xil` folder for temporary files, it is also .gitignored
