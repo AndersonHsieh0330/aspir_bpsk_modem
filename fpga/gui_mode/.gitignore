@@ -1,8 +1,8 @@
 # Ignore everything
-*
+/*
 
 # But not these files...
 !.gitignore
-!build
-!ip
-!src
+!/build/
+!/ip/
+!/src/
