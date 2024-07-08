@@ -23,6 +23,8 @@ module sine_lut #(
 
 (* ramstyle = "distributed" *) wire signed [BITS-1:0] lut [0:SAMPLES-1];
 
+// theoritically real number will not be synthesized
+// it'll be calcuated during elaboration(? and used as constants
 real x_step = `PI*2/SAMPLES;
 
 for (genvar i = 0 ; i < SAMPLES; i = i + 1) begin
