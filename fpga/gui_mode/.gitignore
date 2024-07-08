@@ -1,0 +1,10 @@
+# Ignore everything
+/*
+
+# But not these files...
+!.gitignore
+!/script/
+!/test/
+!/ip/
+!/src/
+!/vivado_output/README.md
