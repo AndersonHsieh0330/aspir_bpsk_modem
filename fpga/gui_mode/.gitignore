@@ -3,7 +3,8 @@
 
 # But not these files...
 !.gitignore
-!/build/
+!/script/
+!/test/
 !/ip/
 !/src/
 !/vivado_output/README.md
