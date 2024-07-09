@@ -1,14 +1,65 @@
-// numerically controlled oscillator
+/* 
+ * numerically controlled oscillator
+ * 
+ * This module computes the address that feeds into cosine_lut
+ * which generates our cosine carrier(I) signal and quadrature 
+ * carrier(Q).
+ */
 `include "params.vh"
 module nco (
     input  wire rst,
     input  wire clk,
-    output wire i_out, // sine wave
-    output wire q_out  // cosine wave
+    input  reg  in, // this is feedback signal to control nco_phase. 0 => positive, 1 => negative
+    
+    // cosine look up (lu stands for look up)
+    output reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] i_cosine_lu_angle,
+    output reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] q_cosine_lu_angle,
 );
 
-reg [$clog2(`SAMPLES_PER_PERIOD)-1:0] phase;
+reg [$clog2(SAMPLES_PER_PERIOD)-1:0] nco_phase;
 
+// feedback phase control
+always @ (posedge clk) begin
+    if (rst) begin
+        nco_phse <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}};
+    end else begin
+        nco_phase <= in ? nco_phase + 1 : nco_phase - 1;
+    end
+end
 
+// i_out, compute the output cosine
+always @ (posedge clk) begin
+    if (rst) begin
+        i_cosine_lu_angle <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}};
+    end else begin
+        /* 
+         * each step = carrier samples per period / (carrier period / adc sampling period)
+         *           = carrier samples per period / (adc sampling frequency / carrier frequency)
+         *
+         * example with default numbers :
+         * each step = 512 / (200 / 50) 
+         *           = 128
+         */
+        i_cosine_lu_angle <= `CARRIER_SAMPLES_PER_PERIOD / (`CARRIER_FREQ / `ADC_SAMPLING_FREQ)
+    end
+end
+
+// q_out, compute the output quadrature sine
+always @ (posedge clk) begin
+    if (rst) begin
+        // sin(x) = cos(x - pi/2)
+        q_cosine_lu_angle <= `CARRIER_SAMPLES_PER_PERIOD / (`CARRIER_FREQ / `ADC_SAMPLING_FREQ) * 3 / 4;
+    end else begin
+        /* 
+         * each step = carrier samples per period / (carrier period / adc sampling period)
+         *           = carrier samples per period / (adc sampling frequency / carrier frequency)
+         *
+         * example with default numbers :
+         * each step = 512 / (200 / 50) 
+         *           = 128
+         */
+        q_cosine_lu_angle <= `CARRIER_SAMPLES_PER_PERIOD / (`CARRIER_FREQ / `ADC_SAMPLING_FREQ)
+    end
+end
 
 endmodule
