@@ -13,7 +13,7 @@
  *  we want asychronous access, aka no clock delay on read. 
  */
 `include "params.vh"
-module sine_lut #(
+module cosine_lut #(
     SAMPLES = 512, // samples per period
     BITS = 12 // our adc/dac uses 12 bits 2s complement
 ) (
@@ -28,9 +28,7 @@ module sine_lut #(
 real x_step = `PI*2/SAMPLES;
 
 for (genvar i = 0 ; i < SAMPLES; i = i + 1) begin
-    // using $ceil makes the expression overflow and go to negative
-    // so use $floor
-    assign lut[i] = $floor($pow(2,(BITS-1))*$sin(x_step*i));
+    assign lut[i] = $pow(2,(BITS-1))*$cos(x_step*i);
 end
 
 assign out = lut[in];

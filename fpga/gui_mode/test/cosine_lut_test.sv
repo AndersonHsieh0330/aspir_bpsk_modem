@@ -3,11 +3,11 @@
  *  not too much going on, just a sanity check
  */
 `timescale 1ns/100ps
-module sine_lut_test ();
+module cosine_lut_test ();
     reg  [8:0] in;
     wire [11:0]  out;
 
-    sine_lut #(
+    cosine_lut #(
         .SAMPLES(512),
         .BITS(12)
     ) sine_lut_inst (
