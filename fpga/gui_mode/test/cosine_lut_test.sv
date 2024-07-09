@@ -3,14 +3,12 @@
  *  not too much going on, just a sanity check
  */
 `timescale 1ns/100ps
+`include "params.vh"
 module cosine_lut_test ();
     reg  [8:0] in;
-    wire [11:0]  out;
+    wire [17:0]  out;
 
-    cosine_lut #(
-        .SAMPLES(512),
-        .BITS(12)
-    ) sine_lut_inst (
+    cosine_lut sine_lut_inst (
         .in(in),
         .out(out)      
     );

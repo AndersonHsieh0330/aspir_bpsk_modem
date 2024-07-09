@@ -1,3 +1,1 @@
 `define PI 3.141592 
-
-`define SAMPLES_PER_PERIOD 512
