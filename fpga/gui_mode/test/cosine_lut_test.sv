@@ -5,10 +5,12 @@
 `timescale 1ns/100ps
 `include "params.vh"
 module cosine_lut_test ();
-    reg  [8:0] in;
+    reg  [8:0]   in;
     wire [17:0]  out;
 
-    cosine_lut sine_lut_inst (
+    cosine_lut #(
+        .READ_PORTS(1)
+    ) cosine_lut_inst (
         .in(in),
         .out(out)      
     );

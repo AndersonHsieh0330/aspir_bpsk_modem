@@ -41,7 +41,7 @@ always @ (posedge clk) begin
          * each step = 512 / (200 / 50) 
          *           = 128
          */
-        i_cosine_lu_angle <= `CARRIER_SAMPLES_PER_PERIOD / (`CARRIER_FREQ / `ADC_SAMPLING_FREQ)
+        i_cosine_lu_angle <= i_cosine_lu_angle + `CARRIER_SAMPLES_PER_PERIOD / (`CARRIER_FREQ / `ADC_SAMPLING_FREQ)
     end
 end
 
@@ -59,7 +59,7 @@ always @ (posedge clk) begin
          * each step = 512 / (200 / 50) 
          *           = 128
          */
-        q_cosine_lu_angle <= `CARRIER_SAMPLES_PER_PERIOD / (`CARRIER_FREQ / `ADC_SAMPLING_FREQ)
+        q_cosine_lu_angle <= q_cosine_lu_angle + `CARRIER_SAMPLES_PER_PERIOD / (`CARRIER_FREQ / `ADC_SAMPLING_FREQ)
     end
 end
 

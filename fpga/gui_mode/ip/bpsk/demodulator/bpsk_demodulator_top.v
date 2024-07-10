@@ -1,5 +1,5 @@
 `include "params.vh"
-module demodulator_top (
+module bpsk_demodulator_top (
     input  wire clk,
     input  wire rst,
     input  wire [`ADC_BITS-1:0] data_in, // from ADC
