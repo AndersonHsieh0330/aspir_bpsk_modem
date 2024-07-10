@@ -16,7 +16,8 @@ module nco (
     output reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] q_cosine_lu_angle,
 );
 
-reg [$clog2(SAMPLES_PER_PERIOD)-1:0] nco_phase;
+// this is an unsigned number, underflow loops around
+reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] nco_phase;
 
 // feedback phase control
 always @ (posedge clk) begin
