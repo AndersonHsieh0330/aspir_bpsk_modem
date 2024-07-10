@@ -7,8 +7,8 @@
  */
 `include "params.vh"
 module nco (
-    input  wire rst,
     input  wire clk,
+    input  wire rst,
     input  reg  in, // this is feedback signal to control nco_phase. 0 => positive, 1 => negative
     
     // cosine look up (lu stands for look up)

@@ -16,11 +16,11 @@
 module cosine_lut #(
     READ_PORTS = 2
 ) (
-    input  wire [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0]  in  [READ_PORTS-1:0],
-    output wire [`FIXED_PT_WIDTH-1:0] out [READ_PORTS-1:0]
+    input  wire [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] in  [READ_PORTS-1:0],
+    output wire [`FIXED_PT_WIDTH-1:0]                     out [READ_PORTS-1:0]
 );
 
-(* ramstyle = "distributed" *) wire signed [`FIXED_PT_WIDTH-1:0] lut [0:`CARRIER_SAMPLES_PER_PERIOD-1];
+(* ramstyle = "distributed" *) wire signed [`FIXED_PT_WIDTH-1:0] lut [0:`CARRIER_SAMPLES_PER_PERIOD];
 
 for(genvar i = 0 ; i < READ_PORTS ; i = i + 1) begin
     assign out[i] = lut[in[i]];
