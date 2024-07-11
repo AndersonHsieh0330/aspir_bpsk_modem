@@ -1,5 +1,5 @@
 `define CARRIER_SAMPLES_PER_PERIOD 512 
-`define CARRIER_FREQ 50 // Mhz
+`define CARRIER_FREQ 5 // Mhz
 `define ADC_SAMPLING_FREQ 200 // Mhz, 2*(Fc * baudrate)
 
 /*

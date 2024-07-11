@@ -12,12 +12,13 @@
  *  Note that we use distributed ram isntead of block ram cuz 
  *  we want asychronous access, aka no clock delay on read. 
  */
-`include "params.vh"
+`include "params.svh"
+`default_nettype none
 module cosine_lut #(
-    READ_PORTS = 2
+    parameter READ_PORTS = 2
 ) (
-    input  wire        [$clog2(READ_PORTS)-1:0][$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] in,
-    output wire signed [$clog2(READ_PORTS)-1:0][`FIXED_PT_WIDTH-1:0]                     out 
+    input  wire        [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] in  [0:READ_PORTS-1],
+    output wire signed [`FIXED_PT_WIDTH-1:0]                     out [0:READ_PORTS-1] 
 );
 
 (* ramstyle = "distributed" *) wire signed [`FIXED_PT_WIDTH-1:0] lut [0:`CARRIER_SAMPLES_PER_PERIOD-1];

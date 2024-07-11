@@ -5,15 +5,16 @@
  * which generates our cosine carrier(I) signal and quadrature 
  * carrier(Q).
  */
-`include "params.vh"
+`include "params.svh"
+`default_nettype none
 module nco (
     input  wire clk,
     input  wire rst,
-    input  reg  in, // this is feedback signal to control nco_phase. 0 => positive, 1 => negative
+    input  wire in, // this is feedback signal to control nco_phase. 0 => positive, 1 => negative
     
     // cosine look up (lu stands for look up)
     output reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] i_cosine_lu_angle,
-    output reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] q_cosine_lu_angle,
+    output reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] q_cosine_lu_angle
 );
 
 // this is an unsigned number, underflow loops around
@@ -22,7 +23,7 @@ reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] nco_phase;
 // feedback phase control
 always @ (posedge clk) begin
     if (rst) begin
-        nco_phse <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}};
+        nco_phase <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}};
     end else begin
         nco_phase <= in ? nco_phase + 1 : nco_phase - 1;
     end
@@ -41,7 +42,7 @@ always @ (posedge clk) begin
          * each step = 512 / (200 / 50) 
          *           = 128
          */
-        i_cosine_lu_angle <= i_cosine_lu_angle + `CARRIER_SAMPLES_PER_PERIOD / (`CARRIER_FREQ / `ADC_SAMPLING_FREQ)
+        i_cosine_lu_angle <= i_cosine_lu_angle + `CARRIER_SAMPLES_PER_PERIOD / (`ADC_SAMPLING_FREQ / `CARRIER_FREQ);
     end
 end
 
@@ -49,7 +50,7 @@ end
 always @ (posedge clk) begin
     if (rst) begin
         // sin(x) = cos(x - pi/2)
-        q_cosine_lu_angle <= `CARRIER_SAMPLES_PER_PERIOD / (`CARRIER_FREQ / `ADC_SAMPLING_FREQ) * 3 / 4;
+        q_cosine_lu_angle <= `CARRIER_SAMPLES_PER_PERIOD * 3 / 4;
     end else begin
         /* 
          * each step = carrier samples per period / (carrier period / adc sampling period)
@@ -59,7 +60,7 @@ always @ (posedge clk) begin
          * each step = 512 / (200 / 50) 
          *           = 128
          */
-        q_cosine_lu_angle <= q_cosine_lu_angle + `CARRIER_SAMPLES_PER_PERIOD / (`CARRIER_FREQ / `ADC_SAMPLING_FREQ)
+        q_cosine_lu_angle <= q_cosine_lu_angle + `CARRIER_SAMPLES_PER_PERIOD / (`ADC_SAMPLING_FREQ / `CARRIER_FREQ);
     end
 end
 
