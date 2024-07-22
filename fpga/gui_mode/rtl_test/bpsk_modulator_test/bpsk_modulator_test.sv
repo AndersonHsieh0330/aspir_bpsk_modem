@@ -21,7 +21,7 @@
 
 `timescale 1ns/100ps
 
-module modulator_tb();
+module bpsk_modulator_test ();
 
     reg clk;
     reg rst;
