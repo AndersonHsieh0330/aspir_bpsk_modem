@@ -1,3 +1,4 @@
+`timescale 1ps/1ps
 `include "params.svh"
 `default_nettype none
 module bpsk_demodulator_top (
@@ -27,7 +28,6 @@ mixer #(
 );
 
 fifo #(
-    .FIFO_SIZE(`ADC_SAMPLING_FREQ/`CARRIER_FREQ),
     .FIFO_SIZE(`ADC_SAMPLING_FREQ/`CARRIER_FREQ),
     .DATA_WIDTH(`ADC_BITS+`FIXED_PT_WIDTH)
 ) fifo_inst_mixer_i (
@@ -77,7 +77,8 @@ cosine_lut #(
 );
 
 lpf_integrator #(
-    .ARRAY_SIZE(`ADC_SAMPLING_FREQ/`CARRIER_FREQ)
+    .ARRAY_SIZE(`ADC_SAMPLING_FREQ/`CARRIER_FREQ),
+    .DATA_WIDTH(`FIXED_PT_WIDTH + `ADC_BITS)
 ) lpf_inst_i (
     .clk(clk),
     .rst(rst),
@@ -86,7 +87,8 @@ lpf_integrator #(
 );
 
 lpf_integrator #(
-    .ARRAY_SIZE(`ADC_SAMPLING_FREQ/`CARRIER_FREQ)
+    .ARRAY_SIZE(`ADC_SAMPLING_FREQ/`CARRIER_FREQ),
+    .DATA_WIDTH(`FIXED_PT_WIDTH + `ADC_BITS)
 ) lpf_inst_q (
     .clk(clk),
     .rst(rst),

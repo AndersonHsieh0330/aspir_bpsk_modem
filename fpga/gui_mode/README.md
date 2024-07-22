@@ -18,7 +18,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;/src\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- all the code to program the PS side(the ARM core) of zynq-7000\
 &nbsp;&nbsp;&nbsp;&nbsp;/test\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- all the testing related code, including verilator test cases, system verilog testbench, etc\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- all the firmware related test files\
+&nbsp;&nbsp;&nbsp;&nbsp;/rtl_test\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- all the RTL related test files\
 &nbsp;&nbsp;&nbsp;&nbsp;/vivado_output\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- vivado project wrapper will be generated here\
 &nbsp;&nbsp;&nbsp;&nbsp;.gitignore\

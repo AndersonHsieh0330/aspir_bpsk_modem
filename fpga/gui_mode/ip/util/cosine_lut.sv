@@ -12,6 +12,7 @@
  *  Note that we use distributed ram isntead of block ram cuz 
  *  we want asychronous access, aka no clock delay on read. 
  */
+`timescale 1ps/1ps
 `include "params.svh"
 `default_nettype none
 module cosine_lut #(

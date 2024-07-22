@@ -1,12 +1,3 @@
-# Ignore everything
-/*
-
 # But not these files...
-!.gitignore
-!README.md
-!Makefile
-!/script/
-!/test/
-!/ip/
-!/src/
-!/vivado_output/README.md
+*vivado*
+/vivado_output
