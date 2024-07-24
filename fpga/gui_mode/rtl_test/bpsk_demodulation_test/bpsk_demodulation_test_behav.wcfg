@@ -11,15 +11,19 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0 ps"></ZoomStartTime>
-      <ZoomEndTime time="307 ps"></ZoomEndTime>
-      <Cursor1Time time="65 ps"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="615.001 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="154"></NameColumnWidth>
-      <ValueColumnWidth column_width="218"></ValueColumnWidth>
+      <ValueColumnWidth column_width="174"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="24" />
+   <wave_markers>
+      <marker label="" time="17500" />
+      <marker label="" time="57500" />
+   </wave_markers>
    <wvobject type="logic" fp_name="/bpsk_demodulation_test/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -28,78 +32,203 @@
       <obj_property name="ElementShortName">rst</obj_property>
       <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/bpsk_demodulation_test/one_angle">
-      <obj_property name="ElementShortName">one_angle[8:0]</obj_property>
-      <obj_property name="ObjectShortName">one_angle[8:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/bpsk_demodulation_test/zero_angle">
-      <obj_property name="ElementShortName">zero_angle[8:0]</obj_property>
-      <obj_property name="ObjectShortName">zero_angle[8:0]</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/bpsk_demodulation_test/modulated_signal_select">
       <obj_property name="ElementShortName">modulated_signal_select</obj_property>
       <obj_property name="ObjectShortName">modulated_signal_select</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/bpsk_demodulation_test/out">
-      <obj_property name="ElementShortName">out[0:1][17:0]</obj_property>
-      <obj_property name="ObjectShortName">out[0:1][17:0]</obj_property>
-      <wvobject type="array" fp_name="/bpsk_demodulation_test/out[0]">
-         <obj_property name="ElementShortName">[0][17:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][17:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">10</obj_property>
-         <obj_property name="radix_otherWidth">0</obj_property>
-         <obj_property name="CellHeight">100</obj_property>
-         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
-         <obj_property name="AnalogYRangeMin">-1.000000</obj_property>
-         <obj_property name="AnalogYRRangeMax">1.000000</obj_property>
-         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
-         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
-         <obj_property name="AnalogHorizLine">0.000000</obj_property>
-         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/bpsk_demodulation_test/out[1]">
-         <obj_property name="ElementShortName">[1][17:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][17:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">10</obj_property>
-         <obj_property name="radix_otherWidth">0</obj_property>
-         <obj_property name="CellHeight">100</obj_property>
-         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
-         <obj_property name="AnalogYRangeMin">-1.000000</obj_property>
-         <obj_property name="AnalogYRRangeMax">1.000000</obj_property>
-         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
-         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
-         <obj_property name="AnalogHorizLine">0.000000</obj_property>
-         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_data_in">
-      <obj_property name="ElementShortName">bpsk_data_in[11:0]</obj_property>
-      <obj_property name="ObjectShortName">bpsk_data_in[11:0]</obj_property>
-      <obj_property name="Radix">REALRADIX</obj_property>
-      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">10</obj_property>
-      <obj_property name="radix_otherWidth">0</obj_property>
-      <obj_property name="CellHeight">100</obj_property>
-      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
-      <obj_property name="AnalogYRangeMin">-1.000000</obj_property>
-      <obj_property name="AnalogYRRangeMax">1.000000</obj_property>
-      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
-      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
-      <obj_property name="AnalogHorizLine">0.000000</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/bpsk_demodulation_test/bpsk_data_out">
       <obj_property name="ElementShortName">bpsk_data_out</obj_property>
       <obj_property name="ObjectShortName">bpsk_data_out</obj_property>
    </wvobject>
+   <wvobject fp_name="divider371" type="divider">
+      <obj_property name="label">i_path</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_data_in">
+      <obj_property name="ElementShortName">bpsk_data_in[11:0]</obj_property>
+      <obj_property name="ObjectShortName">bpsk_data_in[11:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">0</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">-1023.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">1024.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/nco_carrier[0]">
+      <obj_property name="ElementShortName">[0][17:0]</obj_property>
+      <obj_property name="ObjectShortName">[0][17:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">10</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">-1023.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">1024.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider91" type="divider">
+      <obj_property name="label">i_after_mixer</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/i_mixer_out">
+      <obj_property name="ElementShortName">i_mixer_out[29:0]</obj_property>
+      <obj_property name="ObjectShortName">i_mixer_out[29:0]</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">-1023.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">1024.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">10</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider92" type="divider">
+      <obj_property name="label">i_after_lpf_integrator</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/i_lpf_out">
+      <obj_property name="ElementShortName">i_lpf_out[29:0]</obj_property>
+      <obj_property name="ObjectShortName">i_lpf_out[29:0]</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeMin">-1023.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">1024.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">2</obj_property>
+      <obj_property name="radix_otherWidth">1</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider372" type="divider">
+      <obj_property name="label">q_path</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_data_in">
+      <obj_property name="ElementShortName">bpsk_data_in[11:0]</obj_property>
+      <obj_property name="ObjectShortName">bpsk_data_in[11:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">0</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">-1023.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">1024.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/nco_carrier[1]">
+      <obj_property name="ElementShortName">[1][17:0]</obj_property>
+      <obj_property name="ObjectShortName">[1][17:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">-1023.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">1024.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider98" type="divider">
+      <obj_property name="label">q_after_mixer</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/q_mixer_out">
+      <obj_property name="ElementShortName">q_mixer_out[29:0]</obj_property>
+      <obj_property name="ObjectShortName">q_mixer_out[29:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">-1023.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">1024.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">20</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider367" type="divider">
+      <obj_property name="label">q_after_lpf_integrator</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/q_lpf_out">
+      <obj_property name="ElementShortName">q_lpf_out[29:0]</obj_property>
+      <obj_property name="ObjectShortName">q_lpf_out[29:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">-1023.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">1024.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">10</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider52" type="divider">
+      <obj_property name="label">after_mix_fb</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/mixer_inst_fb/in_a">
+      <obj_property name="ElementShortName">in_a[19:0]</obj_property>
+      <obj_property name="ObjectShortName">in_a[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/mixer_inst_fb/in_b">
+      <obj_property name="ElementShortName">in_b[19:0]</obj_property>
+      <obj_property name="ObjectShortName">in_b[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/fb_mixer_out">
+      <obj_property name="ElementShortName">fb_mixer_out[39:0]</obj_property>
+      <obj_property name="ObjectShortName">fb_mixer_out[39:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">-1023.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">1024.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider147" type="divider">
+      <obj_property name="label">nco</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/nco_inst/nco_phase">
       <obj_property name="ElementShortName">nco_phase[8:0]</obj_property>
       <obj_property name="ObjectShortName">nco_phase[8:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
    </wvobject>
 </wave_config>

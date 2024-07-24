@@ -1,4 +1,4 @@
-`timescale 1ps/1ps
+`timescale 1ns/1ps
 `include "params.svh"
 `default_nettype none
 module bpsk_demodulation_test ();
@@ -15,18 +15,18 @@ initial begin
     clk <= 1'b0;
     rst <= 1'b1;
     modulated_signal_select <= 1'b0;
-    #6;
+    #15;
     rst <= 1'b0;
-    for (integer i = 0 ; i < 5 ; i = i + 1) begin
+    for (integer i = 0 ; i < 10 ; i = i + 1) begin
         // toggle 5 times
-        #60;
+        #100;
         modulated_signal_select <= ~modulated_signal_select;
     end
     $finish;
 end
 
 always begin
-    #1 clk <= ~clk;
+    #2.5 clk <= ~clk;
 end
 
 always @(posedge clk) begin

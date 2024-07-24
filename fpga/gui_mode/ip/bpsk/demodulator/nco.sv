@@ -5,6 +5,7 @@
  * which generates our cosine carrier(I) signal and quadrature 
  * carrier(Q).
  */
+`timescale 1ns/1ps
 `include "params.svh"
 `default_nettype none
 module nco (
@@ -42,7 +43,7 @@ always @ (posedge clk) begin
          * each step = 512 / (200 / 50) 
          *           = 128
          */
-        i_cosine_lu_angle <= i_cosine_lu_angle + `CARRIER_SAMPLES_PER_PERIOD / (`ADC_SAMPLING_FREQ / `CARRIER_FREQ) + nco_phase;
+        i_cosine_lu_angle <= i_cosine_lu_angle + `CARRIER_SAMPLES_PER_PERIOD / (`ADC_SAMPLING_FREQ / `CARRIER_FREQ);// + nco_phase;
     end
 end
 
@@ -60,7 +61,7 @@ always @ (posedge clk) begin
          * each step = 512 / (200 / 50) 
          *           = 128
          */
-        q_cosine_lu_angle <= q_cosine_lu_angle + `CARRIER_SAMPLES_PER_PERIOD / (`ADC_SAMPLING_FREQ / `CARRIER_FREQ) + nco_phase;
+        q_cosine_lu_angle <= q_cosine_lu_angle + `CARRIER_SAMPLES_PER_PERIOD / (`ADC_SAMPLING_FREQ / `CARRIER_FREQ);// + nco_phase;
     end
 end
 
