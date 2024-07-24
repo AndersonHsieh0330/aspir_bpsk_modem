@@ -1,4 +1,4 @@
-`timescale 1ps/1ps
+`timescale 1ns/1ps
 `include "params.svh"
 `default_nettype none
 module bpsk_demodulator_top (
@@ -101,7 +101,7 @@ mixer #(
     .IN_B_BITS(`FIXED_PT_WIDTH+`ADC_BITS-10)
 ) mixer_inst_fb (
     .in_a(i_lpf_out[`FIXED_PT_WIDTH+`ADC_BITS-1:10]), // get rid of all the decimal points in lpf outputs
-    .in_b(i_lpf_out[`FIXED_PT_WIDTH+`ADC_BITS-1:10]),
+    .in_b(q_lpf_out[`FIXED_PT_WIDTH+`ADC_BITS-1:10]),
     .out(fb_mixer_out)
 );
 

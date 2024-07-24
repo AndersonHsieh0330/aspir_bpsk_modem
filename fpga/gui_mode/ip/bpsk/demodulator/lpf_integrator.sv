@@ -1,6 +1,7 @@
 /*
  * use integrator was a low pass filter
  */
+`timescale 1ns/1ps
 `include "params.svh"
 `default_nettype none
 module lpf_integrator #(
