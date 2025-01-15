@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fixdt_conversion_test_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_fixdt_conversion_test_sv " />
+            <top_module name="fixdt_conversion_test" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="999,832 ps"></ZoomStartTime>
+      <ZoomEndTime time="1,000,034 ps"></ZoomEndTime>
+      <Cursor1Time time="1,000,000 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="304"></NameColumnWidth>
+      <ValueColumnWidth column_width="280"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="42" />
+   <wvobject fp_name="divider90" type="divider">
+      <obj_property name="label">32 to 16 test</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_32t16_a">
+      <obj_property name="ElementShortName">val_32t16_a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_a[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_32t16_b">
+      <obj_property name="ElementShortName">val_32t16_b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_b[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_32t16_c">
+      <obj_property name="ElementShortName">val_32t16_c[31:0]</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_c[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_32t16_d">
+      <obj_property name="ElementShortName">val_32t16_d[31:0]</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_d[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_32t16_e">
+      <obj_property name="ElementShortName">val_32t16_e[31:0]</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_e[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_32t16_a_num">
+      <obj_property name="ElementShortName">val_32t16_a_num[15:0]</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_a_num[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">10</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_32t16_a_result_overflow">
+      <obj_property name="ElementShortName">val_32t16_a_result_overflow</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_a_result_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_32t16_a_result_underflow">
+      <obj_property name="ElementShortName">val_32t16_a_result_underflow</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_a_result_underflow</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_32t16_b_num">
+      <obj_property name="ElementShortName">val_32t16_b_num[15:0]</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_b_num[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">10</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_32t16_b_result_overflow">
+      <obj_property name="ElementShortName">val_32t16_b_result_overflow</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_b_result_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_32t16_b_result_underflow">
+      <obj_property name="ElementShortName">val_32t16_b_result_underflow</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_b_result_underflow</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_32t16_c_num">
+      <obj_property name="ElementShortName">val_32t16_c_num[15:0]</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_c_num[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">10</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_32t16_c_result_overflow">
+      <obj_property name="ElementShortName">val_32t16_c_result_overflow</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_c_result_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_32t16_c_result_underflow">
+      <obj_property name="ElementShortName">val_32t16_c_result_underflow</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_c_result_underflow</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_32t16_d_num">
+      <obj_property name="ElementShortName">val_32t16_d_num[15:0]</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_d_num[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">10</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_32t16_d_result_overflow">
+      <obj_property name="ElementShortName">val_32t16_d_result_overflow</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_d_result_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_32t16_d_result_underflow">
+      <obj_property name="ElementShortName">val_32t16_d_result_underflow</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_d_result_underflow</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_32t16_e_num">
+      <obj_property name="ElementShortName">val_32t16_e_num[15:0]</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_e_num[15:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">10</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_32t16_e_result_overflow">
+      <obj_property name="ElementShortName">val_32t16_e_result_overflow</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_e_result_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_32t16_e_result_underflow">
+      <obj_property name="ElementShortName">val_32t16_e_result_underflow</obj_property>
+      <obj_property name="ObjectShortName">val_32t16_e_result_underflow</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider90" type="divider">
+      <obj_property name="label">64 to 32 test</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_64t32_a">
+      <obj_property name="ElementShortName">val_64t32_a[63:0]</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_a[63:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">52</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_64t32_b">
+      <obj_property name="ElementShortName">val_64t32_b[63:0]</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_b[63:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">52</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_64t32_c">
+      <obj_property name="ElementShortName">val_64t32_c[63:0]</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_c[63:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">52</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_64t32_d">
+      <obj_property name="ElementShortName">val_64t32_d[63:0]</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_d[63:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">52</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_64t32_e">
+      <obj_property name="ElementShortName">val_64t32_e[63:0]</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_e[63:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">52</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_64t32_a_num">
+      <obj_property name="ElementShortName">val_64t32_a_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_a_num[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_64t32_a_result_overflow">
+      <obj_property name="ElementShortName">val_64t32_a_result_overflow</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_a_result_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_64t32_a_result_underflow">
+      <obj_property name="ElementShortName">val_64t32_a_result_underflow</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_a_result_underflow</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_64t32_b_num">
+      <obj_property name="ElementShortName">val_64t32_b_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_b_num[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_64t32_b_result_overflow">
+      <obj_property name="ElementShortName">val_64t32_b_result_overflow</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_b_result_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_64t32_b_result_underflow">
+      <obj_property name="ElementShortName">val_64t32_b_result_underflow</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_b_result_underflow</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_64t32_c_num">
+      <obj_property name="ElementShortName">val_64t32_c_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_c_num[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_64t32_c_result_overflow">
+      <obj_property name="ElementShortName">val_64t32_c_result_overflow</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_c_result_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_64t32_c_result_underflow">
+      <obj_property name="ElementShortName">val_64t32_c_result_underflow</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_c_result_underflow</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_64t32_d_num">
+      <obj_property name="ElementShortName">val_64t32_d_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_d_num[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_64t32_d_result_overflow">
+      <obj_property name="ElementShortName">val_64t32_d_result_overflow</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_d_result_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_64t32_d_result_underflow">
+      <obj_property name="ElementShortName">val_64t32_d_result_underflow</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_d_result_underflow</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fixdt_conversion_test/val_64t32_e_num">
+      <obj_property name="ElementShortName">val_64t32_e_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_e_num[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_64t32_e_result_overflow">
+      <obj_property name="ElementShortName">val_64t32_e_result_overflow</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_e_result_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fixdt_conversion_test/val_64t32_e_result_underflow">
+      <obj_property name="ElementShortName">val_64t32_e_result_underflow</obj_property>
+      <obj_property name="ObjectShortName">val_64t32_e_result_underflow</obj_property>
+   </wvobject>
+</wave_config>

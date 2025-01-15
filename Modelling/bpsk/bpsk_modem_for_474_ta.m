@@ -12,10 +12,8 @@ bit_rate = bits_per_symbol*symbol_rate;     % bits per second
 fs = 200000000;                             % sampling frequency
 fc = 25000000;                              % carrier frequency
 sps = fs / bit_rate;                        % samples per symbol
-%tx_phase_offset = 2*pi*rand;
-tx_phase_offset = 0;                 % phase offset for testing
+tx_phase_offset = 2*pi*rand;                % phase offset for testing
 lpf_taps = 10;                              % depth of our integrator LPF
-
 t = 0:(sps*1000-1);             % time vector, we want time to start at 0. 
                                 % Each element of the vector is a time step, 
                                 % not 1 second. if you really want to think 
@@ -27,8 +25,7 @@ t = 0:(sps*1000-1);             % time vector, we want time to start at 0.
 % --------------------------Modulation------------------------------------
 % ------------------------------------------------------------------------
 % generate random data
-%bit_data = randi([0, 1], 1, length(t)/sps);
-bit_data = repmat([0 0], 1, 500);
+bit_data = randi([0, 1], 1, length(t)/sps);
 
 % map data to constellation 
 mapped_data = repelem((2*bit_data-1), sps);  
@@ -101,15 +98,9 @@ title('random bit\_data generated');
 xlabel('Bit Index');
 ylabel('Data');
 
-%subplot(4, 2, 2);
-%stem(mapped_data, 'filled');
-%title('mapped\_data');
-%xlabel('Time Step (Sample Step)');
-%ylabel('Amplitude');
-
 subplot(4, 2, 2);
-plot(t,bpsk_signal);
-title('bpsk\_signal');
+stem(mapped_data, 'filled');
+title('mapped\_data');
 xlabel('Time Step (Sample Step)');
 ylabel('Amplitude');
 
@@ -125,7 +116,6 @@ title('i\_arm');
 xlabel('Time Step (Sample Step)');
 ylabel('Amplitude');
 
-
 subplot(4, 2, 5);
 plot(t,phi);
 ylim([-pi pi]);
@@ -133,23 +123,17 @@ title('phase adjust');
 xlabel('Time Step (Sample Step)');
 ylabel('Amplitude');
 
-%subplot(4, 2, 5);
-%plot(t,q_arm_filtered);
-%title('q\_arm\_filtered');
-%xlabel('Time Step (Sample Step)');
-%ylabel('Amplitude');
-
 subplot(4, 2, 6);
 plot(t,i_arm_filtered);
 title('i\_arm\_filtered');
 xlabel('Time Step (Sample Step)');
 ylabel('Amplitude');
 
-%subplot(4, 2, 6);
-%stem(sampled_data, 'filled');
-%title('sampled data after demodulation');
-%xlabel('Bit Index');
-%ylabel('Data');
+subplot(4, 2, 7);
+stem(sampled_data, 'filled');
+title('sampled data after demodulation');
+xlabel('Bit Index');
+ylabel('Data');
 
 % compare sampled data with original data
 comparison_result = zeros(1,length(bit_data));
@@ -158,11 +142,11 @@ for i = 1:length(bit_data)
     comparison_result(i) = bit_data(i) == sampled_data(i);
 end
 
-subplot(4, 2, 7);
-plot(comparison_result);
-title('comparison orignal data and sampled data');
-xlabel('0 for mismatch');
-ylabel('index');
+%subplot(4, 2, 8);
+%plot(comparison_result);
+%title('comparison orignal data and sampled data');
+%xlabel('0 for mismatch');
+%ylabel('index');
 
 nfft = 1024; % FFT size
 frequencies = linspace(-fs/2, fs/2, nfft);
