@@ -1,4 +1,3 @@
-`timescale 1ns/1ps
 `include "params.svh"
 `default_nettype none
 module bpsk_modem_top (

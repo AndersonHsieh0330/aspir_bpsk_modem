@@ -1,52 +1,51 @@
-`timescale 1ns/1ps
+`timescale 10ns/1ns
 `include "params.svh"
 `default_nettype none
 module bpsk_demodulation_test ();
-// clk gen
-reg clk, rst;
 
-reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] one_angle, zero_angle;
+reg clk, rst;
+reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] lu_angle;
 reg modulated_signal_select; // toggle between 1 and 0
-wire signed [`FIXED_PT_WIDTH-1:0] out [0:1]; 
-wire [`ADC_BITS-1:0] bpsk_data_in;
-wire bpsk_data_out;
+wire signed   [`FIXED_PT_WIDTH-1:0] out [0:0];
+wire signed   [`ADC_BITS-1:0]       bpsk_data_in;
+wire unsigned                       bpsk_data_out;
 
 initial begin
-    clk <= 1'b0;
+    clk <= 1'b1;
     rst <= 1'b1;
     modulated_signal_select <= 1'b0;
-    #15;
+    #100;
     rst <= 1'b0;
-    for (integer i = 0 ; i < 10 ; i = i + 1) begin
-        // toggle 5 times
-        #100;
+    for (integer i = 0 ; i < 1000 ; i = i + 1) begin
+        //#`SAMPLES_PER_SYMBOL;
+        #80
+        //modulated_signal_select <= $urandom % 2;
         modulated_signal_select <= ~modulated_signal_select;
     end
-    $finish;
 end
 
 always begin
-    #2.5 clk <= ~clk;
+    // #1 is 10ns, period for 100 Mhz => 1e-8 seconds => 10 ns
+    #0.5 clk <= ~clk;
 end
 
+localparam INITIAL_PHASE_OFFSET = 0;
 always @(posedge clk) begin
     if (rst) begin
-        one_angle <= `CARRIER_SAMPLES_PER_PERIOD / 2;
-        zero_angle <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}};
+        lu_angle <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}} + INITIAL_PHASE_OFFSET;
     end else begin
-        one_angle <= one_angle + `CARRIER_SAMPLES_PER_PERIOD / (`ADC_SAMPLING_FREQ / `CARRIER_FREQ);
-        zero_angle <= zero_angle + `CARRIER_SAMPLES_PER_PERIOD / (`ADC_SAMPLING_FREQ / `CARRIER_FREQ);
+        lu_angle <= lu_angle + `CARRIER_SAMPLES_PER_PERIOD / (`SAMPLING_FREQ / `CARRIER_FREQ);
     end
 end
 
 cosine_lut # (
-    .READ_PORTS(2)
+    .READ_PORTS(1)
 ) cosine_lut_inst (
-   .in({zero_angle, one_angle}),
+   .in({lu_angle}),
    .out(out) 
 );
 
-assign bpsk_data_in = modulated_signal_select?out[1][11:0]:out[0][11:0];
+assign bpsk_data_in = modulated_signal_select? out[0] : -1*out[0];
 
 bpsk_demodulator_top bpsk_demod_inst (
     .clk(clk),

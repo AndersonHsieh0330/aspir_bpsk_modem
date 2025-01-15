@@ -2,8 +2,8 @@
 `include "params.svh"
 `default_nettype none
 module cosine_lut_test ();
-    reg  [8:0]  in  [0:0];
-    wire [17:0] out [0:0];
+    reg  [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] in [0:0];
+    wire [`FIXED_PT_WIDTH-1:0] out [0:0];
 
     cosine_lut #(
         .READ_PORTS(1)
@@ -24,9 +24,9 @@ module cosine_lut_test ();
     );
 
 initial begin
-    in[0] = 8'b0000_0000;
+    in[0] = {$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1{1'b0}};
     #1;
-    for (int i = 0 ; i < 512 ; i = i + 1) begin
+    for (int i = 0 ; i < `CARRIER_SAMPLES_PER_PERIOD; i = i + 1) begin
         in[0] = in[0] + 1;
         #2;
     end

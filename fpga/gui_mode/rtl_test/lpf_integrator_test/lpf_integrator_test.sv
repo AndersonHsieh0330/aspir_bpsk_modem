@@ -3,15 +3,12 @@
 `default_nettype none
 module lpf_integrator_test ();
 
-reg         clk, rst;
+reg         clk;
 reg  [17:0] input_array [0:7];
 wire [17:0] out;
 
 initial begin
     clk <= 1'b0;
-    rst <= 1'b1;
-    #4;
-    rst <= 1'b0;
     for (integer i = 0 ; i < 8 ; i = i + 1) begin
         input_array[i] <= {17{1'b0}};
     end
@@ -31,8 +28,6 @@ lpf_integrator #(
     .ARRAY_SIZE(8),
     .DATA_WIDTH(18)
 ) lpf_integrator_inst (
-    .clk(clk),
-    .rst(rst),
     .input_array(input_array),
     .out(out)
 );

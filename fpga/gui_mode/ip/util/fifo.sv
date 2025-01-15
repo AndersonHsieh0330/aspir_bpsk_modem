@@ -2,7 +2,6 @@
  * every clock cycle shift the last index out and 
  * and put the new data into first index, like a fifo
  */
-`timescale 1ps/1ps
 `include "params.svh"
 `default_nettype none
 module fifo #(

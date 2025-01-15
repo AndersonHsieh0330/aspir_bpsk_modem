@@ -1,5 +1,3 @@
-//assume 200Mhz input clk
-`timescale 1ns/1ps
 `include "params.svh"
 `default_nettype none
 module bpsk_modulator_top (
