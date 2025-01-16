@@ -1,7 +1,7 @@
 `include "params.svh"
-`include "func.sv"
+`include "fixdt_rounder.sv"
 module fixdt_conversion_test ();
-    FixdtRounder rounder;
+    FixdtRounder rounder = new();
 
     // 32 to 16 test 
     bit signed [31:0] val_32t16_a = 32'b0_00000001_00000000000000000000000;

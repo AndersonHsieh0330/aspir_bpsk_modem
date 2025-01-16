@@ -9,10 +9,11 @@ module bpsk_modulator_top (
 );
 
     wire [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] count_0, count_180;
-    wire [`FIXED_PT_WIDTH-1:0] wave_out [0:1];
+    wire [`FIXDT_16_WIDTH-1:0] wave_out [0:1];
     
     always @ (posedge clk) begin
         if (en) begin
+            // TODO: review that this bit selection is ok
             out <= wave_out[in][`ADC_BITS-1:0];
         end else begin
             out <= 0;

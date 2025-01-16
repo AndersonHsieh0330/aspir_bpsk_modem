@@ -3,7 +3,7 @@
 `default_nettype none
 module cosine_lut_test ();
     reg  [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] in [0:0];
-    wire [`FIXED_PT_WIDTH-1:0] out [0:0];
+    wire [`FIXDT_16_WIDTH-1:0] out [0:0];
 
     cosine_lut #(
         .READ_PORTS(1)

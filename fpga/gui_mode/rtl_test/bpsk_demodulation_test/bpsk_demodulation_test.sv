@@ -6,8 +6,8 @@ module bpsk_demodulation_test ();
 reg clk, rst;
 reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] lu_angle;
 reg modulated_signal_select; // toggle between 1 and 0
-wire signed   [`FIXED_PT_WIDTH-1:0] out [0:0];
-wire signed   [`ADC_BITS-1:0]       bpsk_data_in;
+wire signed   [`FIXDT_32_WIDTH-1:0] out [0:0];
+wire signed   [`FIXDT_32_WIDTH-1:0] bpsk_data_in;
 wire unsigned                       bpsk_data_out;
 
 initial begin

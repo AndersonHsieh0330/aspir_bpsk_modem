@@ -6,27 +6,26 @@
  * carrier(Q).
  */
 `include "params.svh"
+`include "phase_converter.sv"
 `default_nettype none
 module nco (
     input  wire clk,
     input  wire rst,
-    input  wire in, // this is feedback signal to control nco_phase. 0 => positive, 1 => negative
-    output reg unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] i_cosine_lu_angle,
-    output reg unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] q_cosine_lu_angle
+    input  wire signed [`FIXDT_32_WIDTH-1:0] phase_adjust, // this is feedback signal to control nco_phase. 0 => positive, 1 => negative
+    output wire unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] i_cosine_lu_angle_steps,
+    output wire unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] q_cosine_lu_angle_steps
 );
 
-reg  signed [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] nco_phase;
-wire signed [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] nco_phase_next;
+reg signed [`FIXDT_32_WIDTH-1:0] i_cosine_lu_angle_rads, q_cosine_lu_angle_rads;
+PhaseConverter pc = new();
 
-assign nco_phase_next = in ? nco_phase + 1 : nco_phase - 1;
-//assign nco_phase_next = 0;
+assign i_cosine_lu_angle_steps = pc.rad_to_step(i_cosine_lu_angle_rads);
+assign q_cosine_lu_angle_steps = pc.rad_to_step(q_cosine_lu_angle_rads);
 
 always_ff @ (posedge clk) begin
     if (rst) begin
-        nco_phase = {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}};
-        i_cosine_lu_angle <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}};
-        // sin(x) = cos(x + 3pi/2)
-        q_cosine_lu_angle <= (`CARRIER_SAMPLES_PER_PERIOD / 4) * 3;
+        i_cosine_lu_angle_rads <= {`FIXDT_32_WIDTH{1'b0}};
+        q_cosine_lu_angle_rads <= (`M_2_PI_32B / 4) * 3; // sin(x) = cos(x + 3pi/2)
     end else begin
         /* 
          * each step = carrier samples per period / (carrier period / adc sampling period)
@@ -36,9 +35,8 @@ always_ff @ (posedge clk) begin
          * each step = 1024 / (100 Mhz / 25 Mhz) 
          *           = 256
          */
-        i_cosine_lu_angle <= i_cosine_lu_angle + (`CARRIER_SAMPLES_PER_PERIOD / (`SAMPLING_FREQ / `CARRIER_FREQ)) + nco_phase;
-        q_cosine_lu_angle <= q_cosine_lu_angle + (`CARRIER_SAMPLES_PER_PERIOD / (`SAMPLING_FREQ / `CARRIER_FREQ)) + nco_phase;
-        nco_phase = nco_phase_next; // each step is 2pi / 1024 = 0.00613592315 rad
+        i_cosine_lu_angle_rads <= i_cosine_lu_angle_rads + (`M_2_PI_32B / (`SAMPLING_FREQ / `CARRIER_FREQ)) + phase_adjust;
+        q_cosine_lu_angle_rads <= q_cosine_lu_angle_rads + (`M_2_PI_32B / (`SAMPLING_FREQ / `CARRIER_FREQ)) + phase_adjust;
     end
 end
 
