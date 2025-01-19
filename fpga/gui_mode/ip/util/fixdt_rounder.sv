@@ -1,3 +1,11 @@
+/*
+*   20250119 
+*   all the rounders in this page follows traditional number of fraction bits
+*   aka 32 bit number has 23 fraction bits
+*   64 bit number has 52 fraction bits
+*   any other customized fixed point format is not suittable for the rounders
+*   in this file
+*/
 `include "params.svh"
 class FixdtRounder;
 // https://chummersone.github.io/qformat.html

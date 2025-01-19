@@ -14,6 +14,9 @@ module lpf_integrator #(
 wire signed [DATA_WIDTH-1:0] temp_out [0:ARRAY_SIZE-2];
 
 for (genvar i = 0 ; i < ARRAY_SIZE-1 ; i = i + 1) begin
+    // over/under flow not explicitly taken cared of here
+    // since output of first stage mixer are between [-1, 1]
+    // over/under flow will never happen
     if (i == 0) begin
         assign temp_out[i] = input_array[i] + input_array[i+1];
     end else begin

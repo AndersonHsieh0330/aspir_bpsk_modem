@@ -1,7 +1,7 @@
 `include "params.svh"
 module loop_filter #(
-    parameter Kp = 32'sb0_0000000000000010_100011110101110, // 0.01
-    parameter Ki = 32'sb0_0000000000000000_010000011000101 // 0.001
+    parameter Kp = 32'sh000020c5, // 0.001
+    parameter Ki = 32'sh00000347 // 0.0001
 ) (
     input  wire clk,
     input  wire rst,
@@ -10,7 +10,7 @@ module loop_filter #(
 );
 
 reg  signed [`FIXDT_32_WIDTH-1:0] integral_error;
-wire signed [`FIXDT_32_WIDTH-1:0] control_signal, p_gain_product, i_gain_product;
+wire signed [`FIXDT_32_WIDTH-1:0] p_gain_product, i_gain_product;
 bit                               p_gain_overflow, p_gain_underflow, i_gain_overflow, i_gain_underflow;
 
 mixer #(

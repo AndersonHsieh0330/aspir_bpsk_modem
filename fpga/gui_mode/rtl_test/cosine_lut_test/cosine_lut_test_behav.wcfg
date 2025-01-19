@@ -12,36 +12,36 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="13.715 ns"></ZoomEndTime>
-      <Cursor1Time time="2.933 ns"></Cursor1Time>
+      <ZoomEndTime time="4.098 ns"></ZoomEndTime>
+      <Cursor1Time time="0.069 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="154"></NameColumnWidth>
-      <ValueColumnWidth column_width="202"></ValueColumnWidth>
+      <ValueColumnWidth column_width="198"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="2" />
    <wvobject type="array" fp_name="/cosine_lut_test/out">
-      <obj_property name="ElementShortName">out[0:0][15:0]</obj_property>
-      <obj_property name="ObjectShortName">out[0:0][15:0]</obj_property>
+      <obj_property name="ElementShortName">out[0:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">out[0:0][31:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">10</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
       <wvobject type="array" fp_name="/cosine_lut_test/out[0]">
-         <obj_property name="ElementShortName">[0][15:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+         <obj_property name="ElementShortName">[0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
          <obj_property name="Radix">REALRADIX</obj_property>
          <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">10</obj_property>
+         <obj_property name="radix_fractionWidth">23</obj_property>
          <obj_property name="radix_otherWidth">0</obj_property>
          <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
          <obj_property name="CellHeight">100</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/cosine_lut_test/out[0]">
-         <obj_property name="ElementShortName">[0][15:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+         <obj_property name="ElementShortName">[0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="array" fp_name="/cosine_lut_test/cosine_lut_inst/in">

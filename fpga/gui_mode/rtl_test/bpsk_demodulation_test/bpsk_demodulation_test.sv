@@ -1,4 +1,4 @@
-`timescale 10ns/1ns
+`timescale 10ns/10ns
 `include "params.svh"
 `default_nettype none
 module bpsk_demodulation_test ();
@@ -17,8 +17,7 @@ initial begin
     #100;
     rst <= 1'b0;
     for (integer i = 0 ; i < 1000 ; i = i + 1) begin
-        //#`SAMPLES_PER_SYMBOL;
-        #80
+        #`SAMPLES_PER_SYMBOL;
         //modulated_signal_select <= $urandom % 2;
         modulated_signal_select <= ~modulated_signal_select;
     end
@@ -29,7 +28,7 @@ always begin
     #0.5 clk <= ~clk;
 end
 
-localparam INITIAL_PHASE_OFFSET = 0;
+localparam INITIAL_PHASE_OFFSET = 689;
 always @(posedge clk) begin
     if (rst) begin
         lu_angle <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}} + INITIAL_PHASE_OFFSET;

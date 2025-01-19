@@ -54,7 +54,7 @@ always_comb begin
             out = POST_SHIFT_MAX; // Clamp to max
             overflow = 1'b1;
         end else if (rounded_value_shifted < POST_SHIFT_MIN_DOUBLE_WIDTH) begin
-            out  = POST_SHIFT_MIN; // Clamp to min
+            out = POST_SHIFT_MIN; // Clamp to min
             underflow = 1'b1;
         end else begin
             out = rounded_value_shifted[DATA_WIDTH-1:0]; 

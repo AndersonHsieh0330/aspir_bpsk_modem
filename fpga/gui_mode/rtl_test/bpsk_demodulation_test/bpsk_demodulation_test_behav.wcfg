@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="11.260001 us"></ZoomEndTime>
-      <Cursor1Time time="1.000000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,855.001 ns"></ZoomEndTime>
+      <Cursor1Time time="115,600.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="192"></NameColumnWidth>
-      <ValueColumnWidth column_width="232"></ValueColumnWidth>
+      <ValueColumnWidth column_width="224"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="25" />
+   <WVObjectSize size="40" />
    <wvobject type="logic" fp_name="/bpsk_demodulation_test/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -46,7 +46,7 @@
       <obj_property name="ObjectShortName">bpsk_data_in[31:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">10</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
       <obj_property name="CellHeight">100</obj_property>
       <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
@@ -62,7 +62,7 @@
       <obj_property name="ObjectShortName">[0][31:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">10</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
       <obj_property name="CellHeight">100</obj_property>
       <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
@@ -122,10 +122,10 @@
       <obj_property name="ObjectShortName">bpsk_data_in[31:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">20</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
       <obj_property name="CellHeight">100</obj_property>
-      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
       <obj_property name="AnalogYRangeMin">-1.000000</obj_property>
       <obj_property name="AnalogYRRangeMax">1.000000</obj_property>
       <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
@@ -139,14 +139,14 @@
       <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
-      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
       <obj_property name="AnalogYRangeMin">-1.000000</obj_property>
       <obj_property name="AnalogYRRangeMax">1.000000</obj_property>
       <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
       <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
       <obj_property name="AnalogHorizLine">0.000000</obj_property>
       <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">20</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
    <wvobject fp_name="divider98" type="divider">
@@ -193,16 +193,6 @@
       <obj_property name="label">after_mix_fb</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/mixer_inst_fb/in_a">
-      <obj_property name="ElementShortName">in_a[31:0]</obj_property>
-      <obj_property name="ObjectShortName">in_a[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/mixer_inst_fb/in_b">
-      <obj_property name="ElementShortName">in_b[31:0]</obj_property>
-      <obj_property name="ObjectShortName">in_b[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/fb_mixer_out">
       <obj_property name="ElementShortName">fb_mixer_out[31:0]</obj_property>
       <obj_property name="ObjectShortName">fb_mixer_out[31:0]</obj_property>
@@ -240,10 +230,120 @@
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
       <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
-      <obj_property name="AnalogYRangeMin">-7.000000</obj_property>
-      <obj_property name="AnalogYRRangeMax">7.000000</obj_property>
+      <obj_property name="AnalogYRangeMin">-3.140000</obj_property>
+      <obj_property name="AnalogYRRangeMax">3.140000</obj_property>
       <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
       <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
       <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/nco_inst/i_cosine_lu_angle_rads">
+      <obj_property name="ElementShortName">i_cosine_lu_angle_rads[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_cosine_lu_angle_rads[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/nco_inst/q_cosine_lu_angle_rads">
+      <obj_property name="ElementShortName">q_cosine_lu_angle_rads[31:0]</obj_property>
+      <obj_property name="ObjectShortName">q_cosine_lu_angle_rads[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/nco_i_cosine_lu_angle_steps">
+      <obj_property name="ElementShortName">nco_i_cosine_lu_angle_steps[10:0]</obj_property>
+      <obj_property name="ObjectShortName">nco_i_cosine_lu_angle_steps[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/nco_q_cosine_lu_angle_steps">
+      <obj_property name="ElementShortName">nco_q_cosine_lu_angle_steps[10:0]</obj_property>
+      <obj_property name="ObjectShortName">nco_q_cosine_lu_angle_steps[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/nco_inst/phase_adjust_prev">
+      <obj_property name="ElementShortName">phase_adjust_prev[31:0]</obj_property>
+      <obj_property name="ObjectShortName">phase_adjust_prev[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider41" type="divider">
+      <obj_property name="label">loop filter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/loop_filter_inst/phase_error">
+      <obj_property name="ElementShortName">phase_error[31:0]</obj_property>
+      <obj_property name="ObjectShortName">phase_error[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/loop_filter_inst/phase_adjust">
+      <obj_property name="ElementShortName">phase_adjust[31:0]</obj_property>
+      <obj_property name="ObjectShortName">phase_adjust[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/loop_filter_inst/integral_error">
+      <obj_property name="ElementShortName">integral_error[31:0]</obj_property>
+      <obj_property name="ObjectShortName">integral_error[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/loop_filter_inst/p_gain_product">
+      <obj_property name="ElementShortName">p_gain_product[31:0]</obj_property>
+      <obj_property name="ObjectShortName">p_gain_product[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/loop_filter_inst/i_gain_product">
+      <obj_property name="ElementShortName">i_gain_product[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_gain_product[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/loop_filter_inst/p_gain_overflow">
+      <obj_property name="ElementShortName">p_gain_overflow</obj_property>
+      <obj_property name="ObjectShortName">p_gain_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/loop_filter_inst/p_gain_underflow">
+      <obj_property name="ElementShortName">p_gain_underflow</obj_property>
+      <obj_property name="ObjectShortName">p_gain_underflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/loop_filter_inst/i_gain_overflow">
+      <obj_property name="ElementShortName">i_gain_overflow</obj_property>
+      <obj_property name="ObjectShortName">i_gain_overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/loop_filter_inst/i_gain_underflow">
+      <obj_property name="ElementShortName">i_gain_underflow</obj_property>
+      <obj_property name="ObjectShortName">i_gain_underflow</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/loop_filter_inst/Kp">
+      <obj_property name="ElementShortName">Kp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Kp[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/bpsk_demodulation_test/bpsk_demod_inst/loop_filter_inst/Ki">
+      <obj_property name="ElementShortName">Ki[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Ki[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
 </wave_config>
