@@ -1,9 +1,9 @@
-// this adder explicitly detects over/under flow
+// this adder explicitly detects and signals over/under flow
 `default_nettype none
 `include "params.svh"
 module adder (
-    parameter DATA_WIDTH = `FIXDT_32_WIDTH,
-    parameter DATA_FRAC_WIDTH = `FIXDT_32_FRAC_WIDTH
+    parameter DATA_WIDTH = `FIXDT_64_A_WIDTH,
+    parameter DATA_FRAC_WIDTH = `FIXDT_64_A_FRAC_WIDTH
 ) (
     input  wire signed [DATA_WIDTH-1:0] in_a,
     input  wire signed [DATA_WIDTH-1:0] in_b,
@@ -15,7 +15,8 @@ module adder (
 localparam signed MAX = {1'b0, {(DATA_WIDTH-1){1'b1}}};
 localparam signed MIN = {1'b1, {(DATA_WIDTH-1){1'b0}}};
 
-wire [DATA_WIDTH-1:0] out_temp = in_a + in_b;
+wire [DATA_WIDTH-1:0] out_temp;
+assign out_temp = in_a + in_b;
 
 always_comb begin
     overflow = 1'b0;
@@ -29,7 +30,7 @@ always_comb begin
         underflow = 1'b1;
         out = MIN;
     end else begin
-        out = temp_out;
+        out = out_temp;
     end
 end
 

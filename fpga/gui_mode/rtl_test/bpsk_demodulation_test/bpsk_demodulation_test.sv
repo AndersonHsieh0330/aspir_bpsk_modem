@@ -6,9 +6,9 @@ module bpsk_demodulation_test ();
 reg clk, rst;
 reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] lu_angle;
 reg modulated_signal_select; // toggle between 1 and 0
-wire signed   [`FIXDT_32_WIDTH-1:0] out [0:0];
-wire signed   [`FIXDT_32_WIDTH-1:0] bpsk_data_in;
-wire unsigned                       bpsk_data_out;
+wire signed   [`FIXDT_64_A_WIDTH-1:0] out [0:0];
+wire signed   [`FIXDT_64_A_WIDTH-1:0] bpsk_data_in;
+wire unsigned                         bpsk_data_out;
 
 initial begin
     clk <= 1'b1;
@@ -28,7 +28,7 @@ always begin
     #0.5 clk <= ~clk;
 end
 
-localparam INITIAL_PHASE_OFFSET = 689;
+localparam INITIAL_PHASE_OFFSET = 0;
 always @(posedge clk) begin
     if (rst) begin
         lu_angle <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}} + INITIAL_PHASE_OFFSET;

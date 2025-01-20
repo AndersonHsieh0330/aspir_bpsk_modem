@@ -1,20 +1,27 @@
 `include "params.svh"
-`include "phase_converter.sv"
 module phase_conversion_test();
-    PhaseConverter pc = new();
 
-    /* 64 bit version 
-    bit signed [63:0] val_a = 64'sh00323d70a3d70a3e; 
-    bit signed [63:0] val_b = 64'sh00324189374bc6a8;
-    bit signed [63:0] val_c = 64'sh0000000000000000;
-    bit signed [63:0] val_d = -64'sh00323d70a3d70a3e;
-    bit signed [63:0] val_e = -64'sh00324189374bc6a8;
-    bit signed [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] val_a_result = pc.rad_to_step(val_a);
-    bit signed [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] val_b_result = pc.rad_to_step(val_b);
-    bit signed [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] val_c_result = pc.rad_to_step(val_c);
-    bit signed [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] val_d_result = pc.rad_to_step(val_d);
-    bit signed [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] val_e_result = pc.rad_to_step(val_e);
-    */
-    bit signed [31:0] val_a = 32'sh025b2f8e;
-    bit signed [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] val_a_result = pc.rad_to_step(val_a);
+    reg signed   [`FIXDT_64_A_WIDTH-1:0] val;
+    reg unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] phase_in_step;
+
+    initial begin
+        val = 64'sh00003243f6a8885a; // 2pi
+        #10;
+        val = 64'sh0000000000000000;
+        #10;
+        val = 64'sh00002de31f8a0903; // 5.7359
+        #10;
+        val = 64'shffffea1ce075f6fd; // -2.7359
+        #10;
+        $finish;
+    end
+
+    phase_converter #(
+        .PHASE_STEP(`M_2_PI_64B_A/`CARRIER_SAMPLES_PER_PERIOD),
+        .INPUT_WIDTH(`FIXDT_64_A_WIDTH),
+        .M_2_PI(`M_2_PI_64B_A)
+    ) phase_converter_inst (
+        .input_value(val),
+        .phase_in_step(phase_in_step)
+    );
 endmodule

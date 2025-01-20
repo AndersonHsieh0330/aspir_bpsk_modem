@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="95.110 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,180.978 ns"></ZoomEndTime>
-      <Cursor1Time time="807.096 ns"></Cursor1Time>
+      <ZoomStartTime time="487.500 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,102.501 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="170"></NameColumnWidth>
-      <ValueColumnWidth column_width="210"></ValueColumnWidth>
+      <NameColumnWidth column_width="269"></NameColumnWidth>
+      <ValueColumnWidth column_width="103"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="5" />
+   <WVObjectSize size="23" />
    <wvobject type="logic" fp_name="/mixer_test/overflow">
       <obj_property name="ElementShortName">overflow</obj_property>
       <obj_property name="ObjectShortName">overflow</obj_property>
@@ -29,27 +29,138 @@
       <obj_property name="ObjectShortName">underflow</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/mixer_test/in_a">
-      <obj_property name="ElementShortName">in_a[31:0]</obj_property>
-      <obj_property name="ObjectShortName">in_a[31:0]</obj_property>
+      <obj_property name="ElementShortName">in_a[63:0]</obj_property>
+      <obj_property name="ObjectShortName">in_a[63:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_fractionWidth">43</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/mixer_test/in_b">
-      <obj_property name="ElementShortName">in_b[31:0]</obj_property>
-      <obj_property name="ObjectShortName">in_b[31:0]</obj_property>
+      <obj_property name="ElementShortName">in_b[63:0]</obj_property>
+      <obj_property name="ObjectShortName">in_b[63:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_fractionWidth">43</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/mixer_test/out">
-      <obj_property name="ElementShortName">out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">out[31:0]</obj_property>
+      <obj_property name="ElementShortName">out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">out[63:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_fractionWidth">43</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider280" type="divider">
+      <obj_property name="label">internal</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/in_a">
+      <obj_property name="ElementShortName">in_a[63:0]</obj_property>
+      <obj_property name="ObjectShortName">in_a[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/in_b">
+      <obj_property name="ElementShortName">in_b[63:0]</obj_property>
+      <obj_property name="ObjectShortName">in_b[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/out">
+      <obj_property name="ElementShortName">out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">out[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mixer_test/mixer_inst/overflow">
+      <obj_property name="ElementShortName">overflow</obj_property>
+      <obj_property name="ObjectShortName">overflow</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mixer_test/mixer_inst/underflow">
+      <obj_property name="ElementShortName">underflow</obj_property>
+      <obj_property name="ObjectShortName">underflow</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/double_width_product">
+      <obj_property name="ElementShortName">double_width_product[127:0]</obj_property>
+      <obj_property name="ObjectShortName">double_width_product[127:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">80</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/DATA_WIDTH">
+      <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/DATA_FRAC_WIDTH">
+      <obj_property name="ElementShortName">DATA_FRAC_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_FRAC_WIDTH[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/ROUND_FACTOR">
+      <obj_property name="ElementShortName">ROUND_FACTOR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ROUND_FACTOR[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/POST_SHIFT_MAX">
+      <obj_property name="ElementShortName">POST_SHIFT_MAX[63:0]</obj_property>
+      <obj_property name="ObjectShortName">POST_SHIFT_MAX[63:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">40</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/POST_SHIFT_MIN">
+      <obj_property name="ElementShortName">POST_SHIFT_MIN[63:0]</obj_property>
+      <obj_property name="ObjectShortName">POST_SHIFT_MIN[63:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">40</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/POST_SHIFT_MAX_DOUBLE_WIDTH">
+      <obj_property name="ElementShortName">POST_SHIFT_MAX_DOUBLE_WIDTH[127:0]</obj_property>
+      <obj_property name="ObjectShortName">POST_SHIFT_MAX_DOUBLE_WIDTH[127:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">80</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/POST_SHIFT_MIN_DOUBLE_WIDTH">
+      <obj_property name="ElementShortName">POST_SHIFT_MIN_DOUBLE_WIDTH[127:0]</obj_property>
+      <obj_property name="ObjectShortName">POST_SHIFT_MIN_DOUBLE_WIDTH[127:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">80</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/MAX_DOUBLE_WIDTH">
+      <obj_property name="ElementShortName">MAX_DOUBLE_WIDTH[127:0]</obj_property>
+      <obj_property name="ObjectShortName">MAX_DOUBLE_WIDTH[127:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">80</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/MIN_DOUBLE_WIDTH">
+      <obj_property name="ElementShortName">MIN_DOUBLE_WIDTH[127:0]</obj_property>
+      <obj_property name="ObjectShortName">MIN_DOUBLE_WIDTH[127:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">80</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/PRE_SHIFT_MIN">
+      <obj_property name="ElementShortName">PRE_SHIFT_MIN[127:0]</obj_property>
+      <obj_property name="ObjectShortName">PRE_SHIFT_MIN[127:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">80</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mixer_test/mixer_inst/PRE_SHIFT_MAX">
+      <obj_property name="ElementShortName">PRE_SHIFT_MAX[127:0]</obj_property>
+      <obj_property name="ObjectShortName">PRE_SHIFT_MAX[127:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">80</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
 </wave_config>

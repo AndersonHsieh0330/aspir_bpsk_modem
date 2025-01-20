@@ -5,33 +5,93 @@
    <db_ref_list>
       <db_ref path="phase_conversion_test_behav.wdb" id="1">
          <top_modules>
-            <top_module name="\$unit_phase_conversion_test_sv " />
             <top_module name="glbl" />
             <top_module name="phase_conversion_test" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0 ps"></ZoomStartTime>
-      <ZoomEndTime time="9 ps"></ZoomEndTime>
-      <Cursor1Time time="300,000,000 ps"></Cursor1Time>
+      <ZoomStartTime time="6.666 ns"></ZoomStartTime>
+      <ZoomEndTime time="46.667 ns"></ZoomEndTime>
+      <Cursor1Time time="40.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="312"></NameColumnWidth>
-      <ValueColumnWidth column_width="184"></ValueColumnWidth>
+      <ValueColumnWidth column_width="180"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="2" />
-   <wvobject type="array" fp_name="/phase_conversion_test/val_a">
-      <obj_property name="ElementShortName">val_a[31:0]</obj_property>
-      <obj_property name="ObjectShortName">val_a[31:0]</obj_property>
+   <WVObjectSize size="11" />
+   <wvobject type="array" fp_name="/phase_conversion_test/val">
+      <obj_property name="ElementShortName">val[63:0]</obj_property>
+      <obj_property name="ObjectShortName">val[63:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">23</obj_property>
+      <obj_property name="radix_fractionWidth">43</obj_property>
       <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/phase_conversion_test/val_a_result">
-      <obj_property name="ElementShortName">val_a_result[10:0]</obj_property>
-      <obj_property name="ObjectShortName">val_a_result[10:0]</obj_property>
+   <wvobject type="array" fp_name="/phase_conversion_test/phase_in_step">
+      <obj_property name="ElementShortName">phase_in_step[10:0]</obj_property>
+      <obj_property name="ObjectShortName">phase_in_step[10:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider163" type="divider">
+      <obj_property name="label">internal</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/phase_conversion_test/phase_converter_inst/input_value">
+      <obj_property name="ElementShortName">input_value[63:0]</obj_property>
+      <obj_property name="ObjectShortName">input_value[63:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">43</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/phase_conversion_test/phase_converter_inst/phase_in_step">
+      <obj_property name="ElementShortName">phase_in_step[10:0]</obj_property>
+      <obj_property name="ObjectShortName">phase_in_step[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/phase_conversion_test/phase_converter_inst/true_phase">
+      <obj_property name="ElementShortName">true_phase[63:0]</obj_property>
+      <obj_property name="ObjectShortName">true_phase[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">43</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/phase_conversion_test/phase_converter_inst/true_phase_remainder">
+      <obj_property name="ElementShortName">true_phase_remainder[63:0]</obj_property>
+      <obj_property name="ObjectShortName">true_phase_remainder[63:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">43</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/phase_conversion_test/phase_converter_inst/true_phase_rounded">
+      <obj_property name="ElementShortName">true_phase_rounded[63:0]</obj_property>
+      <obj_property name="ObjectShortName">true_phase_rounded[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">43</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/phase_conversion_test/phase_converter_inst/PHASE_STEP">
+      <obj_property name="ElementShortName">PHASE_STEP[63:0]</obj_property>
+      <obj_property name="ObjectShortName">PHASE_STEP[63:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">43</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/phase_conversion_test/phase_converter_inst/INPUT_WIDTH">
+      <obj_property name="ElementShortName">INPUT_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">INPUT_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/phase_conversion_test/phase_converter_inst/M_2_PI">
+      <obj_property name="ElementShortName">M_2_PI[63:0]</obj_property>
+      <obj_property name="ObjectShortName">M_2_PI[63:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">43</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
    </wvobject>
 </wave_config>
