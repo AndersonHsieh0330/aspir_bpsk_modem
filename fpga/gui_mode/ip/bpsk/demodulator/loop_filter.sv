@@ -5,11 +5,11 @@ module loop_filter #(
 ) (
     input  wire clk,
     input  wire rst,
-    input  wire signed [`FIXDT_64_A_WIDTH-1:0] phase_error,
+    input  wire signed [`FIXDT_64_A_WIDTH-1:0] phase_error_next,
     output wire signed [`FIXDT_64_A_WIDTH-1:0] phase_adjust
 );
 
-reg  signed [`FIXDT_64_A_WIDTH-1:0] integral_error;
+reg  signed [`FIXDT_64_A_WIDTH-1:0] integral_error, phase_error;
 wire signed [`FIXDT_64_A_WIDTH-1:0] p_gain_product, i_gain_product;
 wire                                p_gain_overflow, p_gain_underflow, i_gain_overflow, i_gain_underflow;
 
@@ -41,8 +41,10 @@ assign phase_adjust = p_gain_product + i_gain_product;
 always_ff @(posedge clk) begin
     if (rst) begin
         integral_error <= {`FIXDT_64_A_WIDTH{1'b0}};
+        phase_error <= {`FIXDT_64_A_WIDTH{1'b0}}; 
     end else begin
-        integral_error <= integral_error + phase_error;
+        integral_error <= integral_error + phase_error_next;
+        phase_error <= phase_error_next;
     end
 end
 

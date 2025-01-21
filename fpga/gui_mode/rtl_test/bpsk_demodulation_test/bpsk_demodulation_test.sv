@@ -18,8 +18,8 @@ initial begin
     rst <= 1'b0;
     for (integer i = 0 ; i < 1000 ; i = i + 1) begin
         #`SAMPLES_PER_SYMBOL;
-        //modulated_signal_select <= $urandom % 2;
-        modulated_signal_select <= ~modulated_signal_select;
+        modulated_signal_select <= $urandom % 2;
+        //modulated_signal_select <= ~modulated_signal_select;
     end
 end
 
@@ -28,7 +28,7 @@ always begin
     #0.5 clk <= ~clk;
 end
 
-localparam INITIAL_PHASE_OFFSET = 0;
+localparam INITIAL_PHASE_OFFSET = 4096;
 always @(posedge clk) begin
     if (rst) begin
         lu_angle <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}} + INITIAL_PHASE_OFFSET;

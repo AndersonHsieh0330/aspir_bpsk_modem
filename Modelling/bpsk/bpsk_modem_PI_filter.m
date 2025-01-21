@@ -12,8 +12,8 @@ bit_rate = bits_per_symbol*symbol_rate;     % bits per second
 fs = 200000000;                             % sampling frequency
 fc = 25000000;                              % carrier frequency
 sps = fs / bit_rate;                        % samples per symbol
-%tx_phase_offset = 2*pi*rand;
-tx_phase_offset = 1.6137;                 % phase offset for testing
+tx_phase_offset = 2*pi*rand;
+%tx_phase_offset = 1.6137;                 % phase offset for testing
 lpf_taps = 10;                              % depth of our integrator LPF
 
 t = 0:(sps*1000-1);             % time vector, we want time to start at 0. 
@@ -27,8 +27,8 @@ t = 0:(sps*1000-1);             % time vector, we want time to start at 0.
 % --------------------------Modulation------------------------------------
 % ------------------------------------------------------------------------
 % generate random data
-%bit_data = randi([0, 1], 1, length(t)/sps);
-bit_data = repmat([0 0], 1, 500);
+bit_data = randi([0, 1], 1, length(t)/sps);
+%bit_data = repmat([0 0], 1, 500);
 
 % map data to constellation 
 mapped_data = repelem((2*bit_data-1), sps);  
@@ -50,21 +50,22 @@ i_arm_lu = zeros(1,N);
 q_arm_lu = zeros(1,N);
 i_arm_filtered = zeros(1,N);
 q_arm_filtered = zeros(1,N);
+integral_error = zeros(1,N);
+phase_error = zeros(1,N);
 
-% Initialize PI filter components
-phase_error = 0;
-integral_error = 0;
 % PI Filter Parameters
 Kp = 0.001;   % Proportional gain
 Ki = 0.0001; % Integral gain
+
 for i = 1:N
     if i>1
        % Phase error calculation
-       phase_error = q_arm_filtered(i-1) * i_arm_filtered(i-1);
+       phase_error(i-1) = q_arm_filtered(i-1) * i_arm_filtered(i-1);
        
        % PI control
-       control_signal = Kp * phase_error + Ki * integral_error;
-       integral_error = integral_error + phase_error; % Accumulate error
+       control_signal = Kp * phase_error(i-1) + Ki * integral_error(i-1);
+       integral_error(i) = integral_error(i-1) + phase_error(i-1);
+
        % Update NCO phase
        phi(i) = phi(i-1) - control_signal;
     end

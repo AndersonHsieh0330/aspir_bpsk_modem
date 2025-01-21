@@ -62,7 +62,7 @@ loop_filter #(
 ) loop_filter_inst (
     .clk(clk),
     .rst(rst),
-    .phase_error(fb_mixer_out),
+    .phase_error_next(fb_mixer_out),
     .phase_adjust(phase_adjust)
 );
 
