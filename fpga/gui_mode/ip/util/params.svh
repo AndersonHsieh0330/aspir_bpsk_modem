@@ -11,6 +11,7 @@
 * 16 bit fixed point floating point = 1, 5, 10
 * 32 bit fixed point floating point = 1, 8, 23
 * 64 bit fixed point floating point = 1, 11, 52
+* 64 bit A fixed point floating point = 1, 20, 43
 */
 `define FIXDT_16_WIDTH 16
 `define FIXDT_16_FRAC_WIDTH 10

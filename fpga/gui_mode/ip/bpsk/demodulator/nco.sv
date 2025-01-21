@@ -15,12 +15,12 @@ module nco (
     output wire unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] q_cosine_lu_angle_steps
 );
 
-reg  signed [`FIXDT_64_A_WIDTH-1:0] i_cosine_lu_angle_rads, i_cosine_lu_angle_rads_prev;
-reg  signed [`FIXDT_64_A_WIDTH-1:0] q_cosine_lu_angle_rads, q_cosine_lu_angle_rads_prev;
+reg  signed [`FIXDT_64_A_WIDTH-1:0] i_cosine_lu_angle_rads, i_cosine_lu_angle_rads_reg;
+reg  signed [`FIXDT_64_A_WIDTH-1:0] q_cosine_lu_angle_rads, q_cosine_lu_angle_rads_reg;
 wire signed [`FIXDT_64_A_WIDTH-1:0] i_cosine_lu_angle_rads_temp, q_cosine_lu_angle_rads_temp;
 
-assign i_cosine_lu_angle_rads_temp = i_cosine_lu_angle_rads_prev - phase_adjust;
-assign q_cosine_lu_angle_rads_temp = q_cosine_lu_angle_rads_prev - phase_adjust;
+assign i_cosine_lu_angle_rads_temp = i_cosine_lu_angle_rads_reg + phase_adjust;
+assign q_cosine_lu_angle_rads_temp = q_cosine_lu_angle_rads_reg + phase_adjust;
 
 always_comb begin
     if (rst) begin
@@ -42,11 +42,11 @@ end
 
 always_ff @ (posedge clk) begin
     if (rst) begin
-        i_cosine_lu_angle_rads_prev <= {`FIXDT_64_A_WIDTH{1'b0}};
-        q_cosine_lu_angle_rads_prev <= (`M_2_PI_64B_A / 4) * 3; // sin(x) = cos(x + 3pi/2)
+        i_cosine_lu_angle_rads_reg <= {`FIXDT_64_A_WIDTH{1'b0}};
+        q_cosine_lu_angle_rads_reg <= (`M_2_PI_64B_A / 4) * 3; // sin(x) = cos(x + 3pi/2)
     end else begin
-        i_cosine_lu_angle_rads_prev <= i_cosine_lu_angle_rads_prev + (`M_2_PI_64B_A / (`SAMPLING_FREQ / `CARRIER_FREQ));
-        q_cosine_lu_angle_rads_prev <= q_cosine_lu_angle_rads_prev + (`M_2_PI_64B_A / (`SAMPLING_FREQ / `CARRIER_FREQ));
+        i_cosine_lu_angle_rads_reg <= i_cosine_lu_angle_rads_reg + (`M_2_PI_64B_A / (`SAMPLING_FREQ / `CARRIER_FREQ));
+        q_cosine_lu_angle_rads_reg <= q_cosine_lu_angle_rads_reg + (`M_2_PI_64B_A / (`SAMPLING_FREQ / `CARRIER_FREQ));
     end
 end
 

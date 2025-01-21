@@ -53,8 +53,7 @@ for i = 1:N
     if i>1
         % The step in which phase is changed is pi*5*10*-5, 
         % it can be varied
-        %phi(i) = phi(i-1) - (5*10^-1)*pi*sign(i_arm_filtered(i-1)*q_arm_filtered(i-1));
-        phi(i) = phi(i-1) - 0.00613592315*sign(i_arm_filtered(i-1)*q_arm_filtered(i-1));
+        phi(i) = phi(i-1) - (5*10^-5)*pi*sign(i_arm_filtered(i-1)*q_arm_filtered(i-1));
     end
     i_arm_lu(i) = cos(2*pi*fc*t(i)/fs  + phi(i));
     q_arm_lu(i) = sin(2*pi*fc*t(i)/fs  + phi(i));

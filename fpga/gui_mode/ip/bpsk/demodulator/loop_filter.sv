@@ -9,7 +9,7 @@ module loop_filter #(
     output reg  signed [`FIXDT_64_A_WIDTH-1:0] phase_adjust
 );
 
-reg  signed [`FIXDT_64_A_WIDTH-1:0] integral_error, phase_error;
+reg  signed [`FIXDT_64_A_WIDTH-1:0] integral_error_reg, phase_error_reg;
 wire signed [`FIXDT_64_A_WIDTH-1:0] p_gain_product, i_gain_product;
 wire signed [`FIXDT_64_A_WIDTH-1:0] control_signal;
 reg  signed [`FIXDT_64_A_WIDTH-1:0] phase_adjust_reg;
@@ -20,7 +20,7 @@ mixer #(
     .DATA_FRAC_WIDTH(`FIXDT_64_A_FRAC_WIDTH)
 ) p_gain_mixer_inst (
     .in_a(Kp),
-    .in_b(phase_error),
+    .in_b(phase_error_reg),
     .out(p_gain_product),
     .overflow(p_gain_overflow),
     .underflow(p_gain_underflow)
@@ -31,7 +31,7 @@ mixer #(
     .DATA_FRAC_WIDTH(`FIXDT_64_A_FRAC_WIDTH)
 ) i_gain_mixer_inst (
     .in_a(Ki),
-    .in_b(integral_error),
+    .in_b(integral_error_reg),
     .out(i_gain_product),
     .overflow(i_gain_overflow),
     .underflow(i_gain_underflow)
@@ -43,12 +43,12 @@ assign phase_adjust = phase_adjust_reg - control_signal;
 
 always_ff @(posedge clk) begin
     if (rst) begin
-        integral_error <= {`FIXDT_64_A_WIDTH{1'b0}};
-        phase_error <= {`FIXDT_64_A_WIDTH{1'b0}}; 
+        integral_error_reg <= {`FIXDT_64_A_WIDTH{1'b0}};
+        phase_error_reg <= {`FIXDT_64_A_WIDTH{1'b0}}; 
         phase_adjust_reg <= {`FIXDT_64_A_WIDTH{1'b0}}; 
     end else begin
-        integral_error <= integral_error + phase_error_next;
-        phase_error <= phase_error_next;
+        integral_error_reg <= integral_error_reg + phase_error_next;
+        phase_error_reg <= phase_error_next;
         phase_adjust_reg <= phase_adjust; 
     end
 end

@@ -13,7 +13,6 @@ fs = 200000000;                             % sampling frequency
 fc = 25000000;                              % carrier frequency
 sps = fs / bit_rate;                        % samples per symbol
 tx_phase_offset = 2*pi*rand;
-%tx_phase_offset = 1.6137;                 % phase offset for testing
 lpf_taps = 10;                              % depth of our integrator LPF
 
 t = 0:(sps*1000-1);             % time vector, we want time to start at 0. 
@@ -22,13 +21,16 @@ t = 0:(sps*1000-1);             % time vector, we want time to start at 0.
                                 % of it in terms of seconds, each time step
                                 % would be 1/fs seconds.
                                 % 1000 bits regardless of any other params
+                                
+% PI Filter Parameters
+Kp = 0.001;   % Proportional gain
+Ki = 0.0001; % Integral gain
 
 % ------------------------------------------------------------------------
 % --------------------------Modulation------------------------------------
 % ------------------------------------------------------------------------
 % generate random data
 bit_data = randi([0, 1], 1, length(t)/sps);
-%bit_data = repmat([0 0], 1, 500);
 
 % map data to constellation 
 mapped_data = repelem((2*bit_data-1), sps);  
@@ -52,10 +54,6 @@ i_arm_filtered = zeros(1,N);
 q_arm_filtered = zeros(1,N);
 integral_error = zeros(1,N);
 phase_error = zeros(1,N);
-
-% PI Filter Parameters
-Kp = 0.001;   % Proportional gain
-Ki = 0.0001; % Integral gain
 
 for i = 1:N
     if i>1
