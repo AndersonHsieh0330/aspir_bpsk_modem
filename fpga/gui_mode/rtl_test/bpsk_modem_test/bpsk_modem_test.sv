@@ -3,10 +3,9 @@
 `default_nettype none
 module bpsk_modem_test ();
 
-reg clk, rst, bit_data;
+reg  clk, rst, bit_data;
 wire bit_data_out;
-wire [`ADC_BITS-1:0] adc_dac;
-
+wire signed [`ADC_BITS-1:0] adc_dac;
 
 initial begin
     clk <= 1'b0;

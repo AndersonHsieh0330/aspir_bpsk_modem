@@ -7,7 +7,7 @@ module phase_conversion_test();
     initial begin
         val = 64'sh00003243f6a8885a; // 2pi
         #10;
-        val = 64'sh0000000000000000;
+        val = 64'sh0000000000000000; // 0 
         #10;
         val = 64'sh00002de31f8a0903; // 5.7359
         #10;

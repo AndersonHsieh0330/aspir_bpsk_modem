@@ -4,8 +4,8 @@
 `include "params.svh"
 `default_nettype none
 module lpf_integrator #(
-    parameter ARRAY_SIZE = `LPF_TAPS,
-    parameter DATA_WIDTH = `FIXDT_64_A_WIDTH
+    parameter ARRAY_SIZE = 5,
+    parameter DATA_WIDTH = 64
 ) (
     input  wire signed [DATA_WIDTH-1:0] input_array [0:ARRAY_SIZE-1],
     output reg  signed [DATA_WIDTH-1:0] out

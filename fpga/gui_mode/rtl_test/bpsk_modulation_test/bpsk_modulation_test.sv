@@ -7,7 +7,7 @@ module bpsk_modulation_test ();
 reg clk;
 reg rst;
 reg in;
-wire [`FIXDT_16_WIDTH-1:0] out;
+wire [`FIXDT_64_A_WIDTH-1:0] out;
 
 localparam clkperiod = 5; // 200 Mhz clk = 5ns clock period
 

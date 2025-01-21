@@ -6,6 +6,8 @@
 `define LPF_TAPS 10
 `define SAMPLES_PER_SYMBOL (`SAMPLING_FREQ/`SYMBOL_RATE)
 `define CARRIER_SAMPLES_PER_PERIOD 8192 // number of entries in the cosine look up table
+`define ADC_BITS 12 // number of bits that the ADC and DAC has
+
 /* 
 * Data Types 
 * 16 bit fixed point floating point = 1, 5, 10
@@ -22,7 +24,7 @@
 `define FIXDT_64_A_WIDTH 64
 `define FIXDT_64_A_FRAC_WIDTH 43
 
-// constants
+// Math Constants
 `define M_2_PI_64B 64'sh006487ed5110b460
 `define M_2_PI_64B_A 64'sh00003243f6a8885a
 `define M_2_PI_32B 32'sh03243f6b

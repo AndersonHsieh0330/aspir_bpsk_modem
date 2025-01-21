@@ -1,23 +1,25 @@
 `include "params.svh"
 module loop_filter #(
     parameter Kp = 64'sh000000020c49ba5e, // 0.001
-    parameter Ki = 64'sh00000000346dc5d6  // 0.0001
+    parameter Ki = 64'sh00000000346dc5d6, // 0.0001
+    parameter DATA_WIDTH = 64,
+    parameter DATA_FRAC_WIDTH = 43
 ) (
     input  wire clk,
     input  wire rst,
-    input  wire signed [`FIXDT_64_A_WIDTH-1:0] phase_error_next,
-    output reg  signed [`FIXDT_64_A_WIDTH-1:0] phase_adjust
+    input  wire signed [DATA_WIDTH-1:0] phase_error_next,
+    output reg  signed [DATA_WIDTH-1:0] phase_adjust
 );
 
-reg  signed [`FIXDT_64_A_WIDTH-1:0] integral_error_reg, phase_error_reg;
-wire signed [`FIXDT_64_A_WIDTH-1:0] p_gain_product, i_gain_product;
-wire signed [`FIXDT_64_A_WIDTH-1:0] control_signal;
-reg  signed [`FIXDT_64_A_WIDTH-1:0] phase_adjust_reg;
+reg  signed [DATA_WIDTH-1:0] integral_error_reg, phase_error_reg;
+wire signed [DATA_WIDTH-1:0] p_gain_product, i_gain_product;
+wire signed [DATA_WIDTH-1:0] control_signal;
+reg  signed [DATA_WIDTH-1:0] phase_adjust_reg;
 wire                                p_gain_overflow, p_gain_underflow, i_gain_overflow, i_gain_underflow;
 
 mixer #(
-    .DATA_WIDTH(`FIXDT_64_A_WIDTH),
-    .DATA_FRAC_WIDTH(`FIXDT_64_A_FRAC_WIDTH)
+    .DATA_WIDTH(DATA_WIDTH),
+    .DATA_FRAC_WIDTH(DATA_FRAC_WIDTH)
 ) p_gain_mixer_inst (
     .in_a(Kp),
     .in_b(phase_error_reg),
@@ -27,8 +29,8 @@ mixer #(
 );
 
 mixer #(
-    .DATA_WIDTH(`FIXDT_64_A_WIDTH),
-    .DATA_FRAC_WIDTH(`FIXDT_64_A_FRAC_WIDTH)
+    .DATA_WIDTH(DATA_WIDTH),
+    .DATA_FRAC_WIDTH(DATA_FRAC_WIDTH)
 ) i_gain_mixer_inst (
     .in_a(Ki),
     .in_b(integral_error_reg),
@@ -43,9 +45,9 @@ assign phase_adjust = phase_adjust_reg - control_signal;
 
 always_ff @(posedge clk) begin
     if (rst) begin
-        integral_error_reg <= {`FIXDT_64_A_WIDTH{1'b0}};
-        phase_error_reg <= {`FIXDT_64_A_WIDTH{1'b0}}; 
-        phase_adjust_reg <= {`FIXDT_64_A_WIDTH{1'b0}}; 
+        integral_error_reg <= {DATA_WIDTH{1'b0}};
+        phase_error_reg <= {DATA_WIDTH{1'b0}}; 
+        phase_adjust_reg <= {DATA_WIDTH{1'b0}}; 
     end else begin
         integral_error_reg <= integral_error_reg + phase_error_next;
         phase_error_reg <= phase_error_next;

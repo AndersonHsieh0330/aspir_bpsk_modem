@@ -58,7 +58,9 @@ fifo #(
 
 loop_filter #(
     .Kp(64'sh000000020c49ba5e), // 0.001
-    .Ki(64'sh00000000346dc5d6) // 0.0001
+    .Ki(64'sh00000000346dc5d6),// 0.0001
+    .DATA_WIDTH(`FIXDT_64_A_WIDTH),
+    .DATA_FRAC_WIDTH(`FIXDT_64_A_FRAC_WIDTH)
 ) loop_filter_inst (
     .clk(clk),
     .rst(rst),

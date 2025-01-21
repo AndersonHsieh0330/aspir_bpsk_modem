@@ -1,36 +1,28 @@
 `include "params.svh"
 `default_nettype none
 module bpsk_modulator_top (
-    input  wire                clk,
-    input  wire                rst,
-    input  wire                en,
-    input  wire                in,
-    output reg [`ADC_BITS-1:0] out
+    input  wire                        clk,
+    input  wire                        rst,
+    input  wire                        en,
+    input  wire                        in,
+    output reg [`FIXDT_64_A_WIDTH-1:0] out
 );
 
-    wire [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] count_0, count_180;
-    wire [`FIXDT_16_WIDTH-1:0] wave_out [0:1];
+    wire unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] count;
+    wire signed   [`FIXDT_64_A_WIDTH-1:0] wave_out [0:0];
     
-    always @ (posedge clk) begin
-        if (en) begin
-            // TODO: review that this bit selection is ok
-            out <= wave_out[in][`ADC_BITS-1:0];
-        end else begin
-            out <= 0;
-        end
-    end
+    assign out = en ? (in ? wave_out[0] : ~wave_out[0]) : 0;
 
     counter counter_inst (
         .clk(clk),
         .rst(rst),
-        .out_0(count_0),
-        .out_180(count_180)
+        .out(count)
     );
 
     cosine_lut #(
-        .READ_PORTS(2)
+        .READ_PORTS(1)
     ) cosine_lut_inst (
-        .in({count_180,count_0}),
+        .in({count}),
         .out(wave_out)
     );
 
