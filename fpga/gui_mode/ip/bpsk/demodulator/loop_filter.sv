@@ -6,11 +6,13 @@ module loop_filter #(
     input  wire clk,
     input  wire rst,
     input  wire signed [`FIXDT_64_A_WIDTH-1:0] phase_error_next,
-    output wire signed [`FIXDT_64_A_WIDTH-1:0] phase_adjust
+    output reg  signed [`FIXDT_64_A_WIDTH-1:0] phase_adjust
 );
 
 reg  signed [`FIXDT_64_A_WIDTH-1:0] integral_error, phase_error;
 wire signed [`FIXDT_64_A_WIDTH-1:0] p_gain_product, i_gain_product;
+wire signed [`FIXDT_64_A_WIDTH-1:0] control_signal;
+reg  signed [`FIXDT_64_A_WIDTH-1:0] phase_adjust_reg;
 wire                                p_gain_overflow, p_gain_underflow, i_gain_overflow, i_gain_underflow;
 
 mixer #(
@@ -36,15 +38,18 @@ mixer #(
 );
 
 // data type should have enough range to not have over/under flow happening here
-assign phase_adjust = p_gain_product + i_gain_product;
+assign control_signal = p_gain_product + i_gain_product;
+assign phase_adjust = phase_adjust_reg - control_signal;
 
 always_ff @(posedge clk) begin
     if (rst) begin
         integral_error <= {`FIXDT_64_A_WIDTH{1'b0}};
         phase_error <= {`FIXDT_64_A_WIDTH{1'b0}}; 
+        phase_adjust_reg <= {`FIXDT_64_A_WIDTH{1'b0}}; 
     end else begin
         integral_error <= integral_error + phase_error_next;
         phase_error <= phase_error_next;
+        phase_adjust_reg <= phase_adjust; 
     end
 end
 

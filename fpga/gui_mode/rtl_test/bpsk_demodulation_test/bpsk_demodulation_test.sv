@@ -28,7 +28,7 @@ always begin
     #0.5 clk <= ~clk;
 end
 
-localparam INITIAL_PHASE_OFFSET = 4096;
+localparam INITIAL_PHASE_OFFSET = 0;
 always @(posedge clk) begin
     if (rst) begin
         lu_angle <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}} + INITIAL_PHASE_OFFSET;

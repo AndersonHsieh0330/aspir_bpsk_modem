@@ -19,8 +19,8 @@ reg  signed [`FIXDT_64_A_WIDTH-1:0] i_cosine_lu_angle_rads, i_cosine_lu_angle_ra
 reg  signed [`FIXDT_64_A_WIDTH-1:0] q_cosine_lu_angle_rads, q_cosine_lu_angle_rads_prev;
 wire signed [`FIXDT_64_A_WIDTH-1:0] i_cosine_lu_angle_rads_temp, q_cosine_lu_angle_rads_temp;
 
-assign i_cosine_lu_angle_rads_temp = i_cosine_lu_angle_rads_prev + (`M_2_PI_64B_A / (`SAMPLING_FREQ / `CARRIER_FREQ)) - phase_adjust;
-assign q_cosine_lu_angle_rads_temp = q_cosine_lu_angle_rads_prev + (`M_2_PI_64B_A / (`SAMPLING_FREQ / `CARRIER_FREQ)) - phase_adjust;
+assign i_cosine_lu_angle_rads_temp = i_cosine_lu_angle_rads_prev - phase_adjust;
+assign q_cosine_lu_angle_rads_temp = q_cosine_lu_angle_rads_prev - phase_adjust;
 
 always_comb begin
     if (rst) begin
@@ -45,8 +45,8 @@ always_ff @ (posedge clk) begin
         i_cosine_lu_angle_rads_prev <= {`FIXDT_64_A_WIDTH{1'b0}};
         q_cosine_lu_angle_rads_prev <= (`M_2_PI_64B_A / 4) * 3; // sin(x) = cos(x + 3pi/2)
     end else begin
-        i_cosine_lu_angle_rads_prev <= i_cosine_lu_angle_rads;
-        q_cosine_lu_angle_rads_prev <= q_cosine_lu_angle_rads;
+        i_cosine_lu_angle_rads_prev <= i_cosine_lu_angle_rads_prev + (`M_2_PI_64B_A / (`SAMPLING_FREQ / `CARRIER_FREQ));
+        q_cosine_lu_angle_rads_prev <= q_cosine_lu_angle_rads_prev + (`M_2_PI_64B_A / (`SAMPLING_FREQ / `CARRIER_FREQ));
     end
 end
 
