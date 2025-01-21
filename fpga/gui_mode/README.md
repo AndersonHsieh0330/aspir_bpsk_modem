@@ -35,6 +35,7 @@ Do not commit any files in the `/vivado_output` directory to git, as it is speci
 4. do your thing and change the project however you want.
 5. when you ready to commit the project to version control, execute the following command in the tcl console in vivado GUI. This will export the project as a tcl script that can recreate the project, this file exists in `/script/create_project.tcl`
 ```
-write_project_tcl -paths_relative_to ./ -origin_dir_override ./ -target_proj_dir ./vivado_output -force -all_properties -no_copy_sources -internal -validate ./script/create_project.tcl
+source ./scripts/save_project_state
+save_project_state
 ```
 5. in the `/gui_mode` directory, execute `git add .` and `git commit` to add ur files. The `.gitignore` file has already specified what should be committed and what shouldn't.

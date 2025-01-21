@@ -54,7 +54,7 @@ phase_converter #(
     .PHASE_STEP(`M_2_PI_64B_A/`CARRIER_SAMPLES_PER_PERIOD),
     .INPUT_WIDTH(`FIXDT_64_A_WIDTH),
     .M_2_PI(`M_2_PI_64B_A)
-) phase_converster_inst_i (
+) phase_converter_inst_i (
     .input_value(i_cosine_lu_angle_rads),
     .phase_in_step(i_cosine_lu_angle_steps)
 );
@@ -63,7 +63,7 @@ phase_converter #(
     .PHASE_STEP(`M_2_PI_64B_A/`CARRIER_SAMPLES_PER_PERIOD),
     .INPUT_WIDTH(`FIXDT_64_A_WIDTH),
     .M_2_PI(`M_2_PI_64B_A)
-) phase_converster_inst_q (
+) phase_converter_inst_q (
     .input_value(q_cosine_lu_angle_rads),
     .phase_in_step(q_cosine_lu_angle_steps)
 );
