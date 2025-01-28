@@ -1,4 +1,8 @@
 ## Installation Prereq
+### Windows 
+- Windows 11
+- [Vivado 2019.1](https://www.xilinx.com/member/forms/download/xef-vivado.html?filename=Xilinx_Vivado_SDK_2019.1_0524_1430.tar.gz)
+### WSL Linux (deprecated)
 - WSL Ubuntu 22.04.3 LTS (This ubuntu version is supported by Xilinx for vivado and vitis)
 - [Vivado 2024.1](https://www.xilinx.com/support/download.html)
 - GNU Make
@@ -29,6 +33,22 @@
 Do not commit any files in the `/vivado_output` directory to git, as it is specified in `.gitginore`. This is done to keep the rest of the directory clean
 
 ## The workflow
+### Windows
+1. open windows powershell and cd to /gui_mode directory
+2. execute the following commands 
+```
+. ./windows_make.ps1
+create_project
+start_vivado
+```
+3. when you ready to commit the project to version control, execute the following command in the tcl console in vivado GUI. This will export the project as a tcl script that can recreate the project, this file exists in `/script/create_project.tcl`
+```
+source ./scripts/save_project_state
+save_project_state
+```
+4. in the `/gui_mode` directory, execute `git add .` and `git commit` to add ur files. The `.gitignore` file has already specified what should be committed and what shouldn't.
+
+### WSL Linux (deprecated)
 1. `cd` to `/gui_mode` directory
 2. execute `make create_project` target to create vivado project under `/vivado_output` directory.
 3. execute `make start_vivado` target to open the created project in vivado gui mode.
@@ -38,4 +58,4 @@ Do not commit any files in the `/vivado_output` directory to git, as it is speci
 source ./scripts/save_project_state
 save_project_state
 ```
-5. in the `/gui_mode` directory, execute `git add .` and `git commit` to add ur files. The `.gitignore` file has already specified what should be committed and what shouldn't.
+6. in the `/gui_mode` directory, execute `git add .` and `git commit` to add ur files. The `.gitignore` file has already specified what should be committed and what shouldn't.

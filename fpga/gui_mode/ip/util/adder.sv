@@ -1,7 +1,7 @@
 // this adder explicitly detects and signals over/under flow
 `default_nettype none
 `include "params.svh"
-module adder (
+module adder #(
     parameter DATA_WIDTH = `FIXDT_64_A_WIDTH,
     parameter DATA_FRAC_WIDTH = `FIXDT_64_A_FRAC_WIDTH
 ) (

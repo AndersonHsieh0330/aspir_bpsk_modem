@@ -26,6 +26,7 @@ initial begin
         #`SAMPLES_PER_SYMBOL;
         modulated_signal_select <= $urandom % 2;
     end
+    $finish;
 end
 
 always begin
