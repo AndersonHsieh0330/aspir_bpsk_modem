@@ -1,5 +1,5 @@
 `timescale 1ps/1ps
-`include "params.svh"
+`include "params.vh"
 `default_nettype none
 module cosine_lut_test ();
     reg  [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] in [0:0];

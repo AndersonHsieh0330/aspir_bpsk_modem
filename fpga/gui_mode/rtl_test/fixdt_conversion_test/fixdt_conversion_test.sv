@@ -1,5 +1,5 @@
-`include "params.svh"
-`include "fixdt_rounder.sv"
+`include "params.vh"
+`include "fixdt_rounder.v"
 module fixdt_conversion_test ();
     FixdtRounder rounder = new();
 

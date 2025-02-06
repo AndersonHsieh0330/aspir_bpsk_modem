@@ -1,5 +1,5 @@
 `timescale 1ps/1ps
-`include "params.svh"
+`include "params.vh"
 `default_nettype none
 module lpf_integrator_test ();
 

@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"aspir_bd_top": {
+			"proto_instances": {
+			}
+		}
+	}
+}
