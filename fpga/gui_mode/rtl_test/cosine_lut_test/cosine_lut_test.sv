@@ -2,13 +2,13 @@
 `include "params.vh"
 `default_nettype none
 module cosine_lut_test ();
-    reg  [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] in [0:0];
-    wire [`FIXDT_64_A_WIDTH-1:0] out [0:0];
+    reg  [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] in;
+    wire [`FIXDT_64_A_WIDTH-1:0] out;
 
     cosine_lut #(
         .READ_PORTS(1)
     ) cosine_lut_inst (
-        .in({in}),
+        .in(in),
         .out(out)      
     /*
      *   declaring in to be "reg [8:0] in [0:1]"
@@ -24,10 +24,10 @@ module cosine_lut_test ();
     );
 
 initial begin
-    in[0] = {$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1{1'b0}};
+    in = {$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1{1'b0}};
     #1;
     for (int i = 0 ; i < `CARRIER_SAMPLES_PER_PERIOD; i = i + 1) begin
-        in[0] = in[0] + 1;
+        in = in + 1;
         #2;
     end
     $finish;
