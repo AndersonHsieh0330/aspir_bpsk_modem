@@ -1,5 +1,5 @@
 `timescale 10ns/10ns
-`include "params.svh"
+`include "params.vh"
 `default_nettype none
 module bpsk_demodulation_test ();
 

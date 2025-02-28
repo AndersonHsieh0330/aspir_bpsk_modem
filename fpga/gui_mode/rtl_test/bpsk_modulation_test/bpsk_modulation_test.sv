@@ -1,7 +1,6 @@
 `timescale 1ns/1ps
-`include "params.svh"
+`include "params.vh"
 `default_nettype none
-
 module bpsk_modulation_test ();
 
 reg clk;

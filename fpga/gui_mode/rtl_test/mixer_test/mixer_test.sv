@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-`include "params.svh"
+`include "params.vh"
 module mixer_test();
 
     bit overflow, underflow;

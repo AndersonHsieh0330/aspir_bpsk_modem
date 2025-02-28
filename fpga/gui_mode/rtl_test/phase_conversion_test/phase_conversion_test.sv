@@ -1,4 +1,4 @@
-`include "params.svh"
+`include "params.vh"
 module phase_conversion_test();
 
     reg signed   [`FIXDT_64_A_WIDTH-1:0] val;
