@@ -2,12 +2,12 @@
 `default_nettype none
 module counter(
     input  wire                                                   clk,
-    input  wire                                                   rst,
+    input  wire                                                   rst_n,
     output reg unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] out
 );
 
 always @(posedge clk) begin
-    if (rst) begin
+    if (~rst_n) begin
         out <= {$clog2(`CARRIER_SAMPLES_PER_PERIOD){1'b0}};
     end else begin
         // intentionally overflow

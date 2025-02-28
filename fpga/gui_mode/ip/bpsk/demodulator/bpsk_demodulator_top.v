@@ -2,7 +2,7 @@
 `default_nettype none
 module bpsk_demodulator_top (
     input  wire                                clk,
-    input  wire                                rst,
+    input  wire                                rst_n,
     input  wire signed [`FIXDT_64_A_WIDTH-1:0] data_in, // from ADC, 2s complement
     output wire                                data_out // 1 or 0
 );
@@ -34,7 +34,7 @@ fifo #(
     .DATA_WIDTH(`FIXDT_64_A_WIDTH)
 ) fifo_inst_mixer_i (
     .clk(clk),
-    .rst(rst),
+    .rst_n(rst_n),
     .data_in(i_mixer_out),
     .fifo_out(i_mixer_out_fifo)
 );
@@ -53,7 +53,7 @@ fifo #(
     .DATA_WIDTH(`FIXDT_64_A_WIDTH)
 ) fifo_inst_mixer_q (
     .clk(clk),
-    .rst(rst),
+    .rst_n(rst_n),
     .data_in(q_mixer_out),
     .fifo_out(q_mixer_out_fifo)
 );
@@ -65,14 +65,14 @@ loop_filter #(
     .DATA_FRAC_WIDTH(`FIXDT_64_A_FRAC_WIDTH)
 ) loop_filter_inst (
     .clk(clk),
-    .rst(rst),
+    .rst_n(rst_n),
     .phase_error_next(fb_mixer_out),
     .phase_adjust(phase_adjust)
 );
 
 nco nco_inst (
     .clk(clk),
-    .rst(rst),
+    .rst_n(rst_n),
     .phase_adjust(phase_adjust), 
     .i_cosine_lu_angle_steps(nco_i_cosine_lu_angle_steps),
     .q_cosine_lu_angle_steps(nco_q_cosine_lu_angle_steps)

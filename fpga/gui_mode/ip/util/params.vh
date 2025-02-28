@@ -1,3 +1,7 @@
+// DSP algorithm
+`define BPSK 1
+
+// modem
 `define SYMBOL_RATE 2500000 // 2.5 Mhz
 `define BITS_PER_SYMBOL 1 // 1 for BPSK, change in the future
 `define BIT_RATE (`BITS_PER_SYMBOL*`SYMBOL_RATE)
@@ -29,3 +33,6 @@
 `define M_2_PI_64B 64'sh006487ed5110b460
 `define M_2_PI_64B_A 64'sh00003243f6a8885a
 `define M_2_PI_32B 32'sh03243f6b
+
+// peripherals
+`define AXI4_STREAM_DATA_FIFO_TDATA_WIDTH 32

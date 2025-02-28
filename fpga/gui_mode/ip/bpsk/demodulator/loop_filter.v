@@ -6,7 +6,7 @@ module loop_filter #(
     parameter DATA_FRAC_WIDTH = 43
 ) (
     input  wire clk,
-    input  wire rst,
+    input  wire rst_n,
     input  wire signed [DATA_WIDTH-1:0] phase_error_next,
     output reg  signed [DATA_WIDTH-1:0] phase_adjust
 );
@@ -15,7 +15,7 @@ reg  signed [DATA_WIDTH-1:0] integral_error_reg, phase_error_reg;
 wire signed [DATA_WIDTH-1:0] p_gain_product, i_gain_product;
 wire signed [DATA_WIDTH-1:0] control_signal;
 reg  signed [DATA_WIDTH-1:0] phase_adjust_reg;
-wire                                p_gain_overflow, p_gain_underflow, i_gain_overflow, i_gain_underflow;
+wire                         p_gain_overflow, p_gain_underflow, i_gain_overflow, i_gain_underflow;
 
 mixer #(
     .DATA_WIDTH(DATA_WIDTH),
@@ -40,11 +40,12 @@ mixer #(
 );
 
 // data type should have enough range to not have over/under flow happening here
+// TODO : investigate whether we need explicit over/underflow controlled adder instantiated here
 assign control_signal = p_gain_product + i_gain_product;
 assign phase_adjust = phase_adjust_reg - control_signal;
 
 always @(posedge clk) begin
-    if (rst) begin
+    if (~rst_n) begin
         integral_error_reg <= {DATA_WIDTH{1'b0}};
         phase_error_reg <= {DATA_WIDTH{1'b0}}; 
         phase_adjust_reg <= {DATA_WIDTH{1'b0}}; 

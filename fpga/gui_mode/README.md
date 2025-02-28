@@ -14,10 +14,13 @@
 /guid_mode\
 &nbsp;&nbsp;&nbsp;&nbsp;/script\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- all the scripts to create the vivado project\
+&nbsp;&nbsp;&nbsp;&nbsp;/bd\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- directory that stores the block design files\
+&nbsp;&nbsp;&nbsp;&nbsp;/constrs\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- all the .xdc constraints files\
+&nbsp;&nbsp;&nbsp;&nbsp;/ip_repo\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- all the packaged ip directories, including the top module wrapper verilog file that instantiates the actual rtl logic, which is in the /ip folder\
 &nbsp;&nbsp;&nbsp;&nbsp;/ip\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/bd\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- block designs used in vivado\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/verilog\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- all the verilog modules implemented by us\
 &nbsp;&nbsp;&nbsp;&nbsp;/src\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- all the code to program the PS side(the ARM core) of zynq-7000\

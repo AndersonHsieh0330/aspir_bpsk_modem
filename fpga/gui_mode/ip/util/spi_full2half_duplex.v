@@ -2,7 +2,7 @@ module spi_full2half_duplex (
     input  wire sclk_in,
     input  wire ss_in,
     input  wire mosi_in,
-    output wire miso_in,
+    output wire miso_out,
 
     output wire sclk_out,
     output wire ss_out,

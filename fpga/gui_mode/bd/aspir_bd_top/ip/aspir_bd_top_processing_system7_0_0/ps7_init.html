@@ -1420,7 +1420,7 @@ Enable DDR Controller of Zynq PS
 <B>Memory Part</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-MT41K256M16 RE-125
+MT41J128M8 JP-125
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 
@@ -1475,7 +1475,7 @@ Select the burst Length. It refers to the amount of data read/written after a re
 <B>Operating Frequency (MHz)</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-533.333333
+533.333
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 Chose the clock period for the desired frequency. The allowed freq range (200 - 667 MHz) is a function of FPGA part and FPGA speed grade
@@ -1497,7 +1497,7 @@ Select the operating temparature
 <B>DRAM IC bus width</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-16 Bits
+8 Bits
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 Provide the width of the DRAM chip
@@ -1508,7 +1508,7 @@ Provide the width of the DRAM chip
 <B>DRAM Device Capacity</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-4096 MBits
+1024 MBits
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 
@@ -1541,7 +1541,7 @@ Defines the bank to which an active an ACTIVE, READ, WRITE, or Precharge Command
 <B>ROW Address Count</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-15
+14
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 Provide the Row address for ACTIVE commands
@@ -1629,7 +1629,7 @@ tRASmin (ns) is the minimum number of clock cycles required between an Active co
 <B>tFAW</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-40.0
+30.0
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 It restricts the number of activates that can be done within a certain window of time
@@ -1651,7 +1651,7 @@ Provide the Additive Latency (ns). Increases the efficiency of the command and d
 <B>Write levelling</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-1
+0
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 
@@ -1662,7 +1662,7 @@ Provide the Additive Latency (ns). Increases the efficiency of the command and d
 <B>Read gate</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-1
+0
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 
@@ -1673,7 +1673,7 @@ Provide the Additive Latency (ns). Increases the efficiency of the command and d
 <B>Read gate</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-1
+0
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
 
@@ -10464,10 +10464,10 @@ ddrc_ctrl
 <B>3fc0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>a1</B>
+<B>3b</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>2840</B>
+<B>ec0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRFC(min) - Minimum time from refresh to refresh or activate (spec: 75nS to 195nS). DRAM Related. Default value is set for DDR3. Dynamic Bit Field.</B>
@@ -10507,7 +10507,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>4285b</B>
+<B>40edb</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 0</B>
@@ -10631,10 +10631,10 @@ ddrc_ctrl
 <B>fc00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>16</B>
+<B>11</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>5800</B>
+<B>4400</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tFAW - At most 4 banks must be activated in a rolling window of tFAW cycles. Unit: clocks. DRAM Related.</B>
@@ -10714,7 +10714,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>44e458d3</B>
+<B>44e444d3</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 1</B>
@@ -11045,10 +11045,10 @@ ddrc_ctrl
 <B>e0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
+<B>5</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>a0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRRD - Minimum time between activates from bank A to bank B. (spec: 10ns or less) DRAM RELATED</B>
@@ -11228,7 +11228,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>270872d0</B>
+<B>270872b0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 3</B>
@@ -12788,10 +12788,10 @@ ddrc_ctrl
 <B>f00000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
+<B>f</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>600000</B>
+<B>f00000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Selects theAXI address bit used as row address bit 14. Valid Range: 0 to 6, Internal Base: 23 The selected address bit is determined by adding the Internal Base to the value of this field. If set to 15, row address bit 14 is set to 0.</B>
@@ -12831,7 +12831,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f666666</B>
+<B>ff66666</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Select DRAM row address bits</B>
@@ -15206,10 +15206,10 @@ ddrc_ctrl
 <B>4000000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>4000000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>0: Write leveling disabled. 1: Write leveling mode has been enabled as part of init sequence; Valid only for DDR3 DFI designs</B>
@@ -15226,10 +15226,10 @@ ddrc_ctrl
 <B>8000000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>8000000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>0: Read DQS gate leveling is disabled. 1: Read DQS Gate Leveling mode has been enabled as part of init sequence; Valid only for DDR3 DFI designs</B>
@@ -15246,10 +15246,10 @@ ddrc_ctrl
 <B>10000000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>10000000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>DDR2: not applicable. LPDDR2 and DDR3: 0: 1: Read Data Eye training mode has been enabled as part of init sequence.</B>
@@ -15269,7 +15269,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>1cffffff</B>
+<B>ffffff</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Training control</B>
@@ -18353,10 +18353,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line. (Used to program the manual training ratio value)</B>
@@ -18416,7 +18416,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 0.</B>
@@ -18500,10 +18500,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line. (Used to program the manual training ratio value)</B>
@@ -18563,7 +18563,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 0.</B>
@@ -18647,10 +18647,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line. (Used to program the manual training ratio value)</B>
@@ -18710,7 +18710,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 0.</B>
@@ -18794,10 +18794,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line. (Used to program the manual training ratio value)</B>
@@ -18857,7 +18857,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 0.</B>
@@ -18941,10 +18941,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when reg_phy_fifo_we_in_force is set to 0.</B>
@@ -19004,7 +19004,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY FIFO write enable configuration for data slice 0.</B>
@@ -19088,10 +19088,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when reg_phy_fifo_we_in_force is set to 0.</B>
@@ -19151,7 +19151,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY FIFO write enable configuration for data slice 0.</B>
@@ -19235,10 +19235,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when reg_phy_fifo_we_in_force is set to 0.</B>
@@ -19298,7 +19298,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY FIFO write enable configuration for data slice 0.</B>
@@ -19382,10 +19382,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when reg_phy_fifo_we_in_force is set to 0.</B>
@@ -19445,7 +19445,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY FIFO write enable configuration for data slice 0.</B>
@@ -19529,10 +19529,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -19592,7 +19592,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio config for data slice 0.</B>
@@ -19676,10 +19676,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -19739,7 +19739,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio config for data slice 0.</B>
@@ -19823,10 +19823,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -19886,7 +19886,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio config for data slice 0.</B>
@@ -19970,10 +19970,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -20033,7 +20033,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio config for data slice 0.</B>
@@ -20217,10 +20217,10 @@ ddrc_ctrl
 <B>80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Inverts the polarity of DRAM clock. 0: core clock is passed on to DRAM 1: inverted core clock is passed on to DRAM. Use this when CLK can arrive at a DRAM device ahead of DQS or coincidence with DQS based on board topology. This effectively delays the CLK to the DRAM device by half -cycle, providing a CLK edge that DQS can align to during leveling.</B>
@@ -20257,10 +20257,10 @@ ddrc_ctrl
 <B>ffc00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>100</B>
+<B>80</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>40000</B>
+<B>20000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for address/command launch timing in phy_ctrl macro. This is the fraction of a clock cycle represented by the shift to be applied to the read DQS in units of 256ths. In other words, the full cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -20360,7 +20360,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>40080</B>
+<B>20000</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Training control 2</B>
@@ -20504,10 +20504,10 @@ ddrc_ctrl
 <B>4000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>4000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Write Leveling training control. 0: Use register programmed ratio values 1: Use ratio for delay line calculated by write leveling Note: This is a Synchronous dynamic signal that requires timing closure.</B>
@@ -20524,10 +20524,10 @@ ddrc_ctrl
 <B>8000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>8000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Read DQS Gate training control. 0: Use register programmed ratio values 1: Use ratio for delay line calculated by DQS gate leveling Note: This is a Synchronous dynamic signal that requires timing closure.</B>
@@ -20544,10 +20544,10 @@ ddrc_ctrl
 <B>10000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>10000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Read Data Eye training control. 0: Use register programmed ratio values 1: Use ratio for delay line calculated by data eye leveling Note: This is a Synchronous dynamic signal that requires timing closure</B>
@@ -20607,7 +20607,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>1fc82</B>
+<B>3c82</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Training control 3</B>
@@ -26795,10 +26795,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Reserved. Do not modify.</B>
@@ -26815,10 +26815,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Reserved. Do not modify.</B>
@@ -26918,7 +26918,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>18c068</B>
+<B>18c61c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Drive and Slew controls for Address and Command pins of the DDR Interface</B>
@@ -27002,10 +27002,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Reserved. Do not modify.</B>
@@ -27022,10 +27022,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Reserved. Do not modify.</B>
@@ -27125,7 +27125,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f98068</B>
+<B>f9861c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Drive and Slew controls for DQ pins of the DDR Interface</B>
@@ -27209,10 +27209,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Reserved. Do not modify.</B>
@@ -27229,10 +27229,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Reserved. Do not modify.</B>
@@ -27332,7 +27332,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f98068</B>
+<B>f9861c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Drive and Slew controls for DQS pins of the DDR Interface</B>
@@ -27416,10 +27416,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Reserved. Do not modify.</B>
@@ -27436,10 +27436,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Reserved. Do not modify.</B>
@@ -27539,7 +27539,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f98068</B>
+<B>f9861c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Drive and Slew controls for Clock pins of the DDR Interface</B>
@@ -56117,10 +56117,10 @@ ddrc_ctrl
 <B>3fc0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>a1</B>
+<B>3b</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>2840</B>
+<B>ec0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRFC(min) - Minimum time from refresh to refresh or activate (spec: 75nS to 195nS). DRAM Related. Default value is set for DDR3. Dynamic Bit Field.</B>
@@ -56160,7 +56160,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>4285b</B>
+<B>40edb</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 0</B>
@@ -56284,10 +56284,10 @@ ddrc_ctrl
 <B>fc00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>16</B>
+<B>11</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>5800</B>
+<B>4400</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tFAW - At most 4 banks must be activated in a rolling window of tFAW cycles. Unit: clocks. DRAM Related.</B>
@@ -56367,7 +56367,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>44e458d3</B>
+<B>44e444d3</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 1</B>
@@ -56698,10 +56698,10 @@ ddrc_ctrl
 <B>e0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
+<B>5</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>a0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRRD - Minimum time between activates from bank A to bank B. (spec: 10ns or less) DRAM RELATED</B>
@@ -56921,7 +56921,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>272872d0</B>
+<B>272872b0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters 3</B>
@@ -58581,10 +58581,10 @@ ddrc_ctrl
 <B>f00000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
+<B>f</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>600000</B>
+<B>f00000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Selects theAXI address bit used as row address bit 14. Valid Range: 0 to 11, and 15 Internal Base: 23 The selected address bit is determined by adding the Internal Base to the value of this field. If set to 15, row address bit 14 is set to 0.</B>
@@ -58624,7 +58624,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f666666</B>
+<B>ff66666</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Select DRAM row address bits</B>
@@ -61286,10 +61286,10 @@ ddrc_ctrl
 <B>4000000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>4000000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>0: Write leveling disabled. 1: Write leveling mode has been enabled as part of init sequence; Valid only for DDR3 DFI designs</B>
@@ -61306,10 +61306,10 @@ ddrc_ctrl
 <B>8000000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>8000000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>0: Read DQS gate leveling is disabled. 1: Read DQS Gate Leveling mode has been enabled as part of init sequence; Valid only for DDR3 DFI designs</B>
@@ -61326,10 +61326,10 @@ ddrc_ctrl
 <B>10000000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>10000000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>DDR2: not applicable. LPDDR2 and DDR3: 0: 1: Read Data Eye training mode has been enabled as part of init sequence.</B>
@@ -61349,7 +61349,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>1cffffff</B>
+<B>ffffff</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Training control</B>
@@ -64813,10 +64813,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -64876,7 +64876,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 0.</B>
@@ -64960,10 +64960,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -65023,7 +65023,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 1.</B>
@@ -65107,10 +65107,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -65170,7 +65170,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 2.</B>
@@ -65254,10 +65254,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -65317,7 +65317,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 3.</B>
@@ -65401,10 +65401,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when fifo_we_X_force_mode is set to 0.</B>
@@ -65464,7 +65464,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY FIFO write enable configuration for data slice 0.</B>
@@ -65548,10 +65548,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when fifo_we_X_force_mode is set to 0.</B>
@@ -65611,7 +65611,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY FIFO write enable configuration for data slice 1.</B>
@@ -65695,10 +65695,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when fifo_we_X_force_mode is set to 0.</B>
@@ -65758,7 +65758,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY FIFO write enable configuration for data slice 2.</B>
@@ -65842,10 +65842,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when fifo_we_X_force_mode is set to 0.</B>
@@ -65905,7 +65905,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY FIFO write enable configuration for data slice 3.</B>
@@ -65989,10 +65989,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -66052,7 +66052,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio config for data slice 0.</B>
@@ -66136,10 +66136,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -66199,7 +66199,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio config for data slice 1.</B>
@@ -66283,10 +66283,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -66346,7 +66346,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio config for data slice 2.</B>
@@ -66430,10 +66430,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -66493,7 +66493,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio config for data slice 3.</B>
@@ -66697,10 +66697,10 @@ ddrc_ctrl
 <B>80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Inverts the polarity of DRAM clock. 0: core clock is passed on to DRAM 1: inverted core clock is passed on to DRAM. Use this when CLK can arrive at a DRAM device ahead of DQS or coincidence with DQS based on boad topology. This effectively delays the CLK to the DRAM device by half -cycle, providing a CLK edge that DQS can align to during leveling.</B>
@@ -66757,10 +66757,10 @@ ddrc_ctrl
 <B>ffc00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>100</B>
+<B>80</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>40000</B>
+<B>20000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for address/command launch timing in phy_ctrl macro. This is the fraction of a clock cycle represented by the shift to be applied to the read DQS in units of 256ths. In other words, the full cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -66900,7 +66900,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>10040080</B>
+<B>10020000</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Training control 2</B>
@@ -67044,10 +67044,10 @@ ddrc_ctrl
 <B>4000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>4000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Write Leveling training control. 0: Use register programmed ratio values 1: Use ratio for delay line calculated by write leveling Note: This is a Synchronous dynamic signal that requires timing closure.</B>
@@ -67064,10 +67064,10 @@ ddrc_ctrl
 <B>8000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>8000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Read DQS Gate training control. 0: Use register programmed ratio values 1: Use ratio for delay line calculated by DQS gate leveling Note: This is a Synchronous dynamic signal that requires timing closure.</B>
@@ -67084,10 +67084,10 @@ ddrc_ctrl
 <B>10000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>10000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Read Data Eye training control. 0: Use register programmed ratio values 1: Use ratio for delay line calculated by data eye leveling Note: This is a Synchronous dynamic signal that requires timing closure</B>
@@ -67147,7 +67147,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>1fc82</B>
+<B>3c82</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Training control 3</B>
@@ -73435,10 +73435,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>DDRIO drive strength for the P devices</B>
@@ -73455,10 +73455,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>DDRIO drive strength for the N devices</B>
@@ -73558,7 +73558,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>18c068</B>
+<B>18c61c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DDR IOB Slew for Address</B>
@@ -73642,10 +73642,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>DDRIO drive strength for the P devices</B>
@@ -73662,10 +73662,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>DDRIO drive strength for the N devices</B>
@@ -73765,7 +73765,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f98068</B>
+<B>f9861c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DDR IOB Slew for Data</B>
@@ -73849,10 +73849,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>DDRIO drive strength for the P devices</B>
@@ -73869,10 +73869,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>DDRIO drive strength for the N devices</B>
@@ -73972,7 +73972,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f98068</B>
+<B>f9861c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DDR IOB Slew for Diff</B>
@@ -74056,10 +74056,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>DDRIO drive strength for the P devices</B>
@@ -74076,10 +74076,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>DDRIO drive strength for the N devices</B>
@@ -74179,7 +74179,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f98068</B>
+<B>f9861c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DDR IOB Slew for Clock</B>
@@ -102732,10 +102732,10 @@ ddrc_ctrl
 <B>3fc0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>a1</B>
+<B>3b</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>2840</B>
+<B>ec0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRFC(min) - Minimum time from refresh to refresh or activate (spec: 75ns to 195ns). DRAM RELATED. Default value is set for DDR3.</B>
@@ -102775,7 +102775,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>4285b</B>
+<B>40edb</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters register 0</B>
@@ -102899,10 +102899,10 @@ ddrc_ctrl
 <B>fc00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>16</B>
+<B>11</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>5800</B>
+<B>4400</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tFAW - At most 4 banks must be activated in a rolling window of tFAW cycles. Unit: clocks DRAM RELATED.</B>
@@ -102982,7 +102982,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>44e458d3</B>
+<B>44e444d3</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters register 1</B>
@@ -103313,10 +103313,10 @@ ddrc_ctrl
 <B>e0</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
+<B>5</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>a0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>tRRD - Minimum time between activates from bank a to bank b. (spec: 10ns or less) DRAM RELATED</B>
@@ -103536,7 +103536,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>272872d0</B>
+<B>272872b0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Parameters register 3</B>
@@ -105196,10 +105196,10 @@ ddrc_ctrl
 <B>f00000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>6</B>
+<B>f</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>600000</B>
+<B>f00000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Selects theAXI address bit used as row address bit 14. Valid Range: 0 to 11, and 15 Internal Base: 23 The selected address bit is determined by adding the Internal Base to the value of this field. If set to 15, row address bit 14 is set to 0.</B>
@@ -105239,7 +105239,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f666666</B>
+<B>ff66666</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Selects the address bits used as DRAM row address bits</B>
@@ -107507,10 +107507,10 @@ ddrc_ctrl
 <B>4000000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>4000000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>1 = Write leveling mode has been enabled as part of init sequence; Valid only for DDR3 DFI designs 0 = Write leveling disabled.</B>
@@ -107527,10 +107527,10 @@ ddrc_ctrl
 <B>8000000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>8000000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>1 = Read DQS Gate Leveling mode has been enabled as part of init sequence; Valid only for DDR3 DFI designs 0= Read DQS gate leveling is disabled.</B>
@@ -107547,10 +107547,10 @@ ddrc_ctrl
 <B>10000000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>10000000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>1 = Read Data Eye training mode has been enabled as part of init sequence. Only present in designs that support DDR3 or LPDDR2 devices.</B>
@@ -107570,7 +107570,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>1cffffff</B>
+<B>ffffff</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Training control register</B>
@@ -110854,10 +110854,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -110917,7 +110917,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 0.</B>
@@ -111001,10 +111001,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -111064,7 +111064,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 0.</B>
@@ -111148,10 +111148,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -111211,7 +111211,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 0.</B>
@@ -111295,10 +111295,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write DQS slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQS in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -111358,7 +111358,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write DQS configuration register for data slice 0.</B>
@@ -111442,10 +111442,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when fifo_we_X_force_mode is set to 0.</B>
@@ -111505,7 +111505,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY fifo write enable configuration register for data slice 0.</B>
@@ -111589,10 +111589,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when fifo_we_X_force_mode is set to 0.</B>
@@ -111652,7 +111652,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY fifo write enable configuration register for data slice 0.</B>
@@ -111736,10 +111736,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when fifo_we_X_force_mode is set to 0.</B>
@@ -111799,7 +111799,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY fifo write enable configuration register for data slice 0.</B>
@@ -111883,10 +111883,10 @@ ddrc_ctrl
 <B>7ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value to be used when fifo_we_X_force_mode is set to 0.</B>
@@ -111946,7 +111946,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f9</B>
+<B>79</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY fifo write enable configuration register for data slice 0.</B>
@@ -112030,10 +112030,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -112093,7 +112093,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio configuration register for data slice 0.</B>
@@ -112177,10 +112177,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -112240,7 +112240,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio configuration register for data slice 0.</B>
@@ -112324,10 +112324,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -112387,7 +112387,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio configuration register for data slice 0.</B>
@@ -112471,10 +112471,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for write data slave DLL. This is the fraction of a clock cycle represented by the shift to be applied to the write DQ muxes in units of 256ths. In other words, the full-cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -112534,7 +112534,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>c0</B>
+<B>40</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>PHY write data slave ratio configuration register for data slice 0.</B>
@@ -112738,10 +112738,10 @@ ddrc_ctrl
 <B>80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>80</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Inverts the polarity of DRAM clock. 0: core clock is passed on to DRAM 1: inverted core clock is passed on to DRAM. Use this when CLK can arrive at a DRAM device ahead of DQS or coincidence with DQS based on boad topology. This effectively delays the CLK to the DRAM device by half -cycle, providing a CLK edge that DQS can align to during leveling.</B>
@@ -112798,10 +112798,10 @@ ddrc_ctrl
 <B>ffc00</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>100</B>
+<B>80</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>40000</B>
+<B>20000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Ratio value for address/command launch timing in phy_ctrl macro. This is the fraction of a clock cycle represented by the shift to be applied to the read DQS in units of 256ths. In other words, the full cycle tap value from the master DLL will be scaled by this number over 256 to get the delay value for the slave delay line.</B>
@@ -112941,7 +112941,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>10040080</B>
+<B>10020000</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Training control register (2)</B>
@@ -113085,10 +113085,10 @@ ddrc_ctrl
 <B>4000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>4000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Write Leveling training control. 0: Use register programmed ratio values 1: Use ratio for delay line calculated by write leveling Note: This is a Synchronous dynamic signal that requires timing closure.</B>
@@ -113105,10 +113105,10 @@ ddrc_ctrl
 <B>8000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>8000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Read DQS Gate training control. 0: Use register programmed ratio values 1: Use ratio for delay line calculated by DQS gate leveling Note: This is a Synchronous dynamic signal that requires timing closure.</B>
@@ -113125,10 +113125,10 @@ ddrc_ctrl
 <B>10000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1</B>
+<B>0</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>10000</B>
+<B>0</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Read Data Eye training control. 0: Use register programmed ratio values 1: Use ratio for delay line calculated by data eye leveling Note: This is a Synchronous dynamic signal that requires timing closure</B>
@@ -113188,7 +113188,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>1fc82</B>
+<B>3c82</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Training control register (3)</B>
@@ -119476,10 +119476,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Programs the DDRIO drive strength for the P devices</B>
@@ -119496,10 +119496,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Programs the DDRIO drive strength for the N devices</B>
@@ -119599,7 +119599,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>18c068</B>
+<B>18c61c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DDRIOB Drive Slew Address Register</B>
@@ -119683,10 +119683,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Programs the DDRIO drive strength for the P devices</B>
@@ -119703,10 +119703,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Programs the DDRIO drive strength for the N devices</B>
@@ -119806,7 +119806,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f98068</B>
+<B>f9861c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DDRIOB Drive Slew Data Register</B>
@@ -119890,10 +119890,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Programs the DDRIO drive strength for the P devices</B>
@@ -119910,10 +119910,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Programs the DDRIO drive strength for the N devices</B>
@@ -120013,7 +120013,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f98068</B>
+<B>f9861c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DDRIOB Drive Slew Differential Strobe Register</B>
@@ -120097,10 +120097,10 @@ SLCR_LOCK
 <B>7f</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>68</B>
+<B>1c</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Programs the DDRIO drive strength for the P devices</B>
@@ -120117,10 +120117,10 @@ SLCR_LOCK
 <B>3f80</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>c</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>600</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Programs the DDRIO drive strength for the N devices</B>
@@ -120220,7 +120220,7 @@ SLCR_LOCK
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>f98068</B>
+<B>f9861c</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DDRIOB Drive Slew Clcok Register</B>

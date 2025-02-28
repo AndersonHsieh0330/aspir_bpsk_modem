@@ -5,8 +5,7 @@
 # all dac pins are 3.3v
 
 # clock to DAC, bank 13
-set_property IOSTANDARD LVDS_25 [get_ports DAC_CLK_P]
-set_property IOSTANDARD LVDS_25 [get_ports DAC_CLK_N]
+set_property IOSTANDARD LVDS_25 [get_ports {DAC_CLK_P DAC_CLK_N}]
 set_property PACKAGE_PIN T9 [get_ports DAC_CLK_P]
 set_property PACKAGE_PIN U10 [get_ports DAC_CLK_N]
 
@@ -56,8 +55,7 @@ set_property PACKAGE_PIN P19 [get_ports DAC_DCO]
 # all adc digital pins are 1.8v
 
 # clock to ADC, bank 13
-set_property IOSTANDARD LVDS_25 [get_ports ADC_CLK_P]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_CLK_N]
+set_property IOSTANDARD LVDS_25 [get_ports {ADC_CLK_P ADC_CLK_N}]
 set_property PACKAGE_PIN Y9 [get_ports ADC_CLK_P]
 set_property PACKAGE_PIN Y8 [get_ports ADC_CLK_N]
 
@@ -70,18 +68,12 @@ set_property PACKAGE_PIN K17 [get_ports ADC_SPI_SS]
 set_property PACKAGE_PIN L14 [get_ports ADC_SPI_SDIO]
 
 # data, 6 diff pairs, bank 13
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_0_P]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_1_P]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_2_P]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_3_P]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_4_P]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_5_P]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_0_N]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_1_N]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_2_N]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_3_N]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_4_N]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DATA_5_N]
+set_property IOSTANDARD LVDS_25 [get_ports {ADC_DATA_0_P ADC_DATA_0_N}]
+set_property IOSTANDARD LVDS_25 [get_ports {ADC_DATA_1_P ADC_DATA_1_N}]
+set_property IOSTANDARD LVDS_25 [get_ports {ADC_DATA_2_P ADC_DATA_2_N}]
+set_property IOSTANDARD LVDS_25 [get_ports {ADC_DATA_3_P ADC_DATA_3_N}]
+set_property IOSTANDARD LVDS_25 [get_ports {ADC_DATA_4_P ADC_DATA_4_N}]
+set_property IOSTANDARD LVDS_25 [get_ports {ADC_DATA_5_P ADC_DATA_5_N}]
 set_property PACKAGE_PIN U9 [get_ports ADC_DATA_0_P]
 set_property PACKAGE_PIN V8 [get_ports ADC_DATA_1_P]
 set_property PACKAGE_PIN V6 [get_ports ADC_DATA_2_P]
@@ -96,14 +88,11 @@ set_property PACKAGE_PIN T5 [get_ports ADC_DATA_4_N]
 set_property PACKAGE_PIN U7 [get_ports ADC_DATA_5_N]
 
 # overange bit, 1 diff pair, bank 13
-set_property IOSTANDARD LVDS_25 [get_ports ADC_OVERRANGE_P]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_OVERRANGE_N]
-set_property PACKAGE_PIN Y12 [get_ports ADC_OVERRANGE_P]
-set_property PACKAGE_PIN Y13 [get_ports ADC_OVERRANGE_N]
+set_property IOSTANDARD LVDS_25 [get_ports {ADC_OVERRANGE_P ADC_OVERRANGE_N}]
+set_property PACKAGE_PIN Y12 [get_ports {ADC_OVERRANGE_P ADC_OVERRANGE_N}]
 
 # dco from adc, 1 diff pair, bank 13
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DCO_P]
-set_property IOSTANDARD LVDS_25 [get_ports ADC_DCO_N]
+set_property IOSTANDARD LVDS_25 [get_ports {ADC_DCO_P ADC_DCO_N}]
 set_property PACKAGE_PIN Y6 [get_ports ADC_DCO_P]
 set_property PACKAGE_PIN Y7 [get_ports ADC_DCO_N]
 

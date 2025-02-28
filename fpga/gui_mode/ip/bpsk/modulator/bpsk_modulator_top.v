@@ -1,10 +1,10 @@
 `include "params.vh"
 `default_nettype none
 module bpsk_modulator_top (
-    input  wire                        clk,
-    input  wire                        rst,
-    input  wire                        en,
-    input  wire                        in,
+    input  wire                         clk,
+    input  wire                         rst_n,
+    input  wire                         en,
+    input  wire                         in,
     output wire [`FIXDT_64_A_WIDTH-1:0] out
 );
 

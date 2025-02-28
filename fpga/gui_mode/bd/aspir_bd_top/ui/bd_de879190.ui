@@ -1,113 +1,131 @@
 {
    "ExpandedHierarchyInLayout":"",
+   "PinnedBlocks":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 4 -x 1300 -y 1240 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 4 -x 1300 -y 1260 -defaultsOSRD
-preplace port DAC_SPI_SCLK -pg 1 -lvl 4 -x 1300 -y 1300 -defaultsOSRD
-preplace port DAC_SPI_SS -pg 1 -lvl 4 -x 1300 -y 1360 -defaultsOSRD
-preplace port DAC_SPI_MOSI -pg 1 -lvl 4 -x 1300 -y 1320 -defaultsOSRD
-preplace port DAC_SPI_MISO -pg 1 -lvl 4 -x 1300 -y 1340 -defaultsOSRD -right
-preplace port ADC_SPI_SCLK -pg 1 -lvl 4 -x 1300 -y 1040 -defaultsOSRD
-preplace port ADC_SPI_SS -pg 1 -lvl 4 -x 1300 -y 1060 -defaultsOSRD
-preplace port ADC_SPI_SDIO -pg 1 -lvl 4 -x 1300 -y 1080 -defaultsOSRD
-preplace port ADC_OVERRANGE_P -pg 1 -lvl 0 -x 0 -y 1020 -defaultsOSRD
-preplace port ADC_OVERRANGE_N -pg 1 -lvl 0 -x 0 -y 1040 -defaultsOSRD
-preplace port GRST_N -pg 1 -lvl 0 -x 0 -y 730 -defaultsOSRD
-preplace port ADC_DCO_P -pg 1 -lvl 0 -x 0 -y 930 -defaultsOSRD
-preplace port ADC_DCO_N -pg 1 -lvl 0 -x 0 -y 770 -defaultsOSRD
-preplace port CLK_50MHZ -pg 1 -lvl 0 -x 0 -y 750 -defaultsOSRD
-preplace port DAC_DCO -pg 1 -lvl 0 -x 0 -y 440 -defaultsOSRD
-preplace port ADC_DATA_0_P -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
-preplace port ADC_DATA_0_N -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
-preplace port ADC_DATA_1_P -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
-preplace port ADC_DATA_2_P -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
-preplace port ADC_DATA_3_P -pg 1 -lvl 0 -x 0 -y 520 -defaultsOSRD
-preplace port ADC_DATA_4_P -pg 1 -lvl 0 -x 0 -y 680 -defaultsOSRD
-preplace port ADC_DATA_5_P -pg 1 -lvl 0 -x 0 -y 870 -defaultsOSRD
-preplace port ADC_DATA_1_N -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
-preplace port ADC_DATA_2_N -pg 1 -lvl 0 -x 0 -y 380 -defaultsOSRD
-preplace port ADC_DATA_3_N -pg 1 -lvl 0 -x 0 -y 540 -defaultsOSRD
-preplace port ADC_DATA_4_N -pg 1 -lvl 0 -x 0 -y 660 -defaultsOSRD
-preplace port ADC_DATA_5_N -pg 1 -lvl 0 -x 0 -y 850 -defaultsOSRD
-preplace portBus ADC_CLK_P -pg 1 -lvl 4 -x 1300 -y 260 -defaultsOSRD
-preplace portBus ADC_CLK_N -pg 1 -lvl 4 -x 1300 -y 280 -defaultsOSRD
-preplace portBus DAC_CLK_N -pg 1 -lvl 4 -x 1300 -y 710 -defaultsOSRD
-preplace portBus DAC_CLK_P -pg 1 -lvl 4 -x 1300 -y 690 -defaultsOSRD
-preplace portBus DAC_DATA -pg 1 -lvl 4 -x 1300 -y 410 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 3 -x 920 -y 1440 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 510 -y 720 -defaultsOSRD
-preplace inst adc_overrange_diff_buf -pg 1 -lvl 2 -x 510 -y 1020 -defaultsOSRD
-preplace inst adc_dco_diff_buf -pg 1 -lvl 2 -x 510 -y 880 -defaultsOSRD
-preplace inst dac_clk_diff_buf -pg 1 -lvl 3 -x 920 -y 700 -defaultsOSRD
-preplace inst adc_clk_diff_buf -pg 1 -lvl 3 -x 920 -y 270 -defaultsOSRD
-preplace inst demodulator_top_wrap_0 -pg 1 -lvl 3 -x 920 -y 890 -defaultsOSRD
-preplace inst modulator_top_wrapper_0 -pg 1 -lvl 3 -x 920 -y 410 -defaultsOSRD
-preplace inst spi_full2half_duplex_0 -pg 1 -lvl 3 -x 920 -y 1050 -defaultsOSRD
-preplace inst adc_data_diff_buf1 -pg 1 -lvl 1 -x 170 -y 220 -defaultsOSRD
-preplace inst adc_data_diff_buf2 -pg 1 -lvl 1 -x 170 -y 360 -defaultsOSRD
-preplace inst adc_data_diff_buf3 -pg 1 -lvl 1 -x 170 -y 520 -defaultsOSRD
-preplace inst adc_data_diff_buf4 -pg 1 -lvl 1 -x 170 -y 660 -defaultsOSRD
-preplace inst adc_data_diff_buf5 -pg 1 -lvl 1 -x 170 -y 850 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 2 -x 510 -y 550 -defaultsOSRD
-preplace inst adc_data_diff_buf0 -pg 1 -lvl 1 -x 170 -y 80 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 2 2 690 1200 1180
-preplace netloc processing_system7_0_SPI0_SCLK_O 1 3 1 1250J 1300n
-preplace netloc processing_system7_0_SPI0_SS_O 1 3 1 1280J 1360n
-preplace netloc processing_system7_0_SPI0_MOSI_O 1 3 1 1260J 1320n
-preplace netloc DAC_SPI_MISO_1 1 3 1 1270J 1340n
-preplace netloc spi_full2half_duplex_0_sclk_out 1 3 1 NJ 1040
-preplace netloc Net 1 3 1 NJ 1080
-preplace netloc spi_full2half_duplex_0_ss_out 1 3 1 NJ 1060
-preplace netloc processing_system7_0_SPI1_SCLK_O 1 2 2 680 1140 1170
-preplace netloc processing_system7_0_SPI1_SS_O 1 2 2 660 1160 1190
-preplace netloc processing_system7_0_SPI1_MOSI_O 1 2 2 690 1150 1160
-preplace netloc Net1 1 3 1 1210 1020n
-preplace netloc util_ds_buf_0_IBUF_OUT1 1 2 1 690 900n
-preplace netloc ADC_OVERRANGE_P_1 1 0 2 NJ 1020 NJ
-preplace netloc ADC_OVERRANGE_N_1 1 0 2 NJ 1040 NJ
-preplace netloc GRST_B_1 1 0 3 20J 740 350 800 680
-preplace netloc adc_dco_diff_buf_IBUF_OUT 1 2 1 N 880
-preplace netloc CLK_50MHZ_1 1 0 2 NJ 750 340J
-preplace netloc clk_wiz_0_clk_out1 1 2 1 N 700
-preplace netloc clk_wiz_0_clk_out2 1 2 1 660 270n
-preplace netloc dac_clk_diff_buf_OBUF_DS_P 1 3 1 NJ 690
-preplace netloc dac_clk_diff_buf_OBUF_DS_N 1 3 1 NJ 710
-preplace netloc adc_clk_diff_buf_OBUF_DS_P 1 3 1 NJ 260
-preplace netloc adc_clk_diff_buf_OBUF_DS_N 1 3 1 NJ 280
-preplace netloc modulator_top_wrapper_0_data_out 1 3 1 NJ 410
-preplace netloc DAC_DCO_1 1 0 3 NJ 440 NJ 440 NJ
-preplace netloc ADC_DATA_0_P_1 1 0 1 NJ 80
-preplace netloc ADC_DATA_0_N_1 1 0 1 NJ 100
-preplace netloc ADC_DATA_1_P_1 1 0 1 NJ 220
-preplace netloc ADC_DATA_1_N_1 1 0 1 NJ 240
-preplace netloc ADC_DATA_2_P_1 1 0 1 NJ 360
-preplace netloc ADC_DATA_2_N_1 1 0 1 NJ 380
-preplace netloc ADC_DATA_3_P_1 1 0 1 NJ 520
-preplace netloc ADC_DATA_3_N_1 1 0 1 NJ 540
-preplace netloc ADC_DATA_4_P_1 1 0 1 NJ 680
-preplace netloc ADC_DATA_4_N_1 1 0 1 NJ 660
-preplace netloc ADC_DATA_5_P_1 1 0 1 NJ 870
-preplace netloc ADC_DATA_5_N_1 1 0 1 NJ 850
-preplace netloc ADC_DCO_P_1 1 0 2 NJ 930 340J
-preplace netloc ADC_DCO_N_1 1 0 2 NJ 770 320J
-preplace netloc adc_data_diff_buf0_IBUF_OUT 1 1 1 350 80n
-preplace netloc adc_data_diff_buf1_IBUF_OUT 1 1 1 340 220n
-preplace netloc adc_data_diff_buf2_IBUF_OUT 1 1 1 330 360n
-preplace netloc adc_data_diff_buf3_IBUF_OUT 1 1 1 320 520n
-preplace netloc adc_data_diff_buf4_IBUF_OUT 1 1 1 320 580n
-preplace netloc adc_data_diff_buf5_IBUF_OUT 1 1 1 330 600n
-preplace netloc xlconcat_0_dout 1 2 1 670 550n
-preplace netloc demodulator_top_wrap_0_data_out 1 3 1 1150 890n
-preplace netloc processing_system7_0_GPIO_O 1 2 2 690 500 1200
-preplace netloc processing_system7_0_GPIO_T 1 2 2 690 200 1220
-preplace netloc processing_system7_0_FIXED_IO 1 3 1 1240J 1260n
-preplace netloc processing_system7_0_DDR 1 3 1 1230J 1240n
-levelinfo -pg 1 0 170 510 920 1300
-pagesize -pg 1 -db -bbox -sgen -200 0 1470 1680
+preplace port DDR -pg 1 -lvl 0 -x 0 -y 450 -defaultsOSRD -left
+preplace port FIXED_IO -pg 1 -lvl 0 -x 0 -y 470 -defaultsOSRD -left
+preplace port DAC_SPI_SCLK -pg 1 -lvl 7 -x 2170 -y 670 -defaultsOSRD
+preplace port DAC_SPI_SS -pg 1 -lvl 7 -x 2170 -y 730 -defaultsOSRD
+preplace port DAC_SPI_MOSI -pg 1 -lvl 7 -x 2170 -y 690 -defaultsOSRD
+preplace port DAC_SPI_MISO -pg 1 -lvl 7 -x 2170 -y 710 -defaultsOSRD -right
+preplace port ADC_SPI_SCLK -pg 1 -lvl 0 -x 0 -y 1800 -defaultsOSRD -left
+preplace port ADC_SPI_SS -pg 1 -lvl 0 -x 0 -y 1780 -defaultsOSRD -left
+preplace port ADC_SPI_SDIO -pg 1 -lvl 0 -x 0 -y 1760 -defaultsOSRD -left
+preplace port ADC_OVERRANGE_P -pg 1 -lvl 0 -x 0 -y 1520 -defaultsOSRD
+preplace port ADC_OVERRANGE_N -pg 1 -lvl 0 -x 0 -y 1540 -defaultsOSRD
+preplace port GRST_N -pg 1 -lvl 0 -x 0 -y 430 -defaultsOSRD
+preplace port ADC_DCO_P -pg 1 -lvl 0 -x 0 -y 1400 -defaultsOSRD
+preplace port ADC_DCO_N -pg 1 -lvl 0 -x 0 -y 1380 -defaultsOSRD
+preplace port CLK_50MHZ -pg 1 -lvl 0 -x 0 -y 410 -defaultsOSRD
+preplace port DAC_DCO -pg 1 -lvl 7 -x 2170 -y 820 -defaultsOSRD -right
+preplace port ADC_DATA_0_P -pg 1 -lvl 0 -x 0 -y 540 -defaultsOSRD
+preplace port ADC_DATA_0_N -pg 1 -lvl 0 -x 0 -y 560 -defaultsOSRD
+preplace port ADC_DATA_1_P -pg 1 -lvl 0 -x 0 -y 680 -defaultsOSRD
+preplace port ADC_DATA_2_P -pg 1 -lvl 0 -x 0 -y 820 -defaultsOSRD
+preplace port ADC_DATA_3_P -pg 1 -lvl 0 -x 0 -y 960 -defaultsOSRD
+preplace port ADC_DATA_4_P -pg 1 -lvl 0 -x 0 -y 1120 -defaultsOSRD
+preplace port ADC_DATA_5_P -pg 1 -lvl 0 -x 0 -y 1260 -defaultsOSRD
+preplace port ADC_DATA_1_N -pg 1 -lvl 0 -x 0 -y 700 -defaultsOSRD
+preplace port ADC_DATA_2_N -pg 1 -lvl 0 -x 0 -y 840 -defaultsOSRD
+preplace port ADC_DATA_3_N -pg 1 -lvl 0 -x 0 -y 980 -defaultsOSRD
+preplace port ADC_DATA_4_N -pg 1 -lvl 0 -x 0 -y 1100 -defaultsOSRD
+preplace port ADC_DATA_5_N -pg 1 -lvl 0 -x 0 -y 1240 -defaultsOSRD
+preplace portBus ADC_CLK_P -pg 1 -lvl 0 -x 0 -y 1660 -defaultsOSRD -left
+preplace portBus ADC_CLK_N -pg 1 -lvl 0 -x 0 -y 1640 -defaultsOSRD -left
+preplace portBus DAC_CLK_N -pg 1 -lvl 7 -x 2170 -y 800 -defaultsOSRD
+preplace portBus DAC_CLK_P -pg 1 -lvl 7 -x 2170 -y 780 -defaultsOSRD
+preplace portBus DAC_DATA -pg 1 -lvl 7 -x 2170 -y 750 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 4 -x 1250 -y 810 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 4 -x 1250 -y 2070 -defaultsOSRD
+preplace inst adc_overrange_diff_buf -pg 1 -lvl 1 -x 170 -y 1520 -defaultsOSRD
+preplace inst adc_dco_diff_buf -pg 1 -lvl 1 -x 170 -y 1380 -defaultsOSRD
+preplace inst dac_clk_diff_buf -pg 1 -lvl 6 -x 1990 -y 790 -defaultsOSRD
+preplace inst adc_clk_diff_buf -pg 1 -lvl 1 -x 170 -y 1650 -defaultsOSRD -orient R180
+preplace inst adc_data_diff_buf1 -pg 1 -lvl 1 -x 170 -y 680 -defaultsOSRD
+preplace inst adc_data_diff_buf2 -pg 1 -lvl 1 -x 170 -y 820 -defaultsOSRD
+preplace inst adc_data_diff_buf3 -pg 1 -lvl 1 -x 170 -y 960 -defaultsOSRD
+preplace inst adc_data_diff_buf4 -pg 1 -lvl 1 -x 170 -y 1100 -defaultsOSRD
+preplace inst adc_data_diff_buf5 -pg 1 -lvl 1 -x 170 -y 1240 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -x 470 -y 830 -defaultsOSRD
+preplace inst adc_data_diff_buf0 -pg 1 -lvl 1 -x 170 -y 540 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 4 -x 1250 -y 1380 -defaultsOSRD
+preplace inst axis_data_fifo_0_ps2pl -pg 1 -lvl 5 -x 1710 -y 820 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 4 -x 1250 -y 1650 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 4 -x 1250 -y 350 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 4 -x 1250 -y 1850 -defaultsOSRD
+preplace inst axis_data_fifo_0_pl2ps -pg 1 -lvl 3 -x 750 -y 1060 -defaultsOSRD -resize 287 136
+preplace inst dsp_modem_0 -pg 1 -lvl 4 -x 1250 -y 110 -defaultsOSRD
+preplace inst spi_full2half_duplex_1 -pg 1 -lvl 1 -x 170 -y 1790 -defaultsOSRD -orient R180
+preplace netloc processing_system7_0_FCLK_CLK0 1 2 3 580 1150 980 470 1550
+preplace netloc processing_system7_0_SPI0_SCLK_O 1 4 3 N 670 N 670 N
+preplace netloc processing_system7_0_SPI0_SS_O 1 4 3 N 730 1850 720 2140
+preplace netloc processing_system7_0_SPI0_MOSI_O 1 4 3 N 690 N 690 N
+preplace netloc DAC_SPI_MISO_1 1 4 3 N 710 N 710 N
+preplace netloc processing_system7_0_SPI1_SCLK_O 1 1 4 330 1970 N 1970 N 1970 1540
+preplace netloc processing_system7_0_SPI1_SS_O 1 1 4 N 1790 N 1790 920 1980 1530
+preplace netloc ADC_OVERRANGE_P_1 1 0 1 NJ 1520
+preplace netloc ADC_OVERRANGE_N_1 1 0 1 NJ 1540
+preplace netloc CLK_50MHZ_1 1 0 5 20 440 N 440 560 440 950 250 1570J
+preplace netloc clk_wiz_0_clk_out1 1 4 2 1580 720 1840
+preplace netloc clk_wiz_0_clk_out2 1 1 4 N 1650 N 1650 930 1990 1480
+preplace netloc dac_clk_diff_buf_OBUF_DS_P 1 6 1 N 780
+preplace netloc dac_clk_diff_buf_OBUF_DS_N 1 6 1 N 800
+preplace netloc adc_clk_diff_buf_OBUF_DS_P 1 0 1 N 1660
+preplace netloc adc_clk_diff_buf_OBUF_DS_N 1 0 1 N 1640
+preplace netloc ADC_DATA_0_P_1 1 0 1 NJ 540
+preplace netloc ADC_DATA_0_N_1 1 0 1 NJ 560
+preplace netloc ADC_DATA_1_P_1 1 0 1 NJ 680
+preplace netloc ADC_DATA_1_N_1 1 0 1 NJ 700
+preplace netloc ADC_DATA_2_P_1 1 0 1 NJ 820
+preplace netloc ADC_DATA_2_N_1 1 0 1 NJ 840
+preplace netloc ADC_DATA_3_P_1 1 0 1 NJ 960
+preplace netloc ADC_DATA_3_N_1 1 0 1 NJ 980
+preplace netloc ADC_DATA_4_P_1 1 0 1 NJ 1120
+preplace netloc ADC_DATA_4_N_1 1 0 1 NJ 1100
+preplace netloc ADC_DATA_5_P_1 1 0 1 NJ 1260
+preplace netloc ADC_DATA_5_N_1 1 0 1 NJ 1240
+preplace netloc ADC_DCO_P_1 1 0 1 NJ 1400
+preplace netloc ADC_DCO_N_1 1 0 1 NJ 1380
+preplace netloc adc_data_diff_buf0_IBUF_OUT 1 1 1 380 540n
+preplace netloc adc_data_diff_buf1_IBUF_OUT 1 1 1 360 680n
+preplace netloc adc_data_diff_buf2_IBUF_OUT 1 1 1 N 820
+preplace netloc adc_data_diff_buf3_IBUF_OUT 1 1 1 320 840n
+preplace netloc adc_data_diff_buf4_IBUF_OUT 1 1 1 340 860n
+preplace netloc adc_data_diff_buf5_IBUF_OUT 1 1 1 360 880n
+preplace netloc demodulator_top_wrap_0_data_out 1 4 1 N 550
+preplace netloc processing_system7_0_GPIO_O 1 4 1 N 570
+preplace netloc processing_system7_0_GPIO_T 1 4 1 N 590
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 3 2 1000 1150 1480J
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 2 3 570 1180 960 1180 1560
+preplace netloc GRST_B_1 1 0 4 NJ 430 NJ 430 N 430 940
+preplace netloc adc_dco_diff_buf_IBUF_OUT 1 1 3 330 100 N 100 N
+preplace netloc xlconcat_0_dout 1 2 2 570 140 N
+preplace netloc adc_overrange_diff_buf_IBUF_OUT 1 1 3 350 120 N 120 N
+preplace netloc DAC_DCO_1 1 3 4 980J 230 NJ 230 NJ 230 2130
+preplace netloc dsp_modem_0_dac_data_out 1 4 3 NJ 120 NJ 120 2150
+preplace netloc processing_system7_0_SPI1_MOSI_O 1 1 4 380 1170 NJ 1170 NJ 1170 1520
+preplace netloc Net 1 0 1 NJ 1760
+preplace netloc spi_full2half_duplex_1_ss_out 1 0 1 NJ 1780
+preplace netloc spi_full2half_duplex_1_sclk_out 1 0 1 NJ 1800
+preplace netloc spi_full2half_duplex_1_miso_out 1 0 5 20 1880 370J 1160 NJ 1160 NJ 1160 1500
+preplace netloc ps7_0_axi_periph_M00_AXI 1 3 2 1020 1220 1510
+preplace netloc processing_system7_0_FIXED_IO 1 0 5 20 460 N 460 N 460 N 460 1520
+preplace netloc axi_dma_0_M_AXI_MM2S 1 3 2 1010 1540 1480
+preplace netloc processing_system7_0_DDR 1 0 5 N 450 N 450 N 450 N 450 1540
+preplace netloc axi_dma_0_M_AXI_S2MM 1 3 2 1000 1210 1500
+preplace netloc axi_smc_M00_AXI 1 3 2 1020 1190 1520
+preplace netloc processing_system7_0_M_AXI_GP0 1 3 2 990 1200 1490J
+preplace netloc axis_data_fifo_0_pl2ps_M_AXIS 1 3 1 970 1060n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 4 1 1590 790n
+preplace netloc axi_dma_0_M_AXI_SG 1 3 2 1020 1550 1490
+preplace netloc dsp_modem_0_pl2ps_fifo_s_axis 1 2 3 580 220 N 220 1570
+preplace netloc axis_data_fifo_0_ps2pl_M_AXIS 1 3 3 950J 240 NJ 240 1830
+levelinfo -pg 1 0 170 470 750 1250 1710 1990 2170
+pagesize -pg 1 -db -bbox -sgen -200 0 2340 2150
 "
 }
 {
-   "da_axi4_cnt":"4",
+   "da_axi4_cnt":"9",
    "da_ps7_cnt":"1"
 }
