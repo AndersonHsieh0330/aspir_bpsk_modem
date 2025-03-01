@@ -813,8 +813,8 @@ proc create_root_design { parentCell } {
   # Create instance: rst_ps7_0_100M, and set properties
   set rst_ps7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_100M ]
 
-  # Create instance: spi_full2half_duplex_1, and set properties
-  set spi_full2half_duplex_1 [ create_bd_cell -type ip -vlnv xilinx.com:user:spi_full2half_duplex_adapter:1.0 spi_full2half_duplex_1 ]
+  # Create instance: spi_full2half_duplex_0, and set properties
+  set spi_full2half_duplex_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:spi_full2half_duplex_adapter:1.0 spi_full2half_duplex_0 ]
 
   # Create instance: xlconcat_0, and set properties
   set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
@@ -860,7 +860,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net DAC_DCO_1 [get_bd_ports DAC_DCO] [get_bd_pins axis_data_fifo_0_ps2pl/m_axis_aclk] [get_bd_pins dsp_modem_0/dac_dco_clk] [get_bd_pins reset_synchronizer_1_tx/target_clk]
   connect_bd_net -net DAC_SPI_MISO_1 [get_bd_ports DAC_SPI_MISO] [get_bd_pins processing_system7_0/SPI0_MISO_I]
   connect_bd_net -net GRST_B_1 [get_bd_ports GRST_N] [get_bd_pins clk_wiz_0/resetn] [get_bd_pins reset_synchronizer_0_rx/async_resetn] [get_bd_pins reset_synchronizer_1_tx/async_resetn]
-  connect_bd_net -net Net [get_bd_ports ADC_SPI_SDIO] [get_bd_pins spi_full2half_duplex_1/sdio_out]
+  connect_bd_net -net Net [get_bd_ports ADC_SPI_SDIO] [get_bd_pins spi_full2half_duplex_0/sdio_out]
   connect_bd_net -net adc_clk_diff_buf_OBUF_DS_N [get_bd_ports ADC_CLK_N] [get_bd_pins adc_clk_diff_buf/OBUF_DS_N]
   connect_bd_net -net adc_clk_diff_buf_OBUF_DS_P [get_bd_ports ADC_CLK_P] [get_bd_pins adc_clk_diff_buf/OBUF_DS_P]
   connect_bd_net -net adc_data_diff_buf0_IBUF_OUT [get_bd_pins adc_data_diff_buf0/IBUF_OUT] [get_bd_pins xlconcat_0/In0]
@@ -881,15 +881,15 @@ proc create_root_design { parentCell } {
   connect_bd_net -net processing_system7_0_SPI0_MOSI_O [get_bd_ports DAC_SPI_MOSI] [get_bd_pins processing_system7_0/SPI0_MOSI_O]
   connect_bd_net -net processing_system7_0_SPI0_SCLK_O [get_bd_ports DAC_SPI_SCLK] [get_bd_pins processing_system7_0/SPI0_SCLK_O]
   connect_bd_net -net processing_system7_0_SPI0_SS_O [get_bd_ports DAC_SPI_SS] [get_bd_pins processing_system7_0/SPI0_SS_O]
-  connect_bd_net -net processing_system7_0_SPI1_MOSI_O [get_bd_pins processing_system7_0/SPI1_MOSI_O] [get_bd_pins spi_full2half_duplex_1/mosi_in]
-  connect_bd_net -net processing_system7_0_SPI1_SCLK_O [get_bd_pins processing_system7_0/SPI1_SCLK_O] [get_bd_pins spi_full2half_duplex_1/sclk_in]
-  connect_bd_net -net processing_system7_0_SPI1_SS_O [get_bd_pins processing_system7_0/SPI1_SS_O] [get_bd_pins spi_full2half_duplex_1/ss_in]
+  connect_bd_net -net processing_system7_0_SPI1_MOSI_O [get_bd_pins processing_system7_0/SPI1_MOSI_O] [get_bd_pins spi_full2half_duplex_0/mosi_in]
+  connect_bd_net -net processing_system7_0_SPI1_SCLK_O [get_bd_pins processing_system7_0/SPI1_SCLK_O] [get_bd_pins spi_full2half_duplex_0/sclk_in]
+  connect_bd_net -net processing_system7_0_SPI1_SS_O [get_bd_pins processing_system7_0/SPI1_SS_O] [get_bd_pins spi_full2half_duplex_0/ss_in]
   connect_bd_net -net reset_synchronizer_0_rx_sync_resetn [get_bd_pins axis_data_fifo_0_pl2ps/s_axis_aresetn] [get_bd_pins dsp_modem_0/demod_resetn] [get_bd_pins reset_synchronizer_0_rx/sync_resetn]
   connect_bd_net -net reset_synchronizer_1_tx_sync_resetn [get_bd_pins dsp_modem_0/mod_resetn] [get_bd_pins reset_synchronizer_1_tx/sync_resetn]
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins axis_data_fifo_0_ps2pl/s_axis_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
-  connect_bd_net -net spi_full2half_duplex_1_miso_out [get_bd_pins processing_system7_0/SPI1_MISO_I] [get_bd_pins spi_full2half_duplex_1/miso_out]
-  connect_bd_net -net spi_full2half_duplex_1_sclk_out [get_bd_ports ADC_SPI_SCLK] [get_bd_pins spi_full2half_duplex_1/sclk_out]
-  connect_bd_net -net spi_full2half_duplex_1_ss_out [get_bd_ports ADC_SPI_SS] [get_bd_pins spi_full2half_duplex_1/ss_out]
+  connect_bd_net -net spi_full2half_duplex_0_miso_out [get_bd_pins processing_system7_0/SPI1_MISO_I] [get_bd_pins spi_full2half_duplex_0/miso_out]
+  connect_bd_net -net spi_full2half_duplex_0_sclk_out [get_bd_ports ADC_SPI_SCLK] [get_bd_pins spi_full2half_duplex_0/sclk_out]
+  connect_bd_net -net spi_full2half_duplex_0_ss_out [get_bd_ports ADC_SPI_SS] [get_bd_pins spi_full2half_duplex_0/ss_out]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins dsp_modem_0/adc_data_in] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins processing_system7_0/SPI0_SS_I] [get_bd_pins processing_system7_0/SPI1_SS_I] [get_bd_pins xlconstant_0/dout]
 

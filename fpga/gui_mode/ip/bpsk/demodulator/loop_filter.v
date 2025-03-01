@@ -8,7 +8,7 @@ module loop_filter #(
     input  wire clk,
     input  wire rst_n,
     input  wire signed [DATA_WIDTH-1:0] phase_error_next,
-    output reg  signed [DATA_WIDTH-1:0] phase_adjust
+    output wire signed [DATA_WIDTH-1:0] phase_adjust
 );
 
 reg  signed [DATA_WIDTH-1:0] integral_error_reg, phase_error_reg;

@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Fri Feb 28 19:42:20 2025
+//Date        : Sat Mar  1 00:45:32 2025
 //Host        : anderson_xps_15 running 64-bit major release  (build 9200)
 //Command     : generate_target aspir_bd_top.bd
 //Design      : aspir_bd_top
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "aspir_bd_top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=aspir_bd_top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=26,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=9,da_ps7_cnt=1,synth_mode=Global}" *) (* HW_HANDOFF = "aspir_bd_top.hwdef" *) 
+(* CORE_GENERATION_INFO = "aspir_bd_top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=aspir_bd_top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=26,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=9,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "aspir_bd_top.hwdef" *) 
 module aspir_bd_top
    (ADC_CLK_N,
     ADC_CLK_P,
@@ -349,9 +349,9 @@ module aspir_bd_top
   wire reset_synchronizer_0_rx_sync_resetn;
   wire reset_synchronizer_1_tx_sync_resetn;
   wire [0:0]rst_ps7_0_100M_peripheral_aresetn;
-  wire spi_full2half_duplex_1_miso_out;
-  wire spi_full2half_duplex_1_sclk_out;
-  wire spi_full2half_duplex_1_ss_out;
+  wire spi_full2half_duplex_0_miso_out;
+  wire spi_full2half_duplex_0_sclk_out;
+  wire spi_full2half_duplex_0_ss_out;
   wire [5:0]xlconcat_0_dout;
   wire [0:0]xlconstant_0_dout;
 
@@ -373,8 +373,8 @@ module aspir_bd_top
   assign ADC_DCO_P_1 = ADC_DCO_P;
   assign ADC_OVERRANGE_N_1 = ADC_OVERRANGE_N;
   assign ADC_OVERRANGE_P_1 = ADC_OVERRANGE_P;
-  assign ADC_SPI_SCLK = spi_full2half_duplex_1_sclk_out;
-  assign ADC_SPI_SS = spi_full2half_duplex_1_ss_out;
+  assign ADC_SPI_SCLK = spi_full2half_duplex_0_sclk_out;
+  assign ADC_SPI_SS = spi_full2half_duplex_0_ss_out;
   assign CLK_50MHZ_1 = CLK_50MHZ;
   assign DAC_CLK_N[0] = dac_clk_diff_buf_OBUF_DS_N;
   assign DAC_CLK_P[0] = dac_clk_diff_buf_OBUF_DS_P;
@@ -655,7 +655,7 @@ module aspir_bd_top
        (.OBUF_DS_N(dac_clk_diff_buf_OBUF_DS_N),
         .OBUF_DS_P(dac_clk_diff_buf_OBUF_DS_P),
         .OBUF_IN(clk_wiz_0_clk_out1));
-  aspir_bd_top_dsp_modem_0_1 dsp_modem_0
+  aspir_bd_top_dsp_modem_0_2 dsp_modem_0
        (.adc_data_in(xlconcat_0_dout),
         .adc_dco_clk(adc_dco_diff_buf_IBUF_OUT),
         .adc_overrange(adc_overrange_diff_buf_IBUF_OUT),
@@ -744,7 +744,7 @@ module aspir_bd_top
         .SPI0_SCLK_O(processing_system7_0_SPI0_SCLK_O),
         .SPI0_SS_I(xlconstant_0_dout),
         .SPI0_SS_O(processing_system7_0_SPI0_SS_O),
-        .SPI1_MISO_I(spi_full2half_duplex_1_miso_out),
+        .SPI1_MISO_I(spi_full2half_duplex_0_miso_out),
         .SPI1_MOSI_I(1'b0),
         .SPI1_MOSI_O(processing_system7_0_SPI1_MOSI_O),
         .SPI1_SCLK_I(1'b0),
@@ -866,14 +866,14 @@ module aspir_bd_top
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_ps7_0_100M_peripheral_aresetn),
         .slowest_sync_clk(processing_system7_0_FCLK_CLK0));
-  aspir_bd_top_spi_full2half_duplex_1_0 spi_full2half_duplex_1
-       (.miso_out(spi_full2half_duplex_1_miso_out),
+  aspir_bd_top_spi_full2half_duplex_0_0 spi_full2half_duplex_0
+       (.miso_out(spi_full2half_duplex_0_miso_out),
         .mosi_in(processing_system7_0_SPI1_MOSI_O),
         .sclk_in(processing_system7_0_SPI1_SCLK_O),
-        .sclk_out(spi_full2half_duplex_1_sclk_out),
+        .sclk_out(spi_full2half_duplex_0_sclk_out),
         .sdio_out(ADC_SPI_SDIO),
         .ss_in(processing_system7_0_SPI1_SS_O),
-        .ss_out(spi_full2half_duplex_1_ss_out));
+        .ss_out(spi_full2half_duplex_0_ss_out));
   aspir_bd_top_xlconcat_0_0 xlconcat_0
        (.In0(adc_data_diff_buf0_IBUF_OUT),
         .In1(adc_data_diff_buf1_IBUF_OUT),

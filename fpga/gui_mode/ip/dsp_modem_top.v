@@ -1,7 +1,8 @@
 `include "params.vh"
 module dsp_modem_top (
     // global reset on som, active low
-    input wire rst_n,
+    input wire mod_resetn,
+    input wire demod_resetn,
 
     // -------- RX --------- //
     // adc
@@ -46,7 +47,7 @@ assign dac_data_out = modulator_out[`DAC_BITS:0];
 
 ps2pl_stream_ctrl ps2pl_stream_ctrl_inst (
     .clk(dac_dco_clk),
-    .rst_n(rst_n),
+    .rst_n(mod_resetn),
     .m_axis_tdata(ps2pl_fifo_m_axis_tdata),
     .m_axis_tkeep(ps2pl_fifo_m_axis_tkeep),
     .m_axis_tlast(ps2pl_fifo_m_axis_tlast),
@@ -58,7 +59,7 @@ ps2pl_stream_ctrl ps2pl_stream_ctrl_inst (
 
 bpsk_modulator_top bpsk_modulator_inst (
     .clk(dac_dco_clk),
-    .rst_n(rst_n),
+    .rst_n(mod_resetn),
     .en(modulator_en),
     .in(modulator_in),
     .out(modulator_out)
@@ -73,14 +74,14 @@ assign demodulator_data_in = 64'b0;
 
 bpsk_demodulator_top bpsk_demodulatorinst (
     .clk(adc_dco_clk),
-    .rst_n(rst_n),
+    .rst_n(demod_resetn),
     .data_in(demodulator_data_in),
     .data_out(demodulator_data_out)
 );
 
 pl2ps_stream_ctrl pl2ps_stream_ctrl_inst (
     .clk(adc_dco_clk),
-    .rst_n(rst_n),
+    .rst_n(demod_resetn),
     .data_in(demodulator_data_out),
     .s_axis_tdata(pl2ps_fifo_s_axis_tdata),
     .s_axis_tkeep(pl2ps_fifo_s_axis_tkeep),

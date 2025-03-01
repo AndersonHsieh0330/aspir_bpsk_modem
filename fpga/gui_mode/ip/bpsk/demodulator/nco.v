@@ -14,9 +14,9 @@ module nco #(
 ) (
     input  wire clk,
     input  wire rst_n,
-    input  wire signed   [DATA_WIDTH-1:0]                   phase_adjust, // this is feedback signal to control nco_phase. 0 => positive, 1 => negative
-    output wire unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] i_cosine_lu_angle_steps,
-    output wire unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] q_cosine_lu_angle_steps
+    input  wire signed [DATA_WIDTH-1:0]                          phase_adjust, // this is feedback signal to control nco_phase. 0 => positive, 1 => negative
+    output wire        [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] i_cosine_lu_angle_steps,
+    output wire        [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] q_cosine_lu_angle_steps
 );
 
 reg  signed [DATA_WIDTH-1:0] i_cosine_lu_angle_rads, i_cosine_lu_angle_rads_reg;

@@ -4,7 +4,7 @@
       "boundary_crc": "0xD7CDF868DA688CA",
       "device": "xc7z020clg400-2",
       "name": "aspir_bd_top",
-      "synth_flow_mode": "None",
+      "synth_flow_mode": "Hierarchical",
       "tool_version": "2019.1",
       "validated": "true"
     },
@@ -36,7 +36,7 @@
       "reset_synchronizer_0_rx": "",
       "reset_synchronizer_1_tx": "",
       "dsp_modem_0": "",
-      "spi_full2half_duplex_1": ""
+      "spi_full2half_duplex_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1801,16 +1801,16 @@
               }
             },
             "interface_nets": {
-              "s00_couplers_to_auto_pc": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "s00_couplers_to_auto_pc": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_pc/S_AXI"
                 ]
               }
             },
@@ -1831,16 +1831,16 @@
           }
         },
         "interface_nets": {
-          "ps7_0_axi_periph_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
-            ]
-          },
           "s00_couplers_to_ps7_0_axi_periph": {
             "interface_ports": [
               "M00_AXI",
               "s00_couplers/M_AXI"
+            ]
+          },
+          "ps7_0_axi_periph_to_s00_couplers": {
+            "interface_ports": [
+              "S00_AXI",
+              "s00_couplers/S_AXI"
             ]
           }
         },
@@ -1918,30 +1918,18 @@
       },
       "dsp_modem_0": {
         "vlnv": "xilinx.com:user:dsp_modem:1.0",
-        "xci_name": "aspir_bd_top_dsp_modem_0_1"
+        "xci_name": "aspir_bd_top_dsp_modem_0_2"
       },
-      "spi_full2half_duplex_1": {
+      "spi_full2half_duplex_0": {
         "vlnv": "xilinx.com:user:spi_full2half_duplex_adapter:1.0",
-        "xci_name": "aspir_bd_top_spi_full2half_duplex_1_0"
+        "xci_name": "aspir_bd_top_spi_full2half_duplex_0_0"
       }
     },
     "interface_nets": {
-      "axi_dma_0_M_AXI_SG": {
+      "axis_data_fifo_0_ps2pl_M_AXIS": {
         "interface_ports": [
-          "axi_dma_0/M_AXI_SG",
-          "axi_smc/S00_AXI"
-        ]
-      },
-      "axi_dma_0_M_AXI_MM2S": {
-        "interface_ports": [
-          "axi_dma_0/M_AXI_MM2S",
-          "axi_smc/S01_AXI"
-        ]
-      },
-      "axi_smc_M00_AXI": {
-        "interface_ports": [
-          "axi_smc/M00_AXI",
-          "processing_system7_0/S_AXI_HP0"
+          "dsp_modem_0/ps2pl_fifo_m_axis",
+          "axis_data_fifo_0_ps2pl/M_AXIS"
         ]
       },
       "axis_data_fifo_0_pl2ps_M_AXIS": {
@@ -1950,10 +1938,10 @@
           "axi_dma_0/S_AXIS_S2MM"
         ]
       },
-      "processing_system7_0_FIXED_IO": {
+      "axi_smc_M00_AXI": {
         "interface_ports": [
-          "FIXED_IO",
-          "processing_system7_0/FIXED_IO"
+          "axi_smc/M00_AXI",
+          "processing_system7_0/S_AXI_HP0"
         ]
       },
       "ps7_0_axi_periph_M00_AXI": {
@@ -1962,10 +1950,16 @@
           "axi_dma_0/S_AXI_LITE"
         ]
       },
-      "axis_data_fifo_0_ps2pl_M_AXIS": {
+      "processing_system7_0_FIXED_IO": {
         "interface_ports": [
-          "axis_data_fifo_0_ps2pl/M_AXIS",
-          "dsp_modem_0/ps2pl_fifo_m_axis"
+          "FIXED_IO",
+          "processing_system7_0/FIXED_IO"
+        ]
+      },
+      "axi_dma_0_M_AXI_SG": {
+        "interface_ports": [
+          "axi_dma_0/M_AXI_SG",
+          "axi_smc/S00_AXI"
         ]
       },
       "processing_system7_0_DDR": {
@@ -1974,16 +1968,10 @@
           "processing_system7_0/DDR"
         ]
       },
-      "dsp_modem_0_pl2ps_fifo_s_axis": {
+      "axi_dma_0_M_AXI_MM2S": {
         "interface_ports": [
-          "dsp_modem_0/pl2ps_fifo_s_axis",
-          "axis_data_fifo_0_pl2ps/S_AXIS"
-        ]
-      },
-      "processing_system7_0_M_AXI_GP0": {
-        "interface_ports": [
-          "processing_system7_0/M_AXI_GP0",
-          "ps7_0_axi_periph/S00_AXI"
+          "axi_dma_0/M_AXI_MM2S",
+          "axi_smc/S01_AXI"
         ]
       },
       "axi_dma_0_M_AXIS_MM2S": {
@@ -1992,10 +1980,22 @@
           "axis_data_fifo_0_ps2pl/S_AXIS"
         ]
       },
+      "processing_system7_0_M_AXI_GP0": {
+        "interface_ports": [
+          "processing_system7_0/M_AXI_GP0",
+          "ps7_0_axi_periph/S00_AXI"
+        ]
+      },
       "axi_dma_0_M_AXI_S2MM": {
         "interface_ports": [
           "axi_dma_0/M_AXI_S2MM",
           "axi_smc/S02_AXI"
+        ]
+      },
+      "dsp_modem_0_pl2ps_fifo_s_axis": {
+        "interface_ports": [
+          "dsp_modem_0/pl2ps_fifo_s_axis",
+          "axis_data_fifo_0_pl2ps/S_AXIS"
         ]
       }
     },
@@ -2040,18 +2040,6 @@
         "ports": [
           "DAC_SPI_MISO",
           "processing_system7_0/SPI0_MISO_I"
-        ]
-      },
-      "processing_system7_0_SPI1_SCLK_O": {
-        "ports": [
-          "processing_system7_0/SPI1_SCLK_O",
-          "spi_full2half_duplex_1/sclk_in"
-        ]
-      },
-      "processing_system7_0_SPI1_SS_O": {
-        "ports": [
-          "processing_system7_0/SPI1_SS_O",
-          "spi_full2half_duplex_1/ss_in"
         ]
       },
       "ADC_OVERRANGE_P_1": {
@@ -2261,60 +2249,12 @@
           "dsp_modem_0/adc_dco_clk"
         ]
       },
-      "xlconcat_0_dout": {
-        "ports": [
-          "xlconcat_0/dout",
-          "dsp_modem_0/adc_data_in"
-        ]
-      },
-      "adc_overrange_diff_buf_IBUF_OUT": {
-        "ports": [
-          "adc_overrange_diff_buf/IBUF_OUT",
-          "dsp_modem_0/adc_overrange"
-        ]
-      },
       "DAC_DCO_1": {
         "ports": [
           "DAC_DCO",
           "axis_data_fifo_0_ps2pl/m_axis_aclk",
           "reset_synchronizer_1_tx/target_clk",
           "dsp_modem_0/dac_dco_clk"
-        ]
-      },
-      "dsp_modem_0_dac_data_out": {
-        "ports": [
-          "dsp_modem_0/dac_data_out",
-          "DAC_DATA"
-        ]
-      },
-      "processing_system7_0_SPI1_MOSI_O": {
-        "ports": [
-          "processing_system7_0/SPI1_MOSI_O",
-          "spi_full2half_duplex_1/mosi_in"
-        ]
-      },
-      "Net": {
-        "ports": [
-          "ADC_SPI_SDIO",
-          "spi_full2half_duplex_1/sdio_out"
-        ]
-      },
-      "spi_full2half_duplex_1_ss_out": {
-        "ports": [
-          "spi_full2half_duplex_1/ss_out",
-          "ADC_SPI_SS"
-        ]
-      },
-      "spi_full2half_duplex_1_sclk_out": {
-        "ports": [
-          "spi_full2half_duplex_1/sclk_out",
-          "ADC_SPI_SCLK"
-        ]
-      },
-      "spi_full2half_duplex_1_miso_out": {
-        "ports": [
-          "spi_full2half_duplex_1/miso_out",
-          "processing_system7_0/SPI1_MISO_I"
         ]
       },
       "xlconstant_0_dout": {
@@ -2335,6 +2275,66 @@
         "ports": [
           "reset_synchronizer_1_tx/sync_resetn",
           "dsp_modem_0/mod_resetn"
+        ]
+      },
+      "adc_overrange_diff_buf_IBUF_OUT": {
+        "ports": [
+          "adc_overrange_diff_buf/IBUF_OUT",
+          "dsp_modem_0/adc_overrange"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "dsp_modem_0/adc_data_in"
+        ]
+      },
+      "dsp_modem_0_dac_data_out": {
+        "ports": [
+          "dsp_modem_0/dac_data_out",
+          "DAC_DATA"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "ADC_SPI_SDIO",
+          "spi_full2half_duplex_0/sdio_out"
+        ]
+      },
+      "spi_full2half_duplex_0_ss_out": {
+        "ports": [
+          "spi_full2half_duplex_0/ss_out",
+          "ADC_SPI_SS"
+        ]
+      },
+      "spi_full2half_duplex_0_sclk_out": {
+        "ports": [
+          "spi_full2half_duplex_0/sclk_out",
+          "ADC_SPI_SCLK"
+        ]
+      },
+      "processing_system7_0_SPI1_SS_O": {
+        "ports": [
+          "processing_system7_0/SPI1_SS_O",
+          "spi_full2half_duplex_0/ss_in"
+        ]
+      },
+      "processing_system7_0_SPI1_SCLK_O": {
+        "ports": [
+          "processing_system7_0/SPI1_SCLK_O",
+          "spi_full2half_duplex_0/sclk_in"
+        ]
+      },
+      "processing_system7_0_SPI1_MOSI_O": {
+        "ports": [
+          "processing_system7_0/SPI1_MOSI_O",
+          "spi_full2half_duplex_0/mosi_in"
+        ]
+      },
+      "spi_full2half_duplex_0_miso_out": {
+        "ports": [
+          "spi_full2half_duplex_0/miso_out",
+          "processing_system7_0/SPI1_MISO_I"
         ]
       }
     },

@@ -17,7 +17,8 @@ module mixer #(
 );
 
 wire       signed [2*DATA_WIDTH-1:0] double_width_product; // this number will have 2*DATA_FRAC_WIDTH fractional bits
-reg        signed [2*DATA_WIDTH-1:0] rounded_value, rounded_value_shifted; 
+reg        signed [2*DATA_WIDTH-1:0] rounded_value; 
+wire       signed [2*DATA_WIDTH-1:0] rounded_value_shifted; 
 localparam signed ROUND_FACTOR = 2 ^ (DATA_FRAC_WIDTH - 1);
 localparam signed POST_SHIFT_MAX = {1'b0, {(DATA_WIDTH-1){1'b1}}};
 localparam signed POST_SHIFT_MIN = {1'b1, {(DATA_WIDTH-1){1'b0}}};
