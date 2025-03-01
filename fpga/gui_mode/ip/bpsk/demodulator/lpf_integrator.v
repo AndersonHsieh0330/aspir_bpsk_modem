@@ -5,7 +5,7 @@
 `default_nettype none
 module lpf_integrator #(
     parameter ARRAY_SIZE = 5,
-    parameter DATA_WIDTH = 64
+    parameter DATA_WIDTH = `FIXDT_64_A_WIDTH
 ) (
     input  wire signed [DATA_WIDTH*ARRAY_SIZE-1:0] input_array,
     output wire signed [DATA_WIDTH-1:0] out
