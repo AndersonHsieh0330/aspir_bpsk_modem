@@ -7,24 +7,27 @@ module bpsk_demodulator_top (
     output wire                                data_out // 1 or 0
 );
 
-wire signed   [`FIXDT_64_A_WIDTH-1:0] i_mixer_out_fifo [0:`LPF_TAPS-1];
-wire signed   [`FIXDT_64_A_WIDTH-1:0] q_mixer_out_fifo [0:`LPF_TAPS-1];
+wire signed   [`FIXDT_64_A_WIDTH*`LPF_TAPS-1:0] i_mixer_out_fifo;
+wire signed   [`FIXDT_64_A_WIDTH*`LPF_TAPS-1:0] q_mixer_out_fifo;
 wire signed   [`FIXDT_64_A_WIDTH-1:0] i_mixer_out, q_mixer_out;
-wire signed   [`FIXDT_64_A_WIDTH-1:0] nco_carrier [0:1]; // [0] = cosine zero shift carrier(i), [1] = quadrature sine carrier(q)
+wire signed   [(`FIXDT_64_A_WIDTH*2)-1:0] nco_carrier; // [0] = cosine zero shift carrier(i), [1] = quadrature sine carrier(q)
+wire signed   [`FIXDT_64_A_WIDTH-1:0] nco_carrier_q;
+wire signed   [`FIXDT_64_A_WIDTH-1:0] nco_carrier_i;
 wire signed   [`FIXDT_64_A_WIDTH-1:0] fb_mixer_out;
 wire signed   [`FIXDT_64_A_WIDTH-1:0] i_lpf_out, q_lpf_out;
 wire          [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] nco_i_cosine_lu_angle_steps, nco_q_cosine_lu_angle_steps;
 wire signed   [`FIXDT_64_A_WIDTH-1:0] phase_adjust;
-wire clk;
 
 assign data_out = i_lpf_out[`FIXDT_64_A_WIDTH-1];
+assign nco_carrier_i = nco_carrier[0+:`FIXDT_64_A_WIDTH];
+assign nco_carrier_q = nco_carrier[`FIXDT_64_A_WIDTH+:`FIXDT_64_A_WIDTH];
 
 mixer #(
     .DATA_WIDTH(`FIXDT_64_A_WIDTH),
     .DATA_FRAC_WIDTH(`FIXDT_64_A_FRAC_WIDTH)
 ) mixer_inst_i (
     .in_a(data_in),
-    .in_b(nco_carrier[0]),
+    .in_b(nco_carrier_i),
     .out(i_mixer_out)
 );
 
@@ -43,7 +46,7 @@ mixer #(
     .DATA_FRAC_WIDTH(`FIXDT_64_A_FRAC_WIDTH)
 ) mixer_inst_q (
     .in_a(data_in),
-    .in_b(nco_carrier[1]),
+    .in_b(nco_carrier_q),
     .out(q_mixer_out)
 );
 
@@ -81,8 +84,8 @@ cosine_lut #(
     .READ_PORTS(2)
 ) cosine_lut_inst (
     .in({
-        nco_i_cosine_lu_angle_steps,
-        nco_q_cosine_lu_angle_steps
+        nco_q_cosine_lu_angle_steps,
+        nco_i_cosine_lu_angle_steps
     }),
     .out(nco_carrier)
 );
@@ -91,7 +94,7 @@ lpf_integrator #(
     .ARRAY_SIZE(`LPF_TAPS+1),
     .DATA_WIDTH(`FIXDT_64_A_WIDTH)
 ) lpf_inst_i (
-    .input_array({i_mixer_out, i_mixer_out_fifo}),
+    .input_array({i_mixer_out_fifo, i_mixer_out}),
     .out(i_lpf_out)
 );
 
@@ -99,7 +102,7 @@ lpf_integrator #(
     .ARRAY_SIZE(`LPF_TAPS+1),
     .DATA_WIDTH(`FIXDT_64_A_WIDTH)
 ) lpf_inst_q (
-    .input_array({q_mixer_out, q_mixer_out_fifo}),
+    .input_array({q_mixer_out_fifo, q_mixer_out}),
     .out(q_lpf_out)
 );
 

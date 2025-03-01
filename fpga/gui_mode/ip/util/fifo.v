@@ -11,18 +11,18 @@ module fifo #(
     input  wire                         clk,
     input  wire                         rst_n,
     input  wire signed [DATA_WIDTH-1:0] data_in,
-    output reg  signed [DATA_WIDTH-1:0] fifo_out [0:FIFO_SIZE-1]
+    output reg  signed [DATA_WIDTH*FIFO_SIZE-1:0] fifo_out
 );
 
 integer i;
 always @(posedge clk) begin
     if (~rst_n) begin
         for (i = 0 ; i < FIFO_SIZE ; i = i + 1) begin
-            fifo_out[i] <= {$clog2(DATA_WIDTH){1'b0}};
+            fifo_out <= {DATA_WIDTH*FIFO_SIZE{1'b0}};
         end
     end else begin
         for (i = 0 ; i < FIFO_SIZE ; i = i + 1) begin
-            fifo_out[i] <= i == 0 ? data_in : fifo_out[i-1];
+            fifo_out[(i*DATA_WIDTH)+:DATA_WIDTH] <= i == 0 ? data_in : fifo_out[((i-1)*DATA_WIDTH)+:DATA_WIDTH];
         end
     end
 end
