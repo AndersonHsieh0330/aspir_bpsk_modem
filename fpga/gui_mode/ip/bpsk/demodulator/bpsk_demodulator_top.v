@@ -13,12 +13,11 @@ wire signed   [`FIXDT_64_A_WIDTH-1:0] i_mixer_out, q_mixer_out;
 wire signed   [`FIXDT_64_A_WIDTH-1:0] nco_carrier [0:1]; // [0] = cosine zero shift carrier(i), [1] = quadrature sine carrier(q)
 wire signed   [`FIXDT_64_A_WIDTH-1:0] fb_mixer_out;
 wire signed   [`FIXDT_64_A_WIDTH-1:0] i_lpf_out, q_lpf_out;
-wire unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] nco_i_cosine_lu_angle_steps, nco_q_cosine_lu_angle_steps;
+wire          [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] nco_i_cosine_lu_angle_steps, nco_q_cosine_lu_angle_steps;
 wire signed   [`FIXDT_64_A_WIDTH-1:0] phase_adjust;
 wire clk;
 
 assign data_out = i_lpf_out[`FIXDT_64_A_WIDTH-1];
-assign clk = dco;
 
 mixer #(
     .DATA_WIDTH(`FIXDT_64_A_WIDTH),

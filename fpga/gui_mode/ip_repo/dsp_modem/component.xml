@@ -69,10 +69,10 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>TKEEP</spirit:name>
+            <spirit:name>TREADY</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>ps2pl_fifo_m_axis_tkeep</spirit:name>
+            <spirit:name>ps2pl_fifo_m_axis_tready</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -93,16 +93,16 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>TREADY</spirit:name>
+            <spirit:name>TKEEP</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>ps2pl_fifo_m_axis_tready</spirit:name>
+            <spirit:name>ps2pl_fifo_m_axis_tkeep</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
       </spirit:portMaps>
     </spirit:busInterface>
     <spirit:busInterface>
-      <spirit:name>rst_n</spirit:name>
+      <spirit:name>mod_resetn</spirit:name>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
       <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
       <spirit:slave/>
@@ -112,14 +112,14 @@
             <spirit:name>RST</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
-            <spirit:name>resetn</spirit:name>
+            <spirit:name>mod_resetn</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
       </spirit:portMaps>
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>POLARITY</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.RST_N.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.MOD_RESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -138,6 +138,20 @@
           </spirit:physicalPort>
         </spirit:portMap>
       </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ADC_DCO_CLK.FREQ_HZ">250000000</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ADC_DCO_CLK.ASSOCIATED_BUSIF">pl2ps_fifo_s_axis</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ADC_DCO_CLK.ASSOCIATED_RESET">demod_resetn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
     </spirit:busInterface>
     <spirit:busInterface>
       <spirit:name>dac_dco_clk</spirit:name>
@@ -154,6 +168,42 @@
           </spirit:physicalPort>
         </spirit:portMap>
       </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DAC_DCO_CLK.FREQ_HZ">250000000</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DAC_DCO_CLK.ASSOCIATED_BUSIF">ps2pl_fifo_m_axis</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DAC_DCO_CLK.ASSOCIATED_RESET">mod_resetn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>demod_resetn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>demod_resetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DEMOD_RESETN.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
     </spirit:busInterface>
   </spirit:busInterfaces>
   <spirit:model>
@@ -170,7 +220,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c877cea8</spirit:value>
+            <spirit:value>069c3fa2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -186,7 +236,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c877cea8</spirit:value>
+            <spirit:value>069c3fa2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -207,7 +257,20 @@
     </spirit:views>
     <spirit:ports>
       <spirit:port>
-        <spirit:name>resetn</spirit:name>
+        <spirit:name>mod_resetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>demod_resetn</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -454,6 +517,11 @@
   </spirit:model>
   <spirit:choices>
     <spirit:choice>
+      <spirit:name>choice_list_74b5137e</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
       <spirit:name>choice_list_9d8b0d81</spirit:name>
       <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
@@ -522,7 +590,7 @@
       <spirit:file>
         <spirit:name>dsp_modem.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_bce7fa6d</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_900fd594</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -623,8 +691,8 @@
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>6</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-02-28T09:50:48Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>9</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2025-02-28T17:40:35Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="nopcore"/>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@56dcdf04_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
@@ -708,13 +776,52 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@7ace7643_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@120f4fdd_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@3474c52b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5afdc9f6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d5cc2d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a43d2a1_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@476b34d4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e16e0fa_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b072633_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dd001ec_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7538723e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50c77551_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c96e0fa_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@149d9e1c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2de0fde4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b7b704d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53184d2b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18d7fc40_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@384239cb_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74f6820e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@babf200_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47233c3b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@228ec1de_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64d0b9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60d0ac8_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d4b933a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@631e342a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44f68474_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ee1f8a4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fbf91a3_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cb18519_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25cdb1f0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30624b55_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53e689c7_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49f2b151_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fa3acff_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8aa6ffd_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5af8e3c3_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fb68def_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14abfeb6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@318ab4cc_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9a1dc63_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="06271ac2"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="0477d0bd"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="017a8217"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="f700a308"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c4fd542c"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="1a6b337a"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="f791d143"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>

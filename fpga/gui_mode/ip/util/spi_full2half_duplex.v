@@ -11,6 +11,6 @@ module spi_full2half_duplex (
 
 assign sclk_out = sclk_in;
 assign ss_out = ss_in;
-assign sdio_out = miso_in & mosi_in;
+assign sdio_out = miso_out & mosi_in;
 
 endmodule
