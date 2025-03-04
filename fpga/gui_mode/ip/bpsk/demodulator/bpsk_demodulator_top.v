@@ -8,24 +8,25 @@ module bpsk_demodulator_top #(
 ) (
     input  wire                         clk,
     input  wire                         rst_n,
-    input  wire signed [DATA_WIDTH-1:0] data_in, // from ADC, 2s complement
-    output wire                         data_out // 1 or 0
+    input  wire signed [DATA_WIDTH-1:0] data_in,  // from ADC, 2s complement
+    output wire                         data_out, // 1 or 0
+
+    // cosine lu
+    output wire        [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] nco_i_cosine_lu_angle_steps,
+    output wire        [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] nco_q_cosine_lu_angle_steps,
+    input  wire signed [DATA_WIDTH-1:0]                          nco_carrier_i,
+    input  wire signed [DATA_WIDTH-1:0]                          nco_carrier_q
 );
 
 wire signed   [DATA_WIDTH*`LPF_TAPS-1:0] i_mixer_out_fifo;
 wire signed   [DATA_WIDTH*`LPF_TAPS-1:0] q_mixer_out_fifo;
 wire signed   [DATA_WIDTH-1:0] i_mixer_out, q_mixer_out;
 wire signed   [(DATA_WIDTH*2)-1:0] nco_carrier; // [0] = cosine zero shift carrier(i), [1] = quadrature sine carrier(q)
-wire signed   [DATA_WIDTH-1:0] nco_carrier_q;
-wire signed   [DATA_WIDTH-1:0] nco_carrier_i;
 wire signed   [DATA_WIDTH-1:0] fb_mixer_out;
 wire signed   [DATA_WIDTH-1:0] i_lpf_out, q_lpf_out;
-wire          [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] nco_i_cosine_lu_angle_steps, nco_q_cosine_lu_angle_steps;
 wire signed   [DATA_WIDTH-1:0] phase_adjust;
 
 assign data_out = i_lpf_out[DATA_WIDTH-1];
-assign nco_carrier_i = nco_carrier[0+:DATA_WIDTH];
-assign nco_carrier_q = nco_carrier[DATA_WIDTH+:DATA_WIDTH];
 
 mixer #(
     .DATA_WIDTH(DATA_WIDTH),
@@ -87,16 +88,6 @@ nco #(
     .phase_adjust(phase_adjust), 
     .i_cosine_lu_angle_steps(nco_i_cosine_lu_angle_steps),
     .q_cosine_lu_angle_steps(nco_q_cosine_lu_angle_steps)
-);
-
-cosine_lut #(
-    .READ_PORTS(2)
-) cosine_lut_inst (
-    .in({
-        nco_q_cosine_lu_angle_steps,
-        nco_i_cosine_lu_angle_steps
-    }),
-    .out(nco_carrier)
 );
 
 lpf_integrator #(

@@ -35,7 +35,16 @@ module dsp_modem_top (
 
 `ifdef BPSK
 
-// TODO : make modulator and demodulator share a cosine lut!!
+// -------- Shared -------- //
+wire [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] mod_cosine_lu, demod_cosine_lu_i, demod_cosine_lu_q;
+wire [`FIXDT_64_A_WIDTH-1:0] mod_carrier, demod_nco_carrier_i, demod_nco_carrier_q;
+
+cosine_lut #(
+    .READ_PORTS(3)
+) cosine_lut_inst (
+    .in({mod_cosine_lu, demod_cosine_lu_i, demod_cosine_lu_q}),
+    .out({mod_carrier, demod_nco_carrier_i, demod_nco_carrier_q})
+);
 
 // -------- TX -------- //
 wire                         modulator_en;
@@ -67,7 +76,9 @@ bpsk_modulator_top bpsk_modulator_inst (
     .rst_n(mod_resetn),
     .en(modulator_en),
     .in(encoded_modulator_in),
-    .out(modulator_out)
+    .out(modulator_out),
+    .cosine_lu(mod_cosine_lu),
+    .carrier(mod_carrier)
 );
 
 num_convert_tx num_convert_tx_inst (
@@ -97,7 +108,11 @@ bpsk_demodulator_top bpsk_demodulator_inst (
     .clk(adc_dco_clk),
     .rst_n(demod_resetn),
     .data_in(demodulator_data_in),
-    .data_out(demodulator_data_out)
+    .data_out(demodulator_data_out),
+    .nco_i_cosine_lu_angle_steps(demod_cosine_lu_i),
+    .nco_q_cosine_lu_angle_steps(demod_cosine_lu_q),
+    .nco_carrier_i(demod_nco_carrier_i),
+    .nco_carrier_q(demod_nco_carrier_q)
 );
 
 differential_decoder differential_decoder_inst (
@@ -117,8 +132,6 @@ axis_fifo_ctrl_pl2ps axis_fifo_ctrl_pl2ps_inst (
     .s_axis_tready(pl2ps_fifo_s_axis_tready),
     .s_axis_tvalid(pl2ps_fifo_s_axis_tvalid)
 );
-
-// -------- Shared -------- //
 
 `endif 
 

@@ -7,6 +7,8 @@ reg clk;
 reg rst_n;
 reg in;
 wire [`FIXDT_64_A_WIDTH-1:0] out;
+wire [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] mod_cosine_lu;
+wire [`FIXDT_64_A_WIDTH-1:0] mod_carrier;
 
 localparam clkperiod = 5; // 200 Mhz clk = 5ns clock period
 
@@ -26,11 +28,21 @@ initial begin
     $finish;
 end
 
+cosine_lut #(
+    .READ_PORTS(1)
+) cosine_lut_inst (
+    .in(mod_cosine_lu),
+    .out(mod_carrier)
+);
+
 bpsk_modulator_top modulator_inst (
     .clk(clk),
     .rst_n(rst_n),
     .en(1'b1),
     .in(in),
-    .out(out));
+    .out(out),
+    .cosine_lu(mod_cosine_lu),
+    .carrier(mod_carrier)
+);
 
 endmodule

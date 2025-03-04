@@ -4,11 +4,13 @@
 module bpsk_demodulation_test ();
 
 reg clk, rst_n;
-reg [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] lu_angle;
 reg modulated_signal_select; // toggle between 1 and 0
-wire signed   [`FIXDT_64_A_WIDTH-1:0] out;
-wire signed   [`FIXDT_64_A_WIDTH-1:0] bpsk_data_in;
-wire unsigned                         bpsk_data_out;
+reg signed [`FIXDT_64_A_WIDTH-1:0] out;
+reg unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] lu_angle;
+wire unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] demod_cosine_lu_i, demod_cosine_lu_q;
+wire signed [`FIXDT_64_A_WIDTH-1:0] demod_nco_carrier_i, demod_nco_carrier_q;
+wire signed [`FIXDT_64_A_WIDTH-1:0] bpsk_data_in;
+wire bpsk_data_out;
 
 // generate random phase offset and convert to radians for easy comparison in waveform viewer
 int unsigned INITIAL_PHASE_OFFSET_STEPS = 1235; // [`CARRIER_SAMPLES_PER_PERIOD, 0]
@@ -43,10 +45,10 @@ always @(posedge clk) begin
 end
 
 cosine_lut # (
-    .READ_PORTS(1)
+    .READ_PORTS(3)
 ) cosine_lut_inst (
-   .in(lu_angle),
-   .out(out) 
+    .in({lu_angle, demod_cosine_lu_i, demod_cosine_lu_q}),
+    .out({out, demod_nco_carrier_i, demod_nco_carrier_q})
 );
 
 assign bpsk_data_in = modulated_signal_select? -1*out : out;
@@ -55,7 +57,11 @@ bpsk_demodulator_top bpsk_demod_inst (
     .clk(clk),
     .rst_n(rst_n),
     .data_in(bpsk_data_in),
-    .data_out(bpsk_data_out)
+    .data_out(bpsk_data_out),
+    .nco_i_cosine_lu_angle_steps(demod_cosine_lu_i),
+    .nco_q_cosine_lu_angle_steps(demod_cosine_lu_q),
+    .nco_carrier_i(demod_nco_carrier_i),
+    .nco_carrier_q(demod_nco_carrier_q)
 );
 
 endmodule

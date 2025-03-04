@@ -1,7 +1,7 @@
 `include "params.vh"
 module counter(
-    input  wire clk,
-    input  wire rst_n,
+    input  wire                                           clk,
+    input  wire                                           rst_n,
     output reg  [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] out
 );
 
