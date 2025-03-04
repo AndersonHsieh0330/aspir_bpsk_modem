@@ -2,7 +2,6 @@
  * use integrator was a low pass filter
  */
 `include "params.vh"
-`default_nettype none
 module lpf_integrator #(
     parameter ARRAY_SIZE = 5,
     parameter DATA_WIDTH = `FIXDT_64_A_WIDTH

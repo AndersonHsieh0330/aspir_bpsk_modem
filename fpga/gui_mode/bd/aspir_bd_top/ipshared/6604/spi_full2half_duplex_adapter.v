@@ -13,7 +13,7 @@ spi_full2half_duplex spi_full2half_duplex_inst (
     .sclk_in(sclk_in),
     .ss_in(ss_in),
     .mosi_in(mosi_in),
-    .miso_out(miso_in),
+    .miso_out(miso_out),
     .sclk_out(sclk_out),
     .ss_out(ss_out),
     .sdio_out(sdio_out)

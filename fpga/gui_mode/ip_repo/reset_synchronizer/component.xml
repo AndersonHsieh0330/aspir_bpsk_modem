@@ -236,8 +236,8 @@
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>4</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-03-01T00:06:06Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2025-03-01T07:03:45Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="nopcore"/>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@4f67604a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/reset_synchronizer</xilinx:tag>
@@ -280,6 +280,11 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2b7da575_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/reset_synchronizer</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@46ba3bdc_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/reset_synchronizer</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6ad9133_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/reset_synchronizer</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59b90428_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/reset_synchronizer</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@678ac50f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/reset_synchronizer</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bcdea38_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/reset_synchronizer</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@762ccb4f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/reset_synchronizer</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8dbfcde_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/reset_synchronizer</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

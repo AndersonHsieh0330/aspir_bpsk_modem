@@ -44,7 +44,7 @@ mixer #(
 assign control_signal = p_gain_product + i_gain_product;
 assign phase_adjust = phase_adjust_reg - control_signal;
 
-always @(posedge clk) begin
+always @(posedge clk or negedge rst_n) begin
     if (~rst_n) begin
         integral_error_reg <= {DATA_WIDTH{1'b0}};
         phase_error_reg <= {DATA_WIDTH{1'b0}}; 

@@ -1,10 +1,9 @@
 `include "params.vh"
-`default_nettype none
 module bpsk_demodulator_top #(
     parameter DATA_WIDTH = `FIXDT_64_A_WIDTH,
     parameter DATA_FRAC_WIDTH = `FIXDT_64_A_FRAC_WIDTH,
-    parameter LOOP_FILTER_KP = 64'sh000000020c49ba5e, // 0.001
-    parameter LOOP_FILTER_KI = 64'sh00000000346dc5d6, // 0.0001
+    parameter LOOP_FILTER_KP = 64'sh000000020c49ba5e, // decimal 0.001
+    parameter LOOP_FILTER_KI = 64'sh00000000346dc5d6, // decimal 0.0001
     parameter M_2_PI = `M_2_PI_64B_A
 ) (
     input  wire                         clk,

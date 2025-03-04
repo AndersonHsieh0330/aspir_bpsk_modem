@@ -40,12 +40,10 @@ module dsp_modem_top (
 // -------- TX -------- //
 wire                         modulator_en;
 wire                         modulator_in;
+wire                         encoded_modulator_in;
 wire [`FIXDT_64_A_WIDTH-1:0] modulator_out;
 
-// TODO : FIXDT_64_A to 12 bit 2s complement!
-assign dac_data_out = modulator_out[`DAC_BITS:0];
-
-ps2pl_stream_ctrl ps2pl_stream_ctrl_inst (
+axis_fifo_ctrl_ps2pl axis_fifo_ctrl_ps2pl_inst (
     .clk(dac_dco_clk),
     .rst_n(mod_resetn),
     .m_axis_tdata(ps2pl_fifo_m_axis_tdata),
@@ -57,38 +55,71 @@ ps2pl_stream_ctrl ps2pl_stream_ctrl_inst (
     .data_out(modulator_in)
 );
 
+differential_encoder differential_encoder_inst (
+    .clk(dac_dco_clk),
+    .rst_n(mod_resetn),
+    .data_in(modulator_in),
+    .data_in(encoded_modulator_in),
+);
+
 bpsk_modulator_top bpsk_modulator_inst (
     .clk(dac_dco_clk),
     .rst_n(mod_resetn),
     .en(modulator_en),
-    .in(modulator_in),
+    .in(encoded_modulator_in),
     .out(modulator_out)
+);
+
+num_convert_tx num_convert_tx_inst (
+    .data_in(modulator_out),
+    .data_out(dac_data_out)
 );
 
 // -------- RX -------- //
 wire [`FIXDT_64_A_WIDTH-1:0] demodulator_data_in;
 wire                         demodulator_data_out;
+wire                         decoded_demodulator_data_out;
+wire [`ADC_BITS-1:0]          sdr_data;
 
-// TODO : 12 bit 2s complement from adc to FIXDT_64_A
-assign demodulator_data_in = 64'b0;
+ddr_to_sdr ddr_to_sdr_inst (
+    .clk(adc_dco_clk),
+    .rst_n(demod_resetn),
+    .data_in(adc_data_in),
+    .data_out(sdr_data)
+);
 
-bpsk_demodulator_top bpsk_demodulatorinst (
+num_convert_tx num_convert_tx_inst (
+    .data_in(sdr_data),
+    .data_out(demodulator_data_in)
+);
+
+bpsk_demodulator_top bpsk_demodulator_inst (
     .clk(adc_dco_clk),
     .rst_n(demod_resetn),
     .data_in(demodulator_data_in),
     .data_out(demodulator_data_out)
 );
 
-pl2ps_stream_ctrl pl2ps_stream_ctrl_inst (
+differential_decoder differential_decoder_inst (
     .clk(adc_dco_clk),
     .rst_n(demod_resetn),
     .data_in(demodulator_data_out),
+    .data_in(decoded_demodulator_data_out),
+);
+
+axis_fifo_ctrl_pl2ps axis_fifo_ctrl_pl2ps_inst (
+    .clk(adc_dco_clk),
+    .rst_n(demod_resetn),
+    .data_in(decoded_demodulator_data_out),
     .s_axis_tdata(pl2ps_fifo_s_axis_tdata),
     .s_axis_tkeep(pl2ps_fifo_s_axis_tkeep),
     .s_axis_tlast(pl2ps_fifo_s_axis_tlast),
     .s_axis_tready(pl2ps_fifo_s_axis_tready),
     .s_axis_tvalid(pl2ps_fifo_s_axis_tvalid)
 );
+
+// -------- Shared -------- //
+
 `endif 
 
 endmodule

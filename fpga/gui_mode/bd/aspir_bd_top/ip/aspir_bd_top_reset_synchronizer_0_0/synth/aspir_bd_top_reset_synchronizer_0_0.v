@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:reset_synchronizer:1.0
-// IP Revision: 4
+// IP Revision: 5
 
 (* X_CORE_INFO = "reset_synchronizer,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "aspir_bd_top_reset_synchronizer_0_0,reset_synchronizer,{}" *)
-(* CORE_GENERATION_INFO = "aspir_bd_top_reset_synchronizer_0_0,reset_synchronizer,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=reset_synchronizer,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "aspir_bd_top_reset_synchronizer_0_0,reset_synchronizer,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=reset_synchronizer,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module aspir_bd_top_reset_synchronizer_0_0 (

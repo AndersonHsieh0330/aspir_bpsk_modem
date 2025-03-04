@@ -1,5 +1,4 @@
 `include "params.vh"
-`default_nettype none
 module bpsk_modulator_top (
     input  wire                         clk,
     input  wire                         rst_n,
@@ -15,7 +14,7 @@ module bpsk_modulator_top (
 
     counter counter_inst (
         .clk(clk),
-        .rst(rst),
+        .rst_n(rst_n),
         .out(count)
     );
 

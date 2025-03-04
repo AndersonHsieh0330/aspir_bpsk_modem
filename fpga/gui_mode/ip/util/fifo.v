@@ -3,7 +3,6 @@
  * and put the new data into first index, like a fifo
  */
 `include "params.vh"
-`default_nettype none
 module fifo #(
     parameter FIFO_SIZE = 1,
     parameter DATA_WIDTH = 8
@@ -15,7 +14,7 @@ module fifo #(
 );
 
 integer i;
-always @(posedge clk) begin
+always @(posedge clk or negedge rst_n) begin
     if (~rst_n) begin
         for (i = 0 ; i < FIFO_SIZE ; i = i + 1) begin
             fifo_out <= {DATA_WIDTH*FIFO_SIZE{1'b0}};

@@ -1,5 +1,4 @@
 // this adder explicitly detects and signals over/under flow
-`default_nettype none
 `include "params.vh"
 module adder #(
     parameter DATA_WIDTH = `FIXDT_64_A_WIDTH,

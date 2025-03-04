@@ -6,7 +6,6 @@
  * carrier(Q).
  */
 `include "params.vh"
-`default_nettype none
 module nco #(
     parameter DATA_WIDTH = `FIXDT_64_A_WIDTH,
     parameter DATA_FRAC_WIDTH = `FIXDT_64_A_FRAC_WIDTH,

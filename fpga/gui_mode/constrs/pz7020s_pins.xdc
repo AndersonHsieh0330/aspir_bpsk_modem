@@ -50,6 +50,7 @@ set_property PACKAGE_PIN T12 [get_ports DAC_DATA[11]]
 # dco from DAC, single ended clk, bank 34
 set_property IOSTANDARD LVCMOS33 [get_ports DAC_DCO]
 set_property PACKAGE_PIN P19 [get_ports DAC_DCO]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets DAC_DCO_IBUF]
 
 ############ ADC ##############
 # all adc digital pins are 1.8v
@@ -89,7 +90,8 @@ set_property PACKAGE_PIN U7 [get_ports ADC_DATA_5_N]
 
 # overange bit, 1 diff pair, bank 13
 set_property IOSTANDARD LVDS_25 [get_ports {ADC_OVERRANGE_P ADC_OVERRANGE_N}]
-set_property PACKAGE_PIN Y12 [get_ports {ADC_OVERRANGE_P ADC_OVERRANGE_N}]
+set_property PACKAGE_PIN Y12 [get_ports ADC_OVERRANGE_P]
+set_property PACKAGE_PIN Y13 [get_ports ADC_OVERRANGE_N]
 
 # dco from adc, 1 diff pair, bank 13
 set_property IOSTANDARD LVDS_25 [get_ports {ADC_DCO_P ADC_DCO_N}]

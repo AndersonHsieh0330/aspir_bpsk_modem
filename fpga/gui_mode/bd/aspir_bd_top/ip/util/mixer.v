@@ -3,7 +3,6 @@
 *   includes rounding to the correct fractional bit
 *   and over/underflow detection
 */
-`default_nettype none
 `include "params.vh"
 module mixer #(
     parameter DATA_WIDTH = `FIXDT_64_A_WIDTH,

@@ -36,3 +36,4 @@
 
 // peripherals
 `define AXI4_STREAM_DATA_FIFO_TDATA_WIDTH 32
+`define ETHERNET_SFD 8'b10101011

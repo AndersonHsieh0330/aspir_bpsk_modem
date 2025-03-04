@@ -3,7 +3,6 @@
  * and put the new data into first index, like a fifo
  */
 `include "params.vh"
-`default_nettype none
 module fifo #(
     parameter FIFO_SIZE = 1,
     parameter DATA_WIDTH = 8

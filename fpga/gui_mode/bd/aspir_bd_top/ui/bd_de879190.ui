@@ -56,20 +56,20 @@ preplace inst rst_ps7_0_100M -pg 1 -lvl 4 -x 1700 -y 390 -defaultsOSRD
 preplace inst ps7_0_axi_periph -pg 1 -lvl 4 -x 1700 -y 2340 -defaultsOSRD
 preplace inst axis_data_fifo_0_pl2ps -pg 1 -lvl 3 -x 1150 -y 580 -defaultsOSRD -resize 287 136
 preplace inst xlconstant_0 -pg 1 -lvl 5 -x 2200 -y 950 -defaultsOSRD -orient R180
+preplace inst spi_full2half_duplex_0 -pg 1 -lvl 1 -x 170 -y 1820 -defaultsOSRD -orient R180
 preplace inst reset_synchronizer_0_rx -pg 1 -lvl 3 -x 1150 -y 220 -defaultsOSRD
 preplace inst reset_synchronizer_1_tx -pg 1 -lvl 3 -x 1150 -y 100 -defaultsOSRD
 preplace inst dsp_modem_0 -pg 1 -lvl 4 -x 1700 -y 110 -defaultsOSRD
-preplace inst spi_full2half_duplex_0 -pg 1 -lvl 1 -x 170 -y 1820 -defaultsOSRD -orient R180
-preplace netloc processing_system7_0_FCLK_CLK0 1 2 3 960 490 1370 1000 2060
-preplace netloc processing_system7_0_SPI0_SCLK_O 1 4 3 2010 700 N 700 2630
-preplace netloc processing_system7_0_SPI0_SS_O 1 4 3 2040 710 N 710 N
-preplace netloc processing_system7_0_SPI0_MOSI_O 1 4 3 2000 640 N 640 N
-preplace netloc DAC_SPI_MISO_1 1 4 3 2020 690 N 690 N
+preplace netloc processing_system7_0_FCLK_CLK0 1 2 3 940 490 1360 1110 2040
+preplace netloc processing_system7_0_SPI0_SCLK_O 1 4 3 1990 700 N 700 2630
+preplace netloc processing_system7_0_SPI0_SS_O 1 4 3 2020 710 N 710 N
+preplace netloc processing_system7_0_SPI0_MOSI_O 1 4 3 1980 640 N 640 N
+preplace netloc DAC_SPI_MISO_1 1 4 3 2000 690 N 690 N
 preplace netloc ADC_OVERRANGE_P_1 1 0 1 -70J 1520n
 preplace netloc ADC_OVERRANGE_N_1 1 0 1 -60J 1540n
-preplace netloc CLK_50MHZ_1 1 0 4 N 430 N 430 920 450 1330
-preplace netloc clk_wiz_0_clk_out1 1 4 2 2080 890 2320
-preplace netloc clk_wiz_0_clk_out2 1 1 4 380 1010 N 1010 N 1010 1990
+preplace netloc CLK_50MHZ_1 1 0 4 N 430 N 430 N 430 1340
+preplace netloc clk_wiz_0_clk_out1 1 4 2 2060 890 2320
+preplace netloc clk_wiz_0_clk_out2 1 1 4 N 1650 N 1650 N 1650 2020
 preplace netloc dac_clk_diff_buf_OBUF_DS_P 1 6 1 N 810
 preplace netloc dac_clk_diff_buf_OBUF_DS_N 1 6 1 N 830
 preplace netloc adc_clk_diff_buf_OBUF_DS_P 1 0 1 -50 1660n
@@ -94,36 +94,36 @@ preplace netloc adc_data_diff_buf2_IBUF_OUT 1 1 1 320 800n
 preplace netloc adc_data_diff_buf3_IBUF_OUT 1 1 1 330 820n
 preplace netloc adc_data_diff_buf4_IBUF_OUT 1 1 1 360 840n
 preplace netloc adc_data_diff_buf5_IBUF_OUT 1 1 1 370 860n
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 3 2 1430 960 1980J
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 3 2 1380 990 1990
-preplace netloc GRST_B_1 1 0 4 -70J 420 NJ 420 940 440 1350
-preplace netloc adc_dco_diff_buf_IBUF_OUT 1 1 3 350 700 900 10 1380
-preplace netloc DAC_DCO_1 1 2 5 970 30 1370J 280 2030J 680 NJ 680 2620
-preplace netloc xlconstant_0_dout 1 4 1 2070 950n
-preplace netloc reset_synchronizer_0_rx_sync_resetn 1 2 2 950 20 1320
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 3 2 1390 1080 1960J
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 3 2 1370 1100 1970
+preplace netloc GRST_B_1 1 0 4 -70J 440 NJ 440 920 460 1330
+preplace netloc adc_dco_diff_buf_IBUF_OUT 1 1 3 350 700 890 10 1370
+preplace netloc DAC_DCO_1 1 2 5 950 30 1360J 280 2010J 680 NJ 680 2620
+preplace netloc xlconstant_0_dout 1 4 1 2050 950n
+preplace netloc reset_synchronizer_0_rx_sync_resetn 1 2 2 930 20 1320
 preplace netloc reset_synchronizer_1_tx_sync_resetn 1 3 1 1330 70n
-preplace netloc adc_overrange_diff_buf_IBUF_OUT 1 1 3 340 0 NJ 0 1410J
-preplace netloc xlconcat_0_dout 1 2 2 930 300 1330J
-preplace netloc dsp_modem_0_dac_data_out 1 4 3 2030 260 NJ 260 2640J
+preplace netloc adc_overrange_diff_buf_IBUF_OUT 1 1 3 340 0 NJ 0 1380J
+preplace netloc xlconcat_0_dout 1 2 2 910 300 1330J
+preplace netloc dsp_modem_0_dac_data_out 1 4 3 2010 260 NJ 260 2640J
 preplace netloc Net 1 0 1 NJ 1790
 preplace netloc spi_full2half_duplex_0_ss_out 1 0 1 NJ 1810
 preplace netloc spi_full2half_duplex_0_sclk_out 1 0 1 NJ 1830
-preplace netloc processing_system7_0_SPI1_SS_O 1 1 4 390 1020 N 1020 N 1020 1940
-preplace netloc processing_system7_0_SPI1_SCLK_O 1 1 4 410 1670 N 1670 N 1670 1960J
-preplace netloc processing_system7_0_SPI1_MOSI_O 1 1 4 400 1660 N 1660 N 1660 1930J
-preplace netloc spi_full2half_duplex_0_miso_out 1 0 5 -40 460 370 480 N 480 1340 980 1950
-preplace netloc axi_dma_0_M_AXI_SG 1 3 2 1410 1710 1930
-preplace netloc axi_dma_0_M_AXI_MM2S 1 3 2 1420 2030 1930
-preplace netloc axi_smc_M00_AXI 1 3 2 1430 1680 1950
+preplace netloc processing_system7_0_SPI1_SS_O 1 1 4 330 1640 N 1640 N 1640 1940
+preplace netloc processing_system7_0_SPI1_SCLK_O 1 1 4 320 1610 N 1610 1350 1590 1950J
+preplace netloc processing_system7_0_SPI1_MOSI_O 1 1 4 340 1660 N 1660 N 1660 2000J
+preplace netloc spi_full2half_duplex_0_miso_out 1 0 5 -60 1720 360 1690 N 1690 N 1690 1980
 preplace netloc axis_data_fifo_0_pl2ps_M_AXIS 1 3 1 1320 580n
-preplace netloc processing_system7_0_FIXED_IO 1 0 5 -50 450 N 450 890 470 1360 970 1960
-preplace netloc ps7_0_axi_periph_M00_AXI 1 3 2 1430 2040 1930
-preplace netloc processing_system7_0_DDR 1 0 5 -60 440 N 440 910 460 1410 490 1970
-preplace netloc processing_system7_0_M_AXI_GP0 1 3 2 1390 1690 1940J
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 4 1 2050 770n
-preplace netloc axi_dma_0_M_AXI_S2MM 1 3 2 1400 1700 1940
-preplace netloc dsp_modem_0_pl2ps_fifo_s_axis 1 2 3 970 290 NJ 290 1970
-preplace netloc axis_data_fifo_0_ps2pl_M_AXIS 1 3 3 1430 270 NJ 270 2320
+preplace netloc processing_system7_0_FIXED_IO 1 0 5 -50 460 370 480 N 480 1350 1090 1930
+preplace netloc axis_data_fifo_0_ps2pl_M_AXIS 1 3 3 1390 270 NJ 270 2320
+preplace netloc axi_smc_M00_AXI 1 3 2 1390 1570 2010
+preplace netloc ps7_0_axi_periph_M00_AXI 1 3 2 1410 1700 1960
+preplace netloc processing_system7_0_M_AXI_GP0 1 3 2 1380 1580 1930J
+preplace netloc axi_dma_0_M_AXI_S2MM 1 3 2 1390 1710 1940
+preplace netloc processing_system7_0_DDR 1 0 5 -60 450 N 450 900 470 1380 490 1950
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 4 1 2030 770n
+preplace netloc axi_dma_0_M_AXI_SG 1 3 2 1410 2040 1950
+preplace netloc dsp_modem_0_pl2ps_fifo_s_axis 1 2 3 950 290 NJ 290 1970
+preplace netloc axi_dma_0_M_AXI_MM2S 1 3 2 1400 2030 1930
 levelinfo -pg 1 -90 170 800 1150 1700 2200 2480 2660
 pagesize -pg 1 -db -bbox -sgen -290 -20 2830 2600
 "

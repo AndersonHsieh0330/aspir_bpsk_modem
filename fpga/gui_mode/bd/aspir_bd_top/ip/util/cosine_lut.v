@@ -7,14 +7,13 @@
  *  should work nicely in the 2s complement arithmetic operations
  */
 `include "params.vh"
-`default_nettype none
 module cosine_lut #(
     parameter READ_PORTS = 2
 ) (
     input  wire          [$clog2(`CARRIER_SAMPLES_PER_PERIOD)*READ_PORTS-1:0] in,
     output wire signed   [`FIXDT_64_A_WIDTH*READ_PORTS-1:0]                   out 
 );
-    (* ramstyle = "distributed" *) wire signed [`FIXDT_64_A_WIDTH-1:0] Lookup_Table3_table_data [0:`CARRIER_SAMPLES_PER_PERIOD-1];
+    (* ramstyle = "block" *) wire signed [`FIXDT_64_A_WIDTH-1:0] Lookup_Table3_table_data [0:`CARRIER_SAMPLES_PER_PERIOD-1];
 
     for(genvar i = 0 ; i < READ_PORTS ; i = i + 1) begin
         assign out[`FIXDT_64_WIDTH*(i+1)-1:`FIXDT_64_WIDTH*i] = Lookup_Table3_table_data[in[$clog2(`CARRIER_SAMPLES_PER_PERIOD)*(i+1)-1:$clog2(`CARRIER_SAMPLES_PER_PERIOD)*i]];
