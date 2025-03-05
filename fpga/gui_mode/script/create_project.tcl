@@ -171,7 +171,6 @@ set obj [get_filesets sources_1]
 set files [list \
  [file normalize "${origin_dir}/ip/util/params.vh"] \
  [file normalize "${origin_dir}/bd/aspir_bd_top/hdl/aspir_bd_top_wrapper.v"] \
- [file normalize "${origin_dir}/vivado_output/aspir_dsp_modem.srcs/sources_1/bd/aspir_bd_top/aspir_bd_top.bd"] \
 ]
 add_files -norecurse -fileset $obj $files
 
@@ -200,25 +199,6 @@ set_property -name "used_in" -value "synthesis implementation simulation" -objec
 set_property -name "used_in_implementation" -value "1" -objects $file_obj
 set_property -name "used_in_simulation" -value "1" -objects $file_obj
 set_property -name "used_in_synthesis" -value "1" -objects $file_obj
-
-set file "$origin_dir/vivado_output/aspir_dsp_modem.srcs/sources_1/bd/aspir_bd_top/aspir_bd_top.bd"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "exclude_debug_logic" -value "0" -objects $file_obj
-set_property -name "is_enabled" -value "1" -objects $file_obj
-set_property -name "is_global_include" -value "0" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "is_locked" -value "0" -objects $file_obj
-}
-set_property -name "library" -value "xil_defaultlib" -objects $file_obj
-set_property -name "path_mode" -value "RelativeFirst" -objects $file_obj
-set_property -name "pfm_name" -value "" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-set_property -name "used_in" -value "synthesis implementation simulation" -objects $file_obj
-set_property -name "used_in_implementation" -value "1" -objects $file_obj
-set_property -name "used_in_simulation" -value "1" -objects $file_obj
-set_property -name "used_in_synthesis" -value "1" -objects $file_obj
-
 
 # Set 'sources_1' fileset file properties for local files
 # None
