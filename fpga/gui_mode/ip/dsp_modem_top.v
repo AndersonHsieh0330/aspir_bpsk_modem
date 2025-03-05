@@ -22,8 +22,8 @@ module dsp_modem_top (
 
     // -------- TX --------- //
     // dac
-    input  wire                 dac_dco_clk, // clock from dac that clocks out the data
-    output wire [`DAC_BITS-1:0] dac_data_out,
+    input  wire                        dac_dco_clk, // clock from dac that clocks out the data
+    output wire signed [`DAC_BITS-1:0] dac_data_out,
 
     // from ps to pl AXI4-Stream Data FIFO
     input  wire [31:0] ps2pl_fifo_m_axis_tdata,
@@ -37,7 +37,7 @@ module dsp_modem_top (
 
 // -------- Shared -------- //
 wire [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] mod_cosine_lu, demod_cosine_lu_i, demod_cosine_lu_q;
-wire [`FIXDT_64_A_WIDTH-1:0] mod_carrier, demod_nco_carrier_i, demod_nco_carrier_q;
+wire signed [`FIXDT_64_A_WIDTH-1:0] mod_carrier, demod_nco_carrier_i, demod_nco_carrier_q;
 
 cosine_lut #(
     .READ_PORTS(3)
@@ -47,10 +47,10 @@ cosine_lut #(
 );
 
 // -------- TX -------- //
-wire                         modulator_en;
-wire                         modulator_in;
-wire                         encoded_modulator_in;
-wire [`FIXDT_64_A_WIDTH-1:0] modulator_out;
+wire                                modulator_en;
+wire                                modulator_in;
+wire                                encoded_modulator_in;
+wire signed [`FIXDT_64_A_WIDTH-1:0] modulator_out;
 
 axis_fifo_ctrl_ps2pl axis_fifo_ctrl_ps2pl_inst (
     .clk(dac_dco_clk),
@@ -87,10 +87,10 @@ num_convert_tx num_convert_tx_inst (
 );
 
 // -------- RX -------- //
-wire [`FIXDT_64_A_WIDTH-1:0] demodulator_data_in;
-wire                         demodulator_data_out;
-wire                         decoded_demodulator_data_out;
-wire [`ADC_BITS-1:0]          sdr_data;
+wire signed [`FIXDT_64_A_WIDTH-1:0] demodulator_data_in;
+wire                                demodulator_data_out;
+wire                                decoded_demodulator_data_out;
+wire signed [`ADC_BITS-1:0]         sdr_data;
 
 ddr_to_sdr ddr_to_sdr_inst (
     .clk(adc_dco_clk),
@@ -99,7 +99,7 @@ ddr_to_sdr ddr_to_sdr_inst (
     .data_out(sdr_data)
 );
 
-num_convert_tx num_convert_tx_inst (
+num_convert_rx num_convert_rx_inst (
     .data_in(sdr_data),
     .data_out(demodulator_data_in)
 );
