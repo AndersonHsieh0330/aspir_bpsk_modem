@@ -12,8 +12,8 @@ create_clock -name dac_dco -period 4 [get_ports DAC_DCO]
 create_clock -name dac_clk_p -period 4 [get_ports DAC_CLK_P]
 
 # generated clocks
-create_generated_clock -name clock_wizard_out1_dac -source [get_ports CLK_50MHZ] -divide_by 5 [get_nets aspir_bd_top_i/clk_wiz_0/clk_out1]
-create_generated_clock -name clock_wizard_out2_adc -source [get_ports CLK_50MHZ] -divide_by 5 [get_nets aspir_bd_top_i/clk_wiz_0/clk_out2]
+# create_generated_clock -name clock_wizard_out1_dac -source [get_ports CLK_50MHZ] -divide_by 0.2 [get_nets aspir_bd_top_i/clk_wiz_0/clk_out1]
+# create_generated_clock -name clock_wizard_out2_adc -source [get_ports CLK_50MHZ] -divide_by 0.2 [get_nets aspir_bd_top_i/clk_wiz_0/clk_out2]
 
 # ps generated clock, overwrites bd generated create clock
 # commented for now since this clock's frequency may change
