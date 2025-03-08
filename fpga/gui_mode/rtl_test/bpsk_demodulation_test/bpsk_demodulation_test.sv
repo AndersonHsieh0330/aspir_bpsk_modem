@@ -3,13 +3,14 @@
 `default_nettype none
 module bpsk_demodulation_test ();
 
+parameter DATA_WIDTH = `FIXDT_24_WIDTH;
 reg clk, rst_n;
 reg modulated_signal_select; // toggle between 1 and 0
-reg signed [`FIXDT_64_A_WIDTH-1:0] out;
+reg signed [DATA_WIDTH-1:0] out;
 reg unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] lu_angle;
 wire unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] demod_cosine_lu_i, demod_cosine_lu_q;
-wire signed [`FIXDT_64_A_WIDTH-1:0] demod_nco_carrier_i, demod_nco_carrier_q;
-wire signed [`FIXDT_64_A_WIDTH-1:0] bpsk_data_in;
+wire signed [DATA_WIDTH-1:0] demod_nco_carrier_i, demod_nco_carrier_q;
+wire signed [DATA_WIDTH-1:0] bpsk_data_in;
 wire bpsk_data_out;
 
 // generate random phase offset and convert to radians for easy comparison in waveform viewer
@@ -55,7 +56,13 @@ cosine_lut # (
 
 assign bpsk_data_in = modulated_signal_select? -1*out : out;
 
-bpsk_demodulator_top bpsk_demod_inst (
+bpsk_demodulator_top #(
+    .DATA_WIDTH(DATA_WIDTH),
+    .DATA_FRAC_WIDTH(DATA_WIDTH),
+    .LOOP_FILTER_KP(24'h000042),
+    .LOOP_FILTER_KI(24'h000007),
+    .M_2_PI(24'h03243f)
+) bpsk_demod_inst (
     .clk(clk),
     .rst_n(rst_n),
     .data_in(bpsk_data_in),

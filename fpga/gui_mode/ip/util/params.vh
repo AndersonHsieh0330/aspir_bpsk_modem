@@ -19,6 +19,7 @@
 * 32 bit fixed point floating point = 1, 8, 23
 * 64 bit fixed point floating point = 1, 11, 52
 * 64 bit A fixed point floating point = 1, 20, 43
+* 20 bit fixed point floating point = 1, 6, 13 
 */
 `define FIXDT_16_WIDTH 16
 `define FIXDT_16_FRAC_WIDTH 10
@@ -28,6 +29,8 @@
 `define FIXDT_64_FRAC_WIDTH 52
 `define FIXDT_64_A_WIDTH 64
 `define FIXDT_64_A_FRAC_WIDTH 43
+`define FIXDT_24_WIDTH 24
+`define FIXDT_24_FRAC_WIDTH 16
 
 // Math Constants
 `define M_2_PI_64B 64'sh006487ed5110b460

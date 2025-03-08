@@ -5,7 +5,7 @@ module cosine_lut_test ();
     reg                                            clk;
     reg                                            rst_n;
     reg  [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] in;
-    wire [`FIXDT_64_A_WIDTH-1:0] out;
+    wire [`FIXDT_24_WIDTH-1:0] out;
 
     always #1 clk <= ~clk;
     
