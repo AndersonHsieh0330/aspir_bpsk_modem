@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:dsp_modem:1.0
-// IP Revision: 13
+// IP Revision: 20
 
 `timescale 1ns/1ps
 

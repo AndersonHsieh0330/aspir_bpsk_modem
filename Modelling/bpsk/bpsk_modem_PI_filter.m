@@ -1,4 +1,4 @@
-% Written by Anderson Hsieh, 2025/01/01
+    % Written by Anderson Hsieh, 2025/01/01
 % based off https://www.mathworks.com/matlabcentral/fileexchange/32956-costas-loop
 % with modifications
 % TODO : look into lpf integrator depth and the phase adjustment step
@@ -105,7 +105,7 @@ end
 % ------------------------------------------------------------------------
 subplot(4, 2, 1);
 stem(bit_data, 'filled');
-title('random bit\_data generated');
+title('Random Bit Data Generated');
 xlabel('Bit Index');
 ylabel('Data');
 
@@ -117,7 +117,7 @@ ylabel('Data');
 
 subplot(4, 2, 2);
 plot(t,bpsk_signal);
-title('bpsk\_signal');
+title('BPSK\_Signal');
 xlabel('Time Step (Sample Step)');
 ylabel('Amplitude');
 
@@ -139,7 +139,7 @@ plot(t,phi);
 ylim([-pi pi]);
 title('phase adjust');
 xlabel('Time Step (Sample Step)');
-ylabel('Amplitude');
+ylabel('Amplitude (Rads)');
 
 %subplot(4, 2, 5);
 %plot(t,q_arm_filtered);
@@ -177,7 +177,7 @@ frequencies = linspace(-fs/2, fs/2, nfft);
 rf_spectrum = fftshift(abs(fft(bpsk_signal, nfft)));
 subplot(4, 2, 8);
 plot(frequencies, 20*log10(rf_spectrum));
-title('spectrum of bpsk signal');
+title('Spectrum of BPSK Signal');
 xlabel('Frequency (Hz)');
 ylabel('Magnitude (dB)');
 
@@ -188,3 +188,5 @@ disp(['final phase adjustment : ', num2str(phase), ' rad/s']);
 disp(['number of data points: ', int2str(length(bit_data))]);
 disp(['there are ', int2str(sum(comparison_result == 0)), ...
     ' mismatch between original data and sampled data, preamble not included in this simulation'])
+
+scatterplot(bpsk_signal, sps);

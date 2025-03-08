@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:spi_full2half_duplex_adapter:1.0
-// IP Revision: 3
+// IP Revision: 5
 
 (* X_CORE_INFO = "spi_full2half_duplex_adapter,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "aspir_bd_top_spi_full2half_duplex_0_0,spi_full2half_duplex_adapter,{}" *)
-(* CORE_GENERATION_INFO = "aspir_bd_top_spi_full2half_duplex_0_0,spi_full2half_duplex_adapter,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=spi_full2half_duplex_adapter,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "aspir_bd_top_spi_full2half_duplex_0_0,spi_full2half_duplex_adapter,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=spi_full2half_duplex_adapter,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module aspir_bd_top_spi_full2half_duplex_0_0 (

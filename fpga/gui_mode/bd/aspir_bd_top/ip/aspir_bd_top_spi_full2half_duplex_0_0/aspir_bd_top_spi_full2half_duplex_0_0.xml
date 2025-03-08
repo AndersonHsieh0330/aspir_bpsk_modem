@@ -17,11 +17,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Mar 01 08:30:51 UTC 2025</spirit:value>
+            <spirit:value>Thu Mar 06 04:30:28 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:57b26b48</spirit:value>
+            <spirit:value>9:c7eb4748</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -32,7 +32,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:57b26b48</spirit:value>
+            <spirit:value>9:c7eb4748</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -48,11 +48,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Mar 01 08:30:51 UTC 2025</spirit:value>
+            <spirit:value>Thu Mar 06 04:30:28 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:57b26b48</spirit:value>
+            <spirit:value>9:c7eb4748</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -67,11 +67,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Mar 01 08:30:51 UTC 2025</spirit:value>
+            <spirit:value>Thu Mar 06 04:30:28 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e20bdb9e</spirit:value>
+            <spirit:value>9:7252f79e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -87,11 +87,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Mar 01 08:30:51 UTC 2025</spirit:value>
+            <spirit:value>Thu Mar 06 04:30:28 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:e20bdb9e</spirit:value>
+            <spirit:value>9:7252f79e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -198,7 +198,7 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/6604/spi_full2half_duplex_adapter.v</spirit:name>
+        <spirit:name>../../ipshared/5589/spi_full2half_duplex_adapter.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -217,7 +217,7 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/6604/spi_full2half_duplex_adapter.v</spirit:name>
+        <spirit:name>../../ipshared/5589/spi_full2half_duplex_adapter.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -246,7 +246,7 @@
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="nopcore"/>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2f8d3536_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_half2full_duplex_adapter</xilinx:tag>
@@ -272,12 +272,53 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@63301b60_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@15658e2c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@41ce887a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62ec971d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3abbffb3_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ee3ba67_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@83d23ad_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@494911d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@117845f5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69963504_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@345aa8ea_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cc02493_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c37ae83_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f2b45f9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10217895_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29235fda_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25fb525b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@930379d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2576ea29_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5870e3b1_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b33e576_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fb18618_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@656ce4c7_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ee0ab82_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@297e6bb6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ce528f3_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3793c8bc_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ef499c0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@617bd802_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f64f451_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13ea071c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2349e085_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cce9921_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31eba2a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55a130bc_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1effea80_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@aa4c49a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67e2eb2b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3953131c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54d21ce0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cae78d7_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d62fd2c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b285e98_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8d0e864_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/spi_full2half_duplex_adapter</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2d9c616e"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="e01f273f"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4364f8ab"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="e22f0f93"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="cf9236d1"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>

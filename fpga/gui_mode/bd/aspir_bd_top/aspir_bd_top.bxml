@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="aspir_bd_top" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1740817852"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1740817852"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1740817852"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1740817852"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1741235429"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1741235429"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1741235429"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1741235429"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\aspir_bd_top_processing_system7_0_0\aspir_bd_top_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -127,14 +127,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\aspir_bd_top_axi_smc_1\aspir_bd_top_axi_smc_1.xci" Type="IP">
-        <Instance HierarchyPath="axi_smc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\aspir_bd_top_rst_ps7_0_100M_1\aspir_bd_top_rst_ps7_0_100M_1.xci" Type="IP">
         <Instance HierarchyPath="rst_ps7_0_100M"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -199,8 +191,56 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
+      <File Name="ip\aspir_bd_top_axi_interconnect_0_0\aspir_bd_top_axi_interconnect_0_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_interconnect_0_read_fifo"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\aspir_bd_top_axi_interconnect_1_0\aspir_bd_top_axi_interconnect_1_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_interconnect_1_write_fifo"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="ip\aspir_bd_top_auto_pc_0_1\aspir_bd_top_auto_pc_0.xci" Type="IP">
         <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\aspir_bd_top_s00_data_fifo_0\aspir_bd_top_s00_data_fifo_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_interconnect_0_read_fifo/s00_couplers/s00_data_fifo"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\aspir_bd_top_auto_pc_1\aspir_bd_top_auto_pc_1.xci" Type="IP">
+        <Instance HierarchyPath="axi_interconnect_0_read_fifo/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\aspir_bd_top_auto_pc_2\aspir_bd_top_auto_pc_2.xci" Type="IP">
+        <Instance HierarchyPath="axi_interconnect_1_write_fifo/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\aspir_bd_top_auto_us_0\aspir_bd_top_auto_us_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_interconnect_1_write_fifo/s00_couplers/auto_us"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
