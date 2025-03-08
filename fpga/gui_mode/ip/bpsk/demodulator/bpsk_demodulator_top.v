@@ -18,21 +18,31 @@ module bpsk_demodulator_top #(
     input  wire signed [DATA_WIDTH-1:0]                          nco_carrier_q
 );
 
-wire signed   [DATA_WIDTH*`LPF_TAPS-1:0] i_mixer_out_fifo;
-wire signed   [DATA_WIDTH*`LPF_TAPS-1:0] q_mixer_out_fifo;
-wire signed   [DATA_WIDTH-1:0] i_mixer_out, q_mixer_out;
-wire signed   [(DATA_WIDTH*2)-1:0] nco_carrier; // [0] = cosine zero shift carrier(i), [1] = quadrature sine carrier(q)
-wire signed   [DATA_WIDTH-1:0] fb_mixer_out;
-wire signed   [DATA_WIDTH-1:0] i_lpf_out, q_lpf_out;
-wire signed   [DATA_WIDTH-1:0] phase_adjust;
+wire signed [DATA_WIDTH*`LPF_TAPS-1:0] i_mixer_out_fifo;
+wire signed [DATA_WIDTH*`LPF_TAPS-1:0] q_mixer_out_fifo;
+wire signed [DATA_WIDTH-1:0] i_mixer_out, q_mixer_out;
+wire signed [(DATA_WIDTH*2)-1:0] nco_carrier; // [0] = cosine zero shift carrier(i), [1] = quadrature sine carrier(q)
+wire signed [DATA_WIDTH-1:0] fb_mixer_out;
+wire signed [DATA_WIDTH-1:0] i_lpf_out, q_lpf_out;
+wire signed [DATA_WIDTH-1:0] phase_adjust;
+wire signed [DATA_WIDTH-1:0] data_in_pip_reg_out;
 
 assign data_out = i_lpf_out[DATA_WIDTH-1];
+
+pip_reg #(
+    .DATA_WIDTH(DATA_WIDTH)
+) pip_reg_inst (
+    .clk(clk),
+    .rst_n(rst_n),
+    .data_in(data_in),
+    .data_out(data_in_pip_reg_out)
+);
 
 mixer #(
     .DATA_WIDTH(DATA_WIDTH),
     .DATA_FRAC_WIDTH(DATA_FRAC_WIDTH)
 ) mixer_inst_i (
-    .in_a(data_in),
+    .in_a(data_in_pip_reg_out),
     .in_b(nco_carrier_i),
     .out(i_mixer_out)
 );
@@ -51,7 +61,7 @@ mixer #(
     .DATA_WIDTH(DATA_WIDTH),
     .DATA_FRAC_WIDTH(DATA_FRAC_WIDTH)
 ) mixer_inst_q (
-    .in_a(data_in),
+    .in_a(data_in_pip_reg_out),
     .in_b(nco_carrier_q),
     .out(q_mixer_out)
 );

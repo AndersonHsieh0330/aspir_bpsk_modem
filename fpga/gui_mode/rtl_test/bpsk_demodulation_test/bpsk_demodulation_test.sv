@@ -13,7 +13,7 @@ wire signed [`FIXDT_64_A_WIDTH-1:0] bpsk_data_in;
 wire bpsk_data_out;
 
 // generate random phase offset and convert to radians for easy comparison in waveform viewer
-int unsigned INITIAL_PHASE_OFFSET_STEPS = 1235; // [`CARRIER_SAMPLES_PER_PERIOD, 0]
+int unsigned INITIAL_PHASE_OFFSET_STEPS = 3235; // [`CARRIER_SAMPLES_PER_PERIOD, 0]
 real M_2_PI = 6.283185307179586476925286766559;
 real TOTAL_STEPS = `CARRIER_SAMPLES_PER_PERIOD-1;
 real INITIAL_PHASE_OFFSET_RADS = (INITIAL_PHASE_OFFSET_STEPS / TOTAL_STEPS) * M_2_PI;
@@ -47,6 +47,8 @@ end
 cosine_lut # (
     .READ_PORTS(3)
 ) cosine_lut_inst (
+    .clk(clk),
+    .rst_n(rst_n),
     .in({lu_angle, demod_cosine_lu_i, demod_cosine_lu_q}),
     .out({out, demod_nco_carrier_i, demod_nco_carrier_q})
 );

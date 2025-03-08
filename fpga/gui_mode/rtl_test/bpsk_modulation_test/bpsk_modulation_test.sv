@@ -31,6 +31,8 @@ end
 cosine_lut #(
     .READ_PORTS(1)
 ) cosine_lut_inst (
+    .clk(clk),
+    .rst_n(rst_n),
     .in(mod_cosine_lu),
     .out(mod_carrier)
 );

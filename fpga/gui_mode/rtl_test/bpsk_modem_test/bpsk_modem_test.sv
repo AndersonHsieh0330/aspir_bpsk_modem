@@ -35,6 +35,8 @@ always #2.5 clk <= ~clk;
 cosine_lut #(
     .READ_PORTS(3)
 ) cosine_lut_inst (
+    .clk(clk),
+    .rst_n(rst_n),
     .in({mod_cosine_lu+INITIAL_PHASE_OFFSET_STEPS, demod_cosine_lu_i, demod_cosine_lu_q}),
     .out({mod_carrier, demod_nco_carrier_i, demod_nco_carrier_q})
 );
