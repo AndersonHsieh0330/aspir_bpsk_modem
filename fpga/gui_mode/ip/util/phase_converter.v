@@ -1,41 +1,24 @@
 // convert radians to step for cosine look up table
 `include "params.vh"
 module phase_converter #(
-    parameter PHASE_STEP = `M_2_PI_64B_A / `CARRIER_SAMPLES_PER_PERIOD,
+    parameter signed PHASE_STEP = `M_2_PI_64B_A / `CARRIER_SAMPLES_PER_PERIOD,
     parameter INPUT_WIDTH = `FIXDT_64_A_WIDTH,
-    parameter M_2_PI = `M_2_PI_64B_A
+    parameter signed M_2_PI = `M_2_PI_64B_A
 ) (
-    input  wire signed   [INPUT_WIDTH-1:0] input_value,
-    output reg  unsigned [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] phase_in_step // phase in the unit of steps
+    input  wire signed [INPUT_WIDTH-1:0] input_value,
+    output wire        [$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0] phase_in_step // phase in the unit of steps
 );
 
-    reg signed [INPUT_WIDTH-1:0] true_phase; // units: steps
-    reg signed [INPUT_WIDTH-1:0] true_phase_in_2pi; // units: rads
-    reg signed [INPUT_WIDTH-1:0] true_phase_remainder; // units: rads
-    reg signed [INPUT_WIDTH-1:0] true_phase_rounded; // units: steps
+//    assign phase_in_step = (input_value * 2186160243) >> 24;
+    // Scaling factor in Q16: 85406613 (0x0516DD55)
+    localparam signed SCALE_FACTOR = 32'd85406613; 
 
-    assign phase_in_step = true_phase_rounded[$clog2(`CARRIER_SAMPLES_PER_PERIOD)-1:0];
-    assign true_phase_in_2pi = input_value % M_2_PI;
-    assign true_phase = true_phase_in_2pi / PHASE_STEP;
-    assign true_phase_remainder = true_phase_in_2pi % PHASE_STEP;
+    wire signed [47:0] product;
+    assign product = input_value * SCALE_FACTOR; // Full precision multiplication
 
-    always @(*) begin
-        if (true_phase[INPUT_WIDTH-1] == 1'b1) begin
-            // if the phase is negative, rotate it by 2pi so it becomes positive
-            if (true_phase_remainder <= -(PHASE_STEP >> 1)) begin
-                // round up
-                true_phase_rounded = true_phase - 1 + `CARRIER_SAMPLES_PER_PERIOD;
-            end else begin
-                true_phase_rounded = true_phase + `CARRIER_SAMPLES_PER_PERIOD;
-            end
-        end else begin
-            if (true_phase_remainder >= (PHASE_STEP >> 1)) begin
-                // round up
-                true_phase_rounded = true_phase + 1;
-            end else begin
-                true_phase_rounded = true_phase;
-            end
-        end
-    end
+    wire signed [31:0] shifted;
+    assign shifted = product[47:16]; // Extract upper 32 bits after shift
 
+    // Ensure output is non-negative (clamp negative values to zero)
+    assign phase_in_step = (shifted < 0) ? 13'd0 : shifted[12:0];
 endmodule

@@ -1,0 +1,20 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port S_AXIS_0 -pg 1 -lvl 0 -x -100 -y -260 -defaultsOSRD
+preplace port M_AXIS_0 -pg 1 -lvl 2 -x 210 -y -230 -defaultsOSRD
+preplace port s_axis_aclk_0 -pg 1 -lvl 0 -x -100 -y -220 -defaultsOSRD
+preplace port m_axis_aclk_0 -pg 1 -lvl 0 -x -100 -y -200 -defaultsOSRD
+preplace port s_axis_aresetn_0 -pg 1 -lvl 0 -x -100 -y -240 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 1 -x 70 -y -230 -defaultsOSRD
+preplace netloc s_axis_aclk_0_1 1 0 1 N -220
+preplace netloc m_axis_aclk_0_1 1 0 1 N -200
+preplace netloc s_axis_aresetn_0_1 1 0 1 N -240
+preplace netloc S_AXIS_0_1 1 0 1 N -260
+preplace netloc axis_data_fifo_0_M_AXIS 1 1 1 N -230
+levelinfo -pg 1 -100 70 210
+pagesize -pg 1 -db -bbox -sgen -270 -340 330 160
+"
+}
+

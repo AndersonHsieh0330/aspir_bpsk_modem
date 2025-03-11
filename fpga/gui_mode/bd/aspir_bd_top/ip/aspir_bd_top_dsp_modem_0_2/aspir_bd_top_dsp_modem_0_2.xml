@@ -1,0 +1,1194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>customized_ip</spirit:library>
+  <spirit:name>aspir_bd_top_dsp_modem_0_2</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>pl2ps_fifo_s_axis</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>pl2ps_fifo_s_axis_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TKEEP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>pl2ps_fifo_s_axis_tkeep</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TLAST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>pl2ps_fifo_s_axis_tlast</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>pl2ps_fifo_s_axis_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>pl2ps_fifo_s_axis_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>TDATA_NUM_BYTES</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.TDATA_NUM_BYTES">4</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>TDEST_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.TDEST_WIDTH">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>TID_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.TID_WIDTH">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>TUSER_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.TUSER_WIDTH">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>HAS_TREADY</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.HAS_TREADY">1</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>HAS_TSTRB</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.HAS_TSTRB">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>HAS_TKEEP</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.HAS_TKEEP">1</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>HAS_TLAST</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.HAS_TLAST">1</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.FREQ_HZ">100000000</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PHASE</spirit:name>
+          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.PHASE">0.000</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>CLK_DOMAIN</spirit:name>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.CLK_DOMAIN"/>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>LAYERED_METADATA</spirit:name>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.LAYERED_METADATA">undef</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>INSERT_VIP</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.INSERT_VIP">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>simulation.rtl</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>ps2pl_fifo_m_axis</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>ps2pl_fifo_m_axis_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>ps2pl_fifo_m_axis_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TLAST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>ps2pl_fifo_m_axis_tlast</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>ps2pl_fifo_m_axis_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TKEEP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>ps2pl_fifo_m_axis_tkeep</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>TDATA_NUM_BYTES</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.TDATA_NUM_BYTES">4</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>TDEST_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.TDEST_WIDTH">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>TID_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.TID_WIDTH">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>TUSER_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.TUSER_WIDTH">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>HAS_TREADY</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.HAS_TREADY">1</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>HAS_TSTRB</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.HAS_TSTRB">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>HAS_TKEEP</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.HAS_TKEEP">1</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>HAS_TLAST</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.HAS_TLAST">1</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.FREQ_HZ">100000000</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PHASE</spirit:name>
+          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.PHASE">0.000</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>CLK_DOMAIN</spirit:name>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.CLK_DOMAIN"/>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>LAYERED_METADATA</spirit:name>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.LAYERED_METADATA">undef</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>INSERT_VIP</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.INSERT_VIP">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>simulation.rtl</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>mod_resetn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>mod_resetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.MOD_RESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>INSERT_VIP</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.MOD_RESETN.INSERT_VIP">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>simulation.rtl</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>adc_dco_clk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>adc_dco_clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ADC_DCO_CLK.FREQ_HZ">250000000</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ADC_DCO_CLK.ASSOCIATED_BUSIF">pl2ps_fifo_s_axis</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ADC_DCO_CLK.ASSOCIATED_RESET">demod_resetn</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PHASE</spirit:name>
+          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.ADC_DCO_CLK.PHASE">0.000</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>CLK_DOMAIN</spirit:name>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.ADC_DCO_CLK.CLK_DOMAIN"/>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>INSERT_VIP</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.ADC_DCO_CLK.INSERT_VIP">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>simulation.rtl</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>dac_dco_clk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>dac_dco_clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DAC_DCO_CLK.FREQ_HZ">250000000</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DAC_DCO_CLK.ASSOCIATED_BUSIF">ps2pl_fifo_m_axis</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DAC_DCO_CLK.ASSOCIATED_RESET">mod_resetn</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PHASE</spirit:name>
+          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.DAC_DCO_CLK.PHASE">0.000</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>CLK_DOMAIN</spirit:name>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.DAC_DCO_CLK.CLK_DOMAIN"/>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>INSERT_VIP</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.DAC_DCO_CLK.INSERT_VIP">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>simulation.rtl</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>demod_resetn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>demod_resetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DEMOD_RESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>INSERT_VIP</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.DEMOD_RESETN.INSERT_VIP">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>simulation.rtl</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>mod_resetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>demod_resetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>adc_dco_clk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>adc_overrange</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>adc_data_in</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">5</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire signed</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>pl2ps_fifo_s_axis_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>pl2ps_fifo_s_axis_tkeep</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>pl2ps_fifo_s_axis_tlast</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>pl2ps_fifo_s_axis_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">1</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>pl2ps_fifo_s_axis_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>dac_dco_clk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>dac_data_out</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ps2pl_fifo_m_axis_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ps2pl_fifo_m_axis_tkeep</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">1</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ps2pl_fifo_m_axis_tlast</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ps2pl_fifo_m_axis_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ps2pl_fifo_m_axis_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:description>dsp_modem_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">aspir_bd_top_dsp_modem_0_2</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:displayName>dsp_modem_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:xpmLibraries>
+        <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
+        <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
+        <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
+      </xilinx:xpmLibraries>
+      <xilinx:coreRevision>21</xilinx:coreRevision>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="nopcore"/>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56dcdf04_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22f26cbc_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25454253_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15d9ffc6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7223f25e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@308b11a0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57cec2b9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b005b5c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5eed3dce_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6188fb87_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@166b641a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f6cfe1c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65e06260_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@507af93d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42f29e60_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d88397f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ebabb91_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1125f449_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1df47aad_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4df7ff1c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1164f762_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c7e7663_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a330c8f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7459c7a2_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f85eb64_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a070681_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63fc5079_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4af944ff_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a680d1a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51937793_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cd022a7_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e11352_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f3f050c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4436b882_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d6443e8_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ad99a1d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d6d79a6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5420a90e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38e5256f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fadf5fb_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@650f9f11_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@286e6be0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@183180c9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c5bf179_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f8a0d99_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76d114c2_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3de82c3c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@169308c9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34fdba74_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10f5aa3c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63f045f9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@618fefcb_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f03665c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70070047_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e969368_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dc0a16e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@379dcc20_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1112f69d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42291d0f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46e1f9c4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b2bdbb8_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d90e316_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ba44f21_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@780bd204_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@180c115c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fe5faa4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b54bdb8_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d22cc23_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53b0c510_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b368995_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f82eac0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@164bfc30_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3099b1aa_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50b5094_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5045c897_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b59cada_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f9c4e94_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b760c97_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ace7643_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@120f4fdd_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3474c52b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5afdc9f6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d5cc2d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a43d2a1_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@476b34d4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e16e0fa_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b072633_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dd001ec_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7538723e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50c77551_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c96e0fa_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@149d9e1c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2de0fde4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b7b704d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53184d2b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18d7fc40_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@384239cb_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74f6820e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@babf200_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47233c3b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@228ec1de_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64d0b9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60d0ac8_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d4b933a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@631e342a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44f68474_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ee1f8a4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fbf91a3_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cb18519_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25cdb1f0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30624b55_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53e689c7_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49f2b151_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fa3acff_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8aa6ffd_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5af8e3c3_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fb68def_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14abfeb6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@318ab4cc_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9a1dc63_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e74d87f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b679a3f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@292d036e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62631aa6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@256a89b6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@297f4b34_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57a26100_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13ba3f9d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67ecb7d1_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13c39d94_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@235d6b1d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a734b76_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26ff34df_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15f55a69_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@304bf38c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@336b797a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20a0e3d6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a686a50_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d146e3_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e452f09_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e0f4a28_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@113f17dd_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3811697a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@133fdd01_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33412068_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9612ea0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f4f0456_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62b7ab3e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4edf7c68_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b6f4898_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@349ded88_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17b70030_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5722d5a5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b6134c0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d59490a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c441da6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b0daf9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@709dfa8_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@246c76e0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@380ab805_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d7a8783_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e590496_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ab0ab89_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16abb659_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15fe895e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@113813c7_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@112a863a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@696b545d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24c55ca2_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@407e504c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26812a3b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b90be76_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@427717a5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b1f5a5c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28b045e4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f8d3e05_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3aa32a5d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2034f927_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@346e2c38_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f0b2e0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@799c05ce_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a572737_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c672e80_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78c0589_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c054ce7_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e81477f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cf4e989_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44be1c93_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4eee7126_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33daed6a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68013418_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3de738e5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@669f7968_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b8d3c11_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52bee7a4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a1d4fba_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b445725_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39de1ed6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b8f9081_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a65fffa_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6209e0e4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f7a815f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c8b590_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fbfcc69_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c528fc9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@236bcda2_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7539c0f0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bd0edaa_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f7d713b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65959ab_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b2ea14c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c1d54ef_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@393e6eda_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53679a3d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6550a55f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69dd3237_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65044e5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ce8324d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ea6b1d2_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2edfa268_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ea4f9f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@312023e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2da98947_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11e07814_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f546574_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d39c28_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@181a7732_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30f65046_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@701f5bd2_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ccf11d0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@582d7513_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f2f2616_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21663304_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@668846ae_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50cd0780_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52f890ed_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c6ac874_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6779a888_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@833a4df_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2280533b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e88df91_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44d3c120_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@533657b0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b858e63_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@163a2b0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a9f7176_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bc5d12a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fef89da_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cc15c8b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2574fdaf_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6673a3d1_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ab4091b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f8f1205_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7da29dff_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51d8b1c9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36e751c8_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@322238f9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e8516f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@614b8075_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fec0718_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@691ec354_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38040d34_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6876c3b4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53f1bd6e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77142302_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@496113f7_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63eed9aa_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10535dc0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@523a654b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a6f40c2_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c2224e7_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44feaca0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61e26d4a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1092f0d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@408c39e6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@428b9f1a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b0c8fb4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68b8568d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7108ac_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3444f598_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f90d2cd_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e93c92_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cdecee6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b840a26_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e7b6238_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10d4c4a0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20b7efe7_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@537638fe_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@581a5144_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@287e51e0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25469af0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b65b1d1_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66ef9b2b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f963ed7_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e62dd51_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ebd3b4f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c6b2c29_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@631997d8_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c50853_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@349fbc5d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34057415_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@678cadc1_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c753f3c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32f4a249_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75d4df59_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@702b3091_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79c23b13_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f230e9e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66b7142d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@488ab7ec_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ed2d2c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6964aaf1_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2563784e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d1028b5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@330f9778_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@649b82c0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@512d404c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@522046aa_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a9bcf5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7073c0ef_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62c12d77_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@525b182b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51e8c2e5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4362f548_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63959661_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a86698_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b123292_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7337d594_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27b39cc0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@187af87_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66912698_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7465af4f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@186fbc5d_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d079311_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7185efc4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c689916_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53ef90b9_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ded6d4f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3becbc80_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3aa065d5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f63214a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d995255_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65fdcc14_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dd574e5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71a7125a_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@427ad3d4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51b5830e_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@392969ae_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6be9c4fa_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@446cf9d6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e6e8c06_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42d9f578_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12934990_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7191d3f5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1891c71c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@be3b90c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@490a0473_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a9a0d6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5132a219_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22d28c2c_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dad8d36_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77907a0_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@265b9252_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40e6a428_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@524702ae_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36d7d04f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7000c34b_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33f7faf2_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20810cf2_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@db53219_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58631d53_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3199d7fb_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a919fd5_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67f06ed4_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66903aa_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@186b951f_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@258d5eb6_ARCHIVE_LOCATION">c:/Users/andy1/repos/award-winning-fydp/fpga/gui_mode/ip_repo/dsp_modem</xilinx:tag>
+      </xilinx:tags>
+      <xilinx:configElementInfos>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.HAS_TKEEP" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.HAS_TLAST" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.HAS_TREADY" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.HAS_TSTRB" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.TDATA_NUM_BYTES" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.TDEST_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.TID_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL2PS_FIFO_S_AXIS.TUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.HAS_TKEEP" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.HAS_TLAST" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.HAS_TREADY" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.HAS_TSTRB" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.TDATA_NUM_BYTES" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.TDEST_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.TID_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PS2PL_FIFO_M_AXIS.TUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd_and_user"/>
+      </xilinx:configElementInfos>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="766ff709"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="99b2045d"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="1a6b337a"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="f791d143"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

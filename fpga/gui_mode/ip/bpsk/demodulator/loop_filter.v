@@ -1,14 +1,14 @@
 `include "params.vh"
 module loop_filter #(
-    parameter Kp = 64'sh000000020c49ba5e, // 0.001
-    parameter Ki = 64'sh00000000346dc5d6, // 0.0001
-    parameter DATA_WIDTH = 64,
-    parameter DATA_FRAC_WIDTH = 43
+    parameter signed Kp = 64'sh000000020c49ba5e, // 0.001
+    parameter signed Ki = 64'sh00000000346dc5d6, // 0.0001
+    parameter DATA_WIDTH = `FIXDT_64_A_WIDTH,
+    parameter DATA_FRAC_WIDTH = `FIXDT_64_A_FRAC_WIDTH
 ) (
     input  wire clk,
     input  wire rst_n,
     input  wire signed [DATA_WIDTH-1:0] phase_error_next,
-    output reg  signed [DATA_WIDTH-1:0] phase_adjust
+    output wire signed [DATA_WIDTH-1:0] phase_adjust
 );
 
 reg  signed [DATA_WIDTH-1:0] integral_error_reg, phase_error_reg;
@@ -44,7 +44,7 @@ mixer #(
 assign control_signal = p_gain_product + i_gain_product;
 assign phase_adjust = phase_adjust_reg - control_signal;
 
-always @(posedge clk) begin
+always @(posedge clk or negedge rst_n) begin
     if (~rst_n) begin
         integral_error_reg <= {DATA_WIDTH{1'b0}};
         phase_error_reg <= {DATA_WIDTH{1'b0}}; 
