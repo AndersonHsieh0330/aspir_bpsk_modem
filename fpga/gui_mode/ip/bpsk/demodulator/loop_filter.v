@@ -1,7 +1,7 @@
 `include "params.vh"
 module loop_filter #(
-    parameter Kp = 64'sh000000020c49ba5e, // 0.001
-    parameter Ki = 64'sh00000000346dc5d6, // 0.0001
+    parameter signed Kp = 64'sh000000020c49ba5e, // 0.001
+    parameter signed Ki = 64'sh00000000346dc5d6, // 0.0001
     parameter DATA_WIDTH = `FIXDT_64_A_WIDTH,
     parameter DATA_FRAC_WIDTH = `FIXDT_64_A_FRAC_WIDTH
 ) (

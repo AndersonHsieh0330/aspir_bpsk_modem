@@ -11,9 +11,9 @@ module cosine_lut #(
     input  wire        [$clog2(`CARRIER_SAMPLES_PER_PERIOD)*READ_PORTS-1:0] in,
     output reg  signed [DATA_WIDTH*READ_PORTS-1:0]                   out 
 );
-    (* ram_style = "block" *) reg signed [`FIXDT_64_A_WIDTH-1:0] Lookup_Table3_table_data [0:`CARRIER_SAMPLES_PER_PERIOD-1];
-    integer i;
     parameter DATA_WIDTH = `FIXDT_24_WIDTH;
+    (* ram_style = "block" *) reg signed [DATA_WIDTH-1:0] Lookup_Table3_table_data [0:`CARRIER_SAMPLES_PER_PERIOD-1];
+    integer i;
 
     always @(posedge clk or negedge rst_n) begin
         if (~rst_n) begin

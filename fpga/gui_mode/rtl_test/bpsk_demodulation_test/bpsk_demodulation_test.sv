@@ -4,6 +4,7 @@
 module bpsk_demodulation_test ();
 
 parameter DATA_WIDTH = `FIXDT_24_WIDTH;
+parameter DATA_FRAC_WIDTH = `FIXDT_24_FRAC_WIDTH;
 reg clk, rst_n;
 reg modulated_signal_select; // toggle between 1 and 0
 reg signed [DATA_WIDTH-1:0] out;
@@ -14,9 +15,9 @@ wire signed [DATA_WIDTH-1:0] bpsk_data_in;
 wire bpsk_data_out;
 
 // generate random phase offset and convert to radians for easy comparison in waveform viewer
-int unsigned INITIAL_PHASE_OFFSET_STEPS = 3235; // [`CARRIER_SAMPLES_PER_PERIOD, 0]
+int unsigned INITIAL_PHASE_OFFSET_STEPS = 5235; // [`CARRIER_SAMPLES_PER_PERIOD, 0]
 real M_2_PI = 6.283185307179586476925286766559;
-real TOTAL_STEPS = `CARRIER_SAMPLES_PER_PERIOD-1;
+real TOTAL_STEPS = `CARRIER_SAMPLES_PER_PERIOD;
 real INITIAL_PHASE_OFFSET_RADS = (INITIAL_PHASE_OFFSET_STEPS / TOTAL_STEPS) * M_2_PI;
 
 initial begin
@@ -58,10 +59,10 @@ assign bpsk_data_in = modulated_signal_select? -1*out : out;
 
 bpsk_demodulator_top #(
     .DATA_WIDTH(DATA_WIDTH),
-    .DATA_FRAC_WIDTH(DATA_WIDTH),
-    .LOOP_FILTER_KP(24'h000042),
-    .LOOP_FILTER_KI(24'h000007),
-    .M_2_PI(24'h03243f)
+    .DATA_FRAC_WIDTH(DATA_FRAC_WIDTH),
+    .LOOP_FILTER_KP(24'sh000042),
+    .LOOP_FILTER_KI(24'sh000007),
+    .M_2_PI(24'sh06487f)
 ) bpsk_demod_inst (
     .clk(clk),
     .rst_n(rst_n),
